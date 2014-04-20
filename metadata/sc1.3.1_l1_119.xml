@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.3.1_l1_119" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>
+			Document containing the italics presentational element
+			<html:code>i</html:code> where its presentation 
+			characteristic is used to express a quotation.
+    </description>
+    <title>Presentational element (i) used to convey information and/or relationships</title>
+    <dc:creator>evlach@aegean.gr</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-28</date>
+    <status>accepted for end user evaluation</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+            <label>
+                <html:acronym>XHTML</html:acronym>
+				™ 1.0 The Extensible HyperText Markup Language
+				(Second Edition)
+			</label>
+      <testElements>
+        <testElement>
+          <elementName localname="i" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/present/graphics.html#edef-I">
+						Font style elements
+					</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>
+				The test case is intended to fail as
+				<html:code>i</html:code>
+				element has been used in order to convey information (quotation) 
+				instead of a semantic element.
+			
+      </p>
+    </purpose>
+        <expertGuidance>
+            <p>Check whether presentation tag has been used in order to convey information.</p>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>experts</testMode>
+      </testModes>
+      <scenario id="s01" name="s1_blind_sr">
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="nl">
+                            <p>Waren de woorden "I saw Lucy at lunch" benadrukt in de tekst ?</p>
+            </questionText>
+            <questionText xml:lang="en">
+                            <p>Were the words "I saw Lucy at lunch" emphasized in the text?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p/>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If so, how could you tell that this was the case?</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="1" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="s1_blind_braille">
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="nl">
+                            <p>Waren de woorden "I saw Lucy at lunch" benadrukt in de tekst? </p>
+            </questionText>
+            <questionText xml:lang="en">
+                            <p>Were the words "I saw Lucy at lunch" emphasized in the text?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p/>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If so, how could you tell that this was the case?</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="Braille display"/>
+          <UserAgent minimumLevel="1" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.3.1_l1_119.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.3_content-structure-separation-programmatic" primary="yes">
+      <locations expectedResult="cannotTell">
+        <location column="12" line="10" xpath="/:html/:body/:p/:i"/>
+      </locations>
+      <functionalOutcome>
+        <p>
+					Presentation tag has been used in order to convey
+					information.
+				</p>
+      </functionalOutcome>
+      <techComment>
+        <p>
+					Use a semantic tag like
+					<html:code>q</html:code>
+					.
+				
+        </p>
+                <p>
+		The test case maps to failure 
+		<html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F64">
+		F64: Failure of SC 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text
+		</html:a>
+                    </html:span>
+                </p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.3_content-structure-separation-programmatic" primary="no">
+      <locations expectedResult="fail">
+        <location column="12" line="10" xpath="/:html/:body/:p/:i"/>
+      </locations>
+      <functionalOutcome>
+        <p>
+					Presentation tag has been used in order to convey
+					information.
+				</p>
+      </functionalOutcome>
+      <techComment>
+        <p>
+					Use a semantic tag like
+					<html:code>q</html:code>
+					.
+				
+        </p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.3.1_l1_119">sc1.3.1_l1_119</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

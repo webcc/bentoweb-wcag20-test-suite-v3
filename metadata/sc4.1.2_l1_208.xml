@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc4.1.2_l1_208" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with a form in which a checkbox is emulated by means of a <html:code>span</html:code> element, an <html:code>onclick</html:code> event handler and Javacript.
+      Clicking the checkbox or its (emulated) label toggles the checkbox on or off.
+    </description>
+    <title>Name, role and value of emulated user interface control: checkbox [new]</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2007-08-24</date>
+    <status>validated</status><!--V_20071214-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/" baseline="included">
+      <label>
+        <html:acronym>XHTML</html:acronym>&#8482; 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#edef-INPUT">The <html:code>input</html:code> element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="title" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#adef-title">The <html:code>title</html:code> attribute</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" baseline="included">
+      <label>Standard <html:acronym>ECMA</html:acronym>-262: <html:acronym>ECMA</html:acronym>Script Language Specification</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/" baseline="excluded">
+      <label>Cascading Style Sheets, level 2: <html:acronym>CSS</html:acronym>2 Specification</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test case is intended to fail because the emulated checkbox cannot be recognised as such by assistive technology.
+        Only the emulation issue is tested here, not keyboard accessibility.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc4.1.2_l1_208.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_4.1_ensure-compat-rsv" primary="yes">
+      <locations expectedResult="fail"/>
+      <functionalOutcome>
+        <p>Users of assistive technology cannot find the &#8216;checkbox&#8217;.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F59">F59: Failure of SC 4.1.2 due to using script to make div or span a user interface control in HTML</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

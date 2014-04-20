@@ -1,0 +1,65 @@
+body { font-family: 'Lucida Grande', 'Trebuchet MS', Helvetica, Geneva, Verdana, sans-serif; 
+  margin:0;
+  color: #000; background-color: #fafad2 /*#ffd700 #fff8dc*/;
+}
+div#sitenav, div#sitesearch, form#searchform, form#searchform p, ul.navigation, ul.navigation li { display: inline; }
+h1 { /*display: inline; float: left;*/ 
+  margin: .2em 10px 0 10px;
+}
+div#sitenav { float: left; background: yellow; }
+div#sitenav h2 { position: absolute; left: -999px; width: 990px; } /* hide visual rendering of h2 */
+div#sitesearch { float: right;  padding: 4px 8px;
+  color: inherit; background-color: transparent; z-index: 10;
+} 
+div#sitesearch { margin-top: -2.5em;} /* hack to 'fix' float in IE 6 and Opera 9; FF 1.5 does not need this*/
+div#top { display: block; float: left; 
+  margin: 0;
+  background: #ffcb2d; color: #000;
+  border-bottom: 1px solid #9b8748;
+}
+ul#sitenavlist { float: left; width: 100%;
+  margin: 0; padding: 10px 0 0 10px;
+  list-style: none;
+  background: #ffcb2d;
+  z-index: 0;
+}
+ul#sitenavlist li { float: left; margin: 0; padding: 0; }
+ul#sitenavlist a { float: left;  display: block;
+  margin: 0 1px -1px 1px; padding: 4px 8px;
+  color: #333; background-color: transparent;
+  text-decoration: none;
+  border: 1px solid #9b8748;
+  background: #f9e9a9;
+}
+ul#sitenavlist a:hover, ul#sitenavlist a:focus {
+  z-index: 100;
+}
+/*div#picks, div#stores*/ div#secondnav { float: left; clear: left; width: 20%; background-color: #f9e9a9; color: inherit;}
+/*div#picks h2, div#stores h2*/ div#secondnav h2 { margin-left: 10px; font-size: 1.2em; }
+ul#pickslist, ul#storeslist { margin: 0; padding: 0; }
+ul#pickslist li, ul#storeslist li { display: block; margin: 0;  padding: 0; }
+ul#pickslist li a, ul#storeslist li a { display: block;
+  padding: 5px 0 5px 10px; margin: 0;
+  color: #333; background-color: #f9e9a9;
+  text-decoration: none;
+}
+ul#pickslist li a:hover, ul#storeslist li a:hover {
+  background-color: #fff;
+}
+
+div#main { float: left; width: 78%; padding-left: 5px; padding-top: 5px; }
+
+div.article { margin-bottom: 2em; }
+div#copyright { margin-top: 500px; margin-bottom: 1em; font-size: .8em; }
+
+a { color: #000; background: transparent; }
+
+a#skipimg, a#skipimg img { margin: 0; padding: 0;}
+a#skipimg img { border: none; height: 0.1px; }
+a#skipimg, a#skipimg:focus { display: inline; float:left; border: none; }
+div#picks p { margin-left: 10px; margin-bottom: 0;}
+
+a.skiphide { font-weight: bold; padding-left: 10px; }
+a.skiphide, a.skiphide:visited { color: #ffcb2d; background: transparent; }
+a.skiphide:focus, a.skiphide:active, a.skiphide:hover { color: #00f; background: transparent; }
+

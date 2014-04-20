@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc2.2.2_l2_001" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with a search form that has a text input field and a submit button. When the user enters a search string of less than three characters, the web page displays a warning that blinks for three seconds.</description>
+    <title>Warning that blinks for three seconds or less</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-29</date>
+    <status>validated</status><!--V_20080111--><!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">
+      <label>Cascading Style Sheets, level 2</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">
+      <label>Standard <html:acronym>ECMA</html:acronym>-262: <html:acronym>ECMA</html:acronym>Script Language Specification</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/2000/WD-DOM-Level-1-20000929/">
+      <label>Document Object Model (<html:acronym>DOM</html:acronym>) Level 1 Specification (Second Edition)</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because the warning does not blink for more than three seconds.
+        Only the time duration of the blinking is tested here, not other usability aspects of the warning or other parts of the page.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+        <userGuidance xml:lang="en">
+          <p>Note: For this test, you need a browser that supports <html:acronym>CSS</html:acronym> and JavaScript, and you need to have <html:acronym>CSS</html:acronym> and JavaScript enabled.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Merk op: voor dese test moet uw browser <html:acronym>CSS</html:acronym> en JavaScript ondersteunen, en <html:acronym>CSS</html:acronym> en JavaScript moeten aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <multipleChoice select="one" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Please enter the two characters "A5" into the search form and press enter (or press "Go!"). </p>
+              <p>The input was not accepted because :</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Voer de tekens "A5" in het zoek formulier en druk op enter of op go! De invoer werd niet aanvaard omdat :</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">Only numbers are accepted</label>
+
+              <label xml:lang="nl">Alleen nummers zijn toegestaan</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Only alphabetic characters A-Z are accepted</label>
+
+              <label xml:lang="nl">Alleen letters A-Z zijn toegestaan</label>
+              <value>-2</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Capitals are not allowed</label>
+
+              <label xml:lang="nl">Hoofdletters zijn niet toegestaan</label>
+              <value>-3</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">You need to enter at least 3 characters</label>
+
+              <label xml:lang="nl">U moet minimaal 3 tekens invoeren</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Don't know</label>
+
+              <label xml:lang="nl">Ik weet het niet</label>
+              <value>-4</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="3" version="6" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="3" version="7" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="3" version="1.7" type="browser" product="Mozilla" />
+          <UserAgent minimumLevel="3" version="1.0" type="browser" product="Firefox" />
+          <UserAgent minimumLevel="3" version="2.0" type="browser" product="Firefox" />
+          <UserAgent minimumLevel="3" version="1.2" type="browser" product="Safari" />
+          <UserAgent minimumLevel="3" version="7.54" type="browser" product="Opera" />
+          <UserAgent minimumLevel="3" version="8" type="browser" product="Opera" />
+          <UserAgent minimumLevel="3" version="9" type="browser" product="Opera" />
+        </experience>
+        <disabilities>
+          <disability>ADHD</disability>
+          <disability>aphasia</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc2.2.2_l2_001.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_2.2_time-limits-blink" primary="yes">
+      <locations expectedResult="pass" />
+      <functionalOutcome>
+        <p>The warning blinks for three seconds or less.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>See http://wiki.script.aculo.us/scriptaculous/show/SupportedBrowsers (Supported browsers) in the 
+          Scriptaculous wiki for browers that support the scripts used in this test:
+          Microsoft Internet Explorer for Windows, version 6.0 and higher; Mozilla Firefox 1.0/Mozilla 1.7 and higher; Apple Safari 1.2 and higher;
+          Konqueror; Camino; Opera 7.54; Opera 8.
+        </p>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G11">G11: Creating content that blinks for less than 3 seconds</html:a></html:span>.</p>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#SCR22">SCR22: Using scripts to control blinking and stop it in three seconds or less</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.2_time-limits-blink" primary="no">
+      <locations expectedResult="pass" />
+      <functionalOutcome>
+        <p>The warning blinks for three seconds or less.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>See http://wiki.script.aculo.us/scriptaculous/show/SupportedBrowsers (Supported browsers) in the 
+          Scriptaculous wiki for browers that support the scripts used in this test:
+          Microsoft Internet Explorer for Windows, version 6.0 and higher; Mozilla Firefox 1.0/Mozilla 1.7 and higher; Apple Safari 1.2 and higher;
+          Konqueror; Camino; Opera 7.54; Opera 8.
+        </p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.2.2_l2_001">sc2.2.2_l2_001</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.2_time-limits-blink" primary="no">
+      <locations expectedResult="pass" />
+      <functionalOutcome>
+        <p>The warning blinks for three seconds or less.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>See http://wiki.script.aculo.us/scriptaculous/show/SupportedBrowsers (Supported browsers) in the 
+          Scriptaculous wiki for browers that support the scripts used in this test:
+          Microsoft Internet Explorer for Windows, version 6.0 and higher; Mozilla Firefox 1.0/Mozilla 1.7 and higher; Apple Safari 1.2 and higher;
+          Konqueror; Camino; Opera 7.54; Opera 8.
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

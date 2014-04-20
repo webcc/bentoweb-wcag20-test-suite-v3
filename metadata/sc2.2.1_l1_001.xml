@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc2.2.1_l1_001" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document that refreshes every 5 seconds to display a new "random" quote. The page refreshes automatically, without giving the user the opportunity to deactivate or modify the timeout.</description>
+    <title>Auto-refreshing content without a mechanism to turn it off</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-29</date>
+    <status>accepted for end user evaluation</status><!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="meta" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#edef-META">The meta element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because the content does not provide a mechanism to turn off the automatic refresh.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s02" name="Scenario s02">
+        <userGuidance xml:lang="en">
+          <p>Note : it is possible that you are not able to perform the requested action.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Opmerking: Het is mogelijk dat deze test niet gedaan kan worden.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Do you have sufficient time to read the full content of the page before it refreshes ?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Heeft U voldoende tijd om de gehele pagina te lezen voor dat deze opnieuw geladen werd?</p>
+            </questionText>
+            <optionYes value="-1"/>
+            <optionNo value="1"/>
+            <optionOther xml:lang="en">
+              <p>If not, were you able to stop or influence the automatic refresh and how ?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien U onvoldoende tijd had, kon U dan het automatisch herladen van de pagina stoppen of beïnvloeden? Indien ja, hoe?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="Braille display"/>
+          <UserAgent minimumLevel="4" type="browser"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>deaf-blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario s03">
+        <userGuidance xml:lang="en">
+          <p>Note : it is possible that you are not able to perform the requested action.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Opmerking: Het is mogelijk dat deze test niet gedaan kan worden.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Do you have sufficient time to read the full content of the page before it refreshes ? </p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Heeft U voldoende tijd om de gehele pagina te lezen voor dat deze opnieuw geladen werd?</p>
+            </questionText>
+            <optionYes value="-1"/>
+            <optionNo value="1"/>
+            <optionOther xml:lang="en">
+              <p>If not, were you able to stop or influence the automatic refresh and how ?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien U onvoldoende tijd had, kon U dan het automatisch herladen van de pagina stoppen of beïnvloeden? Indien ja, hoe?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="speech and hearing support software"/>
+          <UserAgent minimumLevel="4" type="browser"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>ADHD</disability>
+          <disability>dyslexia</disability>
+          <disability>hard of hearing</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05" name="Scenario s05">
+        <userGuidance xml:lang="en">
+          <p>Note : it is possible that you are not able to perform the requested action.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Opmerking: Het is mogelijk dat deze test niet gedaan kan worden.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Do you have sufficient time to read the full content of the page before it refreshes ? </p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Heeft U voldoende tijd om de gehele pagina te lezen voor dat deze opnieuw geladen werd?</p>
+            </questionText>
+            <optionYes value="-1"/>
+            <optionNo value="1"/>
+            <optionOther xml:lang="en">
+              <p>If not, were you able to stop or influence the automatic refresh and how ?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien U onvoldoende tijd had, kon U dan het automatisch herladen van de pagina stoppen of beïnvloeden? Indien ja, hoe?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="4" type="talking browser"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>ADHD</disability>
+          <disability>blindness</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s07" name="Scenario s07">
+        <userGuidance xml:lang="en">
+          <p>Note : it is possible that you are not able to perform the requested action.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Opmerking: Het is mogelijk dat deze test niet gedaan kan worden.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Do you have sufficient time to read the full content of the page before it refreshes ? </p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Heeft U voldoende tijd om de gehele pagina te lezen voor dat deze opnieuw geladen werd?</p>
+            </questionText>
+            <optionYes value="-1"/>
+            <optionNo value="1"/>
+            <optionOther xml:lang="en">
+              <p>If not, were you able to stop or influence the automatic refresh and how ?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien U onvoldoende tijd had, kon U dan het automatisch herladen van de pagina stoppen of beïnvloeden? Indien ja, hoe?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="alternative input devices"/>
+          <UserAgent minimumLevel="4" type="browser"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc2.2.1_l1_001.jsp"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_2.2_time-limits-required-behaviors" primary="yes">
+      <locations expectedResult="fail">
+        <location column="41" line="7" xpath="/h:html/h:head/h:meta[@http-equiv]/@content"/>
+      </locations>
+      <functionalOutcome>
+        <p>The page auto-refreshes periodically before the user has the opportunity to read all the content.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The line and column in the location refer to the <html:code>content</html:code> attribute in the <html:acronym>HTML</html:acronym> output, not in the <html:acronym>JSP</html:acronym> source code!</p>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F41">F41: Failure of SC 2.2.1, 2.2.5, and 3.2.5 due to using meta refresh with a time-out</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.2_time-limits-required-behaviors" primary="no">
+      <locations expectedResult="fail">
+        <location column="41" line="7" xpath="/h:html/h:head/h:meta[@http-equiv]/@content"/>
+      </locations>
+      <functionalOutcome>
+        <p>The page auto-refreshes periodically before the user has the opportunity to read all the content.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The line and column in the location refer to the <html:code>content</html:code> attribute in the <html:acronym>HTML</html:acronym> output, not in the <html:acronym>JSP</html:acronym> source code!</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.2.1_l1_001">sc2.2.1_l1_001</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.2_time-limits-required-behaviors" primary="no">
+      <locations expectedResult="fail">
+        <location column="41" line="7" xpath="/h:html/h:head/h:meta[@http-equiv]/@content"/>
+      </locations>
+      <functionalOutcome>
+        <p>The page auto-refreshes periodically before the user has the opportunity to read all the content.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The line and column in the location refer to the <html:code>content</html:code> attribute in the <html:acronym>HTML</html:acronym> output, not in the <html:acronym>JSP</html:acronym> source code!</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:btw="http://bentoweb.org/refs/TCDL1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sc2.4.3_l3_201" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document containing three input fields (not contained in a form element). When using tabulator key to browse through the fields, the fields receive focus in a sequence that matches the visual sequence.</description>
+    <title>Focus order of input fields matches visual order [new]</title>
+    <dc:creator>Reinhard.Ruemer@jku.at</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2007-08-25</date>
+    <status>validated</status><!--V_20080111-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/" baseline="included">
+      <label><html:acronym>CSS</html:acronym> 2.0 Specification</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test case is intended to pass because the interactive elements receive focus in a sequence that matches the visual sequence when the user tabs through them.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc2.4.3_l3_201.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_navigation-mechanisms-focus" primary="yes">
+      <locations expectedResult="pass">
+        <location line="13" column="7" xpath="/h:html/h:body/h:div/h:p[1]"/>
+        <location line="17" column="7" xpath="/h:html/h:body/h:div/h:p[2]"/>
+        <location line="21" column="7" xpath="/h:html/h:body/h:div/h:p[3]"/>        
+      </locations>
+      <functionalOutcome>
+        <p>The tabulator order matches the visual sequence.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G59">G59: Placing the interactive elements in an order that follows sequences and relationships within the content</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

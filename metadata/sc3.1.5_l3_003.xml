@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.1.5_l3_003" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+    <!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>A text that requires a reading ability above the upper secondary education level, with a summary at the bottom that requires a reading ability higher than lower secondary education level.</description>
+    <title>Difficult text with hard-to-read summary</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-02</date>
+    <status>accepted QA</status>
+        <!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because the summary that is provided is still too difficult. 
+        Only the reading level is tested here, not the other aspects of the document (descriptive section titles, expanded forms for abbreviations, etcetera).
+      </p>
+    </purpose>
+        <expertGuidance>
+            <p>Check whether the reading level needed to understand the summary is higher than lower secondary education level.</p>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>experts</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+                            <p>Does the summary provided really help you to understand the rest of the content?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Helpt de samenvatting u echt om de rest van het document te begrijpen?</p>
+            </questionText>
+            <optionYes value="-1"/>
+            <optionNo value="1"/>
+            <optionOther xml:lang="en">
+                            <p/>
+            </optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="1" type="browser"/>
+        </experience>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.1.5_l3_003.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.1_meaning-supplements" primary="yes">
+      <locations expectedResult="fail">
+        <location column="3" line="80" xpath="/h:html/h:body/h:div[@id='summary']"/>
+      </locations>
+      <functionalOutcome>
+        <p>The summary at the end of the document is too hard to read for people with a reading level that is not higher than lower secondary education level.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-supplements" primary="no">
+      <locations expectedResult="fail">
+        <location column="3" line="80" xpath="/h:html/h:body/h:div[@id='summary']"/>
+      </locations>
+      <functionalOutcome>
+        <p>The summary at the end of the document is too hard to read for people with a reading level that is not higher than lower secondary education level.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique G86: Providing a text summary that requires reading ability less advanced than the upper secondary education level (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#G86).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc3.1.5_l3_003">sc3.1.5_l3_003</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.1_meaning-supplements" primary="no">
+      <locations expectedResult="fail">
+        <location column="3" line="80" xpath="/h:html/h:body/h:div[@id='summary']"/>
+      </locations>
+      <functionalOutcome>
+        <p>The summary at the end of the document is too hard to read for people with a reading level that is not higher than lower secondary education level.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Testfile - Blink</title>
+  <link href="resources/css/script.aculo.us.css" media="screen" rel="Stylesheet" type="text/css" />
+  <script src="resources/scripts/prototype.js" type="text/javascript"></script>
+  <script src="resources/scripts/scriptaculous.js" type="text/javascript"></script>
+<!--script src="resources/scripts/scriptaculous_weed.js" type="text/javascript"></script-->
+<style type="text/css">
+     div.auto_complete {
+       position:absolute;
+       width:250px;
+       background-color:white;
+       border:1px solid #888;
+       margin:0px;
+       padding:0px;
+     }
+     #message_to_auto_complete ul.contacts  {
+       list-style-type: none;
+       margin:0px;
+       padding:0px;
+     }
+     ul.contacts li.selected { background-color: #ffb; }
+     li.contact {
+       list-style-type: none;
+       display:block;
+       margin:0;
+       padding:2px;
+       height:32px;
+     }
+     li.contact div.image {
+       float:left;
+       width:32px;
+       height:32px;
+       margin-right:8px;
+     }
+     li.contact div.name {
+       font-weight:bold;
+       font-size:12px;
+       line-height:1.2em;
+     }
+     li.contact div.email {
+       font-size:10px;
+       color:#888;
+     }
+     #list {
+       margin:0;
+       margin-top:10px;
+       padding:0;
+       list-style-type: none;
+       width:250px;
+     }
+     #list li {
+       margin:0;
+       margin-bottom:4px;
+       padding:5px;
+       border:1px solid #888;
+       cursor:move;
+     }
+</style>
+</head>
+<body>
+
+  <div id="content">
+    <!--p>Hint: try fewer than 3 characters on the search.</p-->
+    <div id="effectsdemo">
+
+      <form method="get" action="" onsubmit="ed_checkForm(); return false;">
+        <div id="edmainpanel">
+         <label for="edsearch">Search:</label>
+          <input class="box" name="edsearch" id="edsearch" type="text" />
+          <input type="submit" size="10" value=" Go! " />
+          <!---a href="#" onclick="new Effect.SlideDown('edsubpanel');return false;">Advanced options</a-->
+          <div id="edwarning" style="display:none;">
+            Please use at least 3 characters.
+          </div>
+        </div>
+
+        <!--div id="edsubpanel" style="display:none;"><div>
+          <a href="#" onclick="new Effect.SlideUp('edsubpanel');return false;">close</a>
+          <input type="checkbox" name="details" id="eddetails" checked="checked" onchange="new Effect.SlideUp('edsubpanel');" />
+          Show details (always active in demo) 
+        </div></div-->
+        <!--div id="edresultscontainer"><div id="edresults" style="display:none;"><div>
+          <ul> 
+            <li>
+              <a href="http://mir.aculo.us/" target="_new">mir.aculo.us</a><br/>
+              My Weblog on cool stuff
+            </li>
+            <li>
+              <a href="http://prototype.conio.net/" target="_new">Prototype JavaScript library</a><br/>
+              Object-oriented JavaScript goodness
+            </li>
+            <li>
+              <a href="http://www.rubyonrails.org/" target="_new">Ruby on Rails</a><br/>
+              Developer-friendly no-nonsense web application framework
+            </li>
+          </ul>
+          <a href="#" id="edcloseresults" onclick="new Effect.SlideUp('edresults');return false;">Close results</a>
+        </div></div></div-->
+      </form>
+      
+      <script type="text/javascript" language="javascript">
+      // <![CDATA[
+      function ed_checkForm() {
+        if(Form.Element.getValue('edsearch').length<3) {
+          /*Effect.Shake('edmainpanel');*/
+          Effect.Appear('edwarning',
+            {duration:2.0, transition:Effect.Transitions.pulse});
+        } else {
+          if($("edsubpanel").style.display=="") 
+            Effect.SlideUp("edsubpanel");
+          if($("edwarning").style.display=="")
+            Effect.Fade("edwarning");
+          Effect.SlideDown("edresults");
+        }
+      }
+      // ]]>
+      </script>
+    </div>
+
+
+    
+
+    <h2>License</h2>
+    <p>
+      The scripts for this test page were borrowed from <a href="http://script.aculo.us/">http://script.aculo.us/</a> and are licensed under a
+      <a href="#" onclick="Effect.BlindDown('license'); return false;">MIT-style license</a>,
+      so you can use them for anything you like, as long as you include the copyright notice.
+    </p>
+  
+   </div>
+
+  <div id="footer">
+    <p>&copy; 2005 Thomas Fuchs
+      <a href="#" onclick="Effect.BlindDown('license'); return false;">License</a> 
+    </p>
+    <p class="info">
+      This is <a href="http://script.aculo.us">script.aculo.us</a>, 
+      version <em>1.0</em> of <em>2005/07/07</em>
+
+    </p>
+    <div id="license" style="display:none;">
+      <pre>
+      Copyright (c) 2005 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
+      
+      Permission is hereby granted, free of charge, to any person obtaining
+      a copy of this software and associated documentation files (the
+      "Software"), to deal in the Software without restriction, including
+      without limitation the rights to use, copy, modify, merge, publish,
+      distribute, sublicense, and/or sell copies of the Software, and to
+      permit persons to whom the Software is furnished to do so, subject to
+      the following conditions:
+      
+      The above copyright notice and this permission notice shall be
+      included in all copies or substantial portions of the Software.
+      
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+      LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+      OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+      WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+      
+      <a href="#" onclick="Effect.BlindUp('license'); return false;">Hide</a>
+      </pre>
+    </div>
+  </div>
+  
+  <script type="text/javascript" language="javascript" charset="utf-8">
+  // <![CDATA[
+    Effect.Appear('tagline',{duration:2.0});
+  // ]]>
+  </script>
+
+</body>
+
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!-- 
+  Copyright info for the JavaScript technique:
+
+  Copyright (c) 2005 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
+  
+  Permission is hereby granted, free of charge, to any person obtaining
+  a copy of this software and associated documentation files (the
+  "Software"), to deal in the Software without restriction, including
+  without limitation the rights to use, copy, modify, merge, publish,
+  distribute, sublicense, and/or sell copies of the Software, and to
+  permit persons to whom the Software is furnished to do so, subject to
+  the following conditions:
+  
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+</html>

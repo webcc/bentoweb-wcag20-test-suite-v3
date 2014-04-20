@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Information conveyed by colour (BenToWeb Testfile)</title>
+<style type="text/css">
+body { color: #000; background: #fff; 
+  font-family: 'Trebuchet MS', Helvetica, Geneva, Verdana, /*Arial,*/ sans-serif; 
+}
+.required { color: #f00; background: transparent; }
+fieldset { margin-top: 1em; border: 1px solid #ccc; }
+legend { letter-spacing: .1em; font-weight: bold; font-variant: small-caps; 
+  color: #000; background: #eee;
+  border: 1px solid #ccc;  
+  padding: .2em 1em; margin-bottom: .5em;  
+}
+label { padding-left: .1em}
+button#submit { margin-right: 1em; }
+button { color: #000; background: #ddd; padding: .2em .5em;  }
+</style>
+</head>
+<body>
+<h1>Travel planner</h1>
+<p>Please fill in your preferences for your next holiday and we'll arrange your trip and hotel for you. 
+<span class="required">Required fields</span> have red labels that contain the text "required field".</p>
+<form action="sc1.1.1_l1_045_processformdummy.html" method="post">
+  <fieldset>
+    <legend>Destination</legend>
+    <p class="required">Please choose a destination (required field):</p>
+    <input id="destination1" name="destination" type="radio" value="Hawa&iuml;" /><label for="destination1">Hawa&iuml;</label><br />
+    <input id="destination3" name="destination" type="radio" value="Cuba" /><label for="destination3">Cuba</label> <br />
+    <input id="destination4" name="destination" type="radio" value="BoraBora" /><label for="destination4">Bora Bora</label><br />
+    <input id="destination5" name="destination" type="radio" value="NewZealand" /><label for="destination5">New Zealand</label><br />
+    <input id="destination2" name="destination" type="radio" value="SanktAugustin" /><label for="destination2" lang="de">Sankt Augustin</label>
+  </fieldset>
+  <fieldset>
+    <legend>Transport</legend>
+    <p>Please choose your means of transport. You can choose any combination. (Optional field).</p>
+    <input id="transport1" name="transport" type="checkbox" value="aeroplane" /><label for="transport1">Aeroplane</label><br />
+    <input id="transport2" name="transport" type="checkbox" value="train"/><label for="transport2">Train</label><br />
+    <input id="transport3" name="transport" type="checkbox" value="bus"/><label for="transport3">Bus</label><br />
+    <input id="transport4" name="transport" type="checkbox" value="car"/><label for="transport4">Car</label>
+  </fieldset>
+  <p><button id="submit" type="submit">Send preferences</button> <button id="reset" type="reset">Clear form</button></p>
+</form>
+</body>
+
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+</html>

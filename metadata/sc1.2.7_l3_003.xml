@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.2.7_l3_003" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+    <!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing a link to a video file and a link to a full multimedia text alternative. The text alternative is containing a description of the auditory as well as the visual content presented in the video.</description>
+    <title>Video with full multimedia text alternative</title>
+    <dc:creator>evlach@aegean.gr</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2006-10-25</date>
+    <status>validated</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>The test case is intended to pass because the text alternative contains both a description of the visual information and a transcript of the auditory information in the video.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01 blind braille">
+                <userGuidance xml:lang="en">
+                    <p>A video fragment will be presented to you. Please make sure you have the sound turned on.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Er zal een videofragment getoond worden. Zorg ervoor dat uw geluid aan staat.</p>
+                </userGuidance>
+        <questions>
+                    <multipleChoice display="horizontal" select="one">
+            <questionText xml:lang="en">
+                            <p>Was there a text alternative to the video?</p>
+                            <p>If yes, was the text alternative helpful?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was er een tekst alternatief voor de video ? Indien ja, was het tot hulp ?</p>
+            </questionText>
+                        <choice>
+                            <label xml:lang="en">Yes, both the visual as well as the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Ja zowel de visuele als auditieve informatie werd beschreven door de alternatieve tekst.</label>
+                            <value>1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the visual information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de visuele informatie werd beschreven door de alternatieve tekst.</label>
+                            <value>-1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de auditieve informatie werd beschreven door de alternatieve tekst</label>
+                            <value>-2</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">I don't know</label>
+                            <label xml:lang="nl">Ik weet het niet</label>
+                            <value>-3</value>
+                        </choice>
+                    </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="Braille display"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>deaf-blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario s02 blind speech">
+                <userGuidance xml:lang="en">
+                    <p>A video fragment will be presented to you. Please make sure you have the sound turned on.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Er zal een videofragment getoond worden. Zorg ervoor dat uw geluid aan staat.</p>
+                </userGuidance>
+        <questions>
+                    <multipleChoice display="horizontal" select="one">
+            <questionText xml:lang="en">
+                            <p> Was there a text alternative to the video?</p>
+                            <p> If yes, was it helpful to you? </p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was er een tekst alternatief voor de video ? Indien ja, was het tot hulp ?</p>
+            </questionText>
+                        <choice>
+                            <label xml:lang="en">Yes, both the visual as well as the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Ja zowel de visuele als auditieve informatie werd beschreven door de alternatieve tekst.</label>
+                            <value>1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the visual information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de visuele informatie werd beschreven door de alternatieve tekst</label>
+                            <value>-1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de auditieve informatie werd beschreven door de alternatieve tekst</label>
+                            <value>-2</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">I don't know</label>
+                            <label xml:lang="nl">Ik weet het niet</label>
+                            <value>-3</value>
+                        </choice>
+                    </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario s03 lowvis sc + mag">
+                <userGuidance xml:lang="en">
+                    <p>A video fragment will be presented to you. Please make sure you have the sound turned on.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Er zal een videofragment getoond worden. Zorg ervoor dat uw geluid aan staat.</p>
+                </userGuidance>
+        <questions>
+                    <multipleChoice display="horizontal" select="one">
+            <questionText xml:lang="en">
+                            <p>Was there a text alternative to the video? Was the text alternative helpful to you?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was er een tekst alternatief voor de video ? Was het tekst alternatief tot hulp ?</p>
+            </questionText>
+                        <choice>
+                            <label xml:lang="en">Yes, both the visual as well as the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Ja zowel de visuele als auditieve informatie werd beschreven door de alternatieve tekst.</label>
+                            <value>1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the visual information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de visuele informatie werd beschreven door de alternatieve tekst</label>
+                            <value>-1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de auditieve informatie werd beschreven door de alternatieve tekst</label>
+                            <value>-2</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">I don't know</label>
+                            <label xml:lang="nl">Ik weet het niet</label>
+                            <value>-3</value>
+                        </choice>
+                    </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04" name="Scenario s04 lowvis mag">
+                <userGuidance xml:lang="en">
+                    <p>A video fragment will be presented to you. Please make sure you have the sound turned on.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Er zal een videofragment getoond worden. Zorg ervoor dat uw geluid aan staat.</p>
+                </userGuidance>
+        <questions>
+                    <multipleChoice display="horizontal" select="one">
+            <questionText xml:lang="en">
+                            <p>Was  there a text alternative to the video? </p>
+                            <p> If yes, was the text alternative helpful to you? </p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was er een tekst alternatief voor de video ? Indien ja, was het tekst alternatief tot hulp ?</p>
+            </questionText>
+                        <choice>
+                            <label xml:lang="en">Yes, both the visual as well as the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Ja zowel de visuele als auditieve informatie werd beschreven door de alternatieve tekst.</label>
+                            <value>1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the visual information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de visuele informatie werd beschreternatieve tekstven door de al</label>
+                            <value>-1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de auditieve informatie werd beschreven door de alternatieve tekst</label>
+                            <value>-2</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">I don't know</label>
+                            <label xml:lang="nl">Ik weet het niet</label>
+                            <value>-3</value>
+                        </choice>
+                    </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="magnification software"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05" name="Scenario s05 hh">
+                <userGuidance xml:lang="en">
+                    <p>A video fragment will be presented to you. Please make sure you have the sound turned on.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Er zal een videofragment getoond worden. Zorg ervoor dat uw geluid aan staat.</p>
+                </userGuidance>
+        <questions>
+                    <multipleChoice display="horizontal" select="one">
+            <questionText xml:lang="en">
+                            <p>Was there a text alternative to the video? </p>
+                            <p> If yes, was the text alternative helpful to you?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was er een tekst alternatief voor de video ? Indien ja, was het tekst alternatief tot hulp ?</p>
+            </questionText>
+                        <choice>
+                            <label xml:lang="en">Yes, both the visual as well as the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Ja zowel de visuele als auditieve informatie werd beschreven door de alternatieve tekst. </label>
+                            <value>1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the visual information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de visuele informatie werd beschreven door de alternatieve tekste</label>
+                            <value>-1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de auditieve informatie werd beschreven door de alternatieve tekst</label>
+                            <value>-2</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">I don't know</label>
+                            <label xml:lang="nl">Ik weet het niet</label>
+                            <value>-3</value>
+                        </choice>
+                    </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="speech and hearing support software"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>hard of hearing</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s06" name="Scenario s06 deaf/hh">
+                <userGuidance xml:lang="en">
+                    <p>A video fragment will be presented to you. Please make sure you have the sound turned on.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Er zal een videofragment getoond worden. Zorg ervoor dat uw geluid aan staat.</p>
+                </userGuidance>
+        <questions>
+                    <multipleChoice display="horizontal" select="one">
+            <questionText xml:lang="en">
+                            <p>Was there a text alternative to the video? </p>
+                            <p> If yes, was the text alternative helpful to you? conta </p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was er een tekst alternatief voor de video ? Indien ja, was het tekst alternatief  tot hulp ?</p>
+            </questionText>
+                        <choice>
+                            <label xml:lang="en">Yes, both the visual as well as the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Ja zowel de visuele als auditieve informatie werd beschreven door de alternatieve tekst. </label>
+                            <value>1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the visual information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de visuele informatie werd beschreven door de alternatieve tekst</label>
+                            <value>-1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No, only the auditory information is described by the text alternative</label>
+                            <label xml:lang="nl">Nee, enkel de auditieve informatie werd beschreven door de alternatieve tekst</label>
+                            <value>-2</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">I don't know</label>
+                            <label xml:lang="nl">Ik weet het niet</label>
+                            <value>-3</value>
+                        </choice>
+                    </multipleChoice>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>deafness</disability>
+          <disability>hard of hearing</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.2.7_l3_003.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.2_media-equiv-text-docs" primary="yes">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The text alternative contains the auditory and the visual information presented in the video.
+          (The test case needs further testing.)
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G69">G69: Providing a full multimedia text alternative including any interaction </html:a>
+                    </html:span>
+                </p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.2_media-equiv-text-docs" primary="no">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The text alternative contains the auditory and the visual information presented in the video.</p>
+      </functionalOutcome>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG1_19990505_1.1" primary="no">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The text alternative contains the auditory and the visual information presented in the video.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

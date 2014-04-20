@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.3.3_l2_002" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:btw="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>
+			Document containing a form with multiple steps in a virtual
+			bank transfer. On submit the transfer is finished with
+			the possibility to correct the data entries.
+    </description>
+    <title>Web form with a mechanism for reviewing, confirming, and
+			correcting information before finalizing the transaction [new]
+    </title>
+    <dc:creator>Dimitar.Denev@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2007-09-30</date>
+    <status>accepted for end user evaluation</status>
+        <!--@@Fix bug by updating to 17 May 2007 working draft, then change status to "draft".-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>
+				The document is intended to pass, because it provides a mechanism for reviewing, confirming,
+				and correcting information before finalizing the transaction.
+			</p>
+    </purpose>
+        <expertGuidance>
+            <p/>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="s01_bli_scr">
+                <userGuidance xml:lang="en">
+                    <p>Imagine you want to transfer money from one account of yours to another one. For this purpose three consecutive forms will be presented to you. Please enter:</p>
+                    <p>- "Pete" for account holder in all forms</p>
+                    <p>- "999" as Bank Code in all forms</p>
+                    <p>- "1234" for the account you want to transfer money from</p>
+                    <p>- "5678" for the account you want to transfer money to</p>
+                    <p>- "20" as amount of money you want to have transferred </p>
+                    <p/>
+                    <p>Once you have completed all forms an overview of what you have entered will be presented to you. Please correct now the amount of money to be transferred to "30".      </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Stel u voor dat u geld wil overschrijven van een van uw rekeningen naar een andere. Omwille van deze reden zullen u drie opeenvolgende formulieren getoond worden. </p>
+                    <p>Voer het volgende in:</p>
+                    <p>- "Pete" voor rekeninghouder (account holder)</p>
+                    <p>- "999" als bank code in alle formulieren</p>
+                    <p>- "1234" voor de rekening waarvan u geld wil overschrijven</p>
+                    <p>- "5678" voor de rekening waarnaar u geld wil overschrijven</p>
+                    <p>- "20" als het bedrag dat u wil overschrijven</p>
+                    <p/>
+                    <p>Wanneer u alle formulieren hebt ingevuld zal u een overzicht krijgen van wat u hebt ingevoerd.  Verander nu het bedrag dat u wil overschrijven naar "30".</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the amount of money?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het bedrag aan te passen ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you have encountered. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="s02_bli_brail">
+                <userGuidance xml:lang="en">
+                    <p>Imagine you want to transfer money from one account of yours to another one. For this purpose three consecutive forms will be presented to you. Please enter:</p>
+                    <p>- "Pete" for account holder in all forms</p>
+                    <p>- "999" as Bank Code in all forms</p>
+                    <p>- "1234" for the account you want to transfer money from</p>
+                    <p>- "5678" for the account you want to transfer money to</p>
+                    <p>- "20" as amount of money you want to have transferred </p>
+                    <p/>
+                    <p>Once you have completed all forms an overview of what you have entered will be presented to you. Please correct now the amount of money to be transferred to "30".      </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Stel u voor dat u geld wil overschrijven van een van uw rekeningen naar een andere. Omwille van deze reden zullen u drie opeenvolgende formulieren getoond worden. </p>
+                    <p>Voer het volgende in:</p>
+                    <p>- "Pete" voor rekeninghouder (account holder)</p>
+                    <p>- "999" als bank code in alle formulieren</p>
+                    <p>- "1234" voor de rekening waarvan u geld wil overschrijven</p>
+                    <p>- "5678" voor de rekening waarnaar u geld wil overschrijven</p>
+                    <p>- "20" als het bedrag dat u wil overschrijven</p>
+                    <p/>
+                    <p>Wanneer u alle formulieren hebt ingevuld zal u een overzicht krijgen van wat u hebt ingevoerd.  Verander nu het bedrag dat u wil overschrijven naar "30".</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the amount of money?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het bedrag aan te passen ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <AssistiveTechnology minimumLevel="2" type="Braille display"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04" name="s04_adhd_ld_dyslex">
+                <userGuidance xml:lang="en">
+                    <p>Imagine you want to transfer money from one account of yours to another one. For this purpose three consecutive forms will be presented to you. Please enter:</p>
+                    <p>- "Pete" for account holder in all forms</p>
+                    <p>- "999" as Bank Code in all forms</p>
+                    <p>- "1234" for the account you want to transfer money from</p>
+                    <p>- "5678" for the account you want to transfer money to</p>
+                    <p>- "20" as amount of money you want to have transferred </p>
+                    <p/>
+                    <p>Once you have completed all forms an overview of what you have entered will be presented to you. Please correct now the amount of money to be transferred to "30".      </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Stel u voor dat u geld wil overschrijven van een van uw rekeningen naar een andere. Omwille van deze reden zullen u drie opeenvolgende formulieren getoond worden. </p>
+                    <p>Voer het volgende in:</p>
+                    <p>- "Pete" voor rekeninghouder (account holder)</p>
+                    <p>- "999" als bank code in alle formulieren</p>
+                    <p>- "1234" voor de rekening waarvan u geld wil overschrijven</p>
+                    <p>- "5678" voor de rekening waarnaar u geld wil overschrijven</p>
+                    <p>- "20" als het bedrag dat u wil overschrijven</p>
+                    <p/>
+                    <p>Wanneer u alle formulieren hebt ingevuld zal u een overzicht krijgen van wat u hebt ingevoerd.  Verander nu het bedrag dat u wil overschrijven naar "30".</p>
+                </userGuidance>
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the amount of money?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het bedrag aan te passen ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you have encountered. All comments are welcome!</p>
+            </optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>ADHD</disability>
+          <disability>colour vision deficiency</disability>
+          <disability>deafness</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+          <disability>hard of hearing</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05" name="s03_lowvis_scr_magni">
+                <userGuidance xml:lang="en">
+                    <p>Imagine you want to transfer money from one account of yours to another one. For this purpose three consecutive forms will be presented to you. Please enter:</p>
+                    <p>- "Pete" for account holder in all forms</p>
+                    <p>- "999" as Bank Code in all forms</p>
+                    <p>- "1234" for the account you want to transfer money from</p>
+                    <p>- "5678" for the account you want to transfer money to</p>
+                    <p>- "20" as amount of money you want to have transferred </p>
+                    <p/>
+                    <p>Once you have completed all forms an overview of what you have entered will be presented to you. Please correct now the amount of money to be transferred to "30".      </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Stel u voor dat u geld wil overschrijven van een van uw rekeningen naar een andere. Omwille van deze reden zullen u drie opeenvolgende formulieren getoond worden. </p>
+                    <p>Voer het volgende in:</p>
+                    <p>- "Pete" voor rekeninghouder (account holder)</p>
+                    <p>- "999" als bank code in alle formulieren</p>
+                    <p>- "1234" voor de rekening waarvan u geld wil overschrijven</p>
+                    <p>- "5678" voor de rekening waarnaar u geld wil overschrijven</p>
+                    <p>- "20" als het bedrag dat u wil overschrijven</p>
+                    <p/>
+                    <p>Wanneer u alle formulieren hebt ingevuld zal u een overzicht krijgen van wat u hebt ingevoerd.  Verander nu het bedrag dat u wil overschrijven naar "30".</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the amount of money?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het bedrag aan te passen ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!
+</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s06" name="s05_dex">
+                <userGuidance xml:lang="en">
+                    <p>Imagine you want to transfer money from one account of yours to another one. For this purpose three consecutive forms will be presented to you. Please enter:</p>
+                    <p>- "Pete" for account holder in all forms</p>
+                    <p>- "999" as Bank Code in all forms</p>
+                    <p>- "1234" for the account you want to transfer money from</p>
+                    <p>- "5678" for the account you want to transfer money to</p>
+                    <p>- "20" as amount of money you want to have transferred </p>
+                    <p/>
+                    <p>Once you have completed all forms an overview of what you have entered will be presented to you. Please correct now the amount of money to be transferred to "30".      </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Stel u voor dat u geld wil overschrijven van een van uw rekeningen naar een andere. Omwille van deze reden zullen u drie opeenvolgende formulieren getoond worden. </p>
+                    <p>Voer het volgende in:</p>
+                    <p>- "Pete" voor rekeninghouder (account holder)</p>
+                    <p>- "999" als bank code in alle formulieren</p>
+                    <p>- "1234" voor de rekening waarvan u geld wil overschrijven</p>
+                    <p>- "5678" voor de rekening waarnaar u geld wil overschrijven</p>
+                    <p>- "20" als het bedrag dat u wil overschrijven</p>
+                    <p/>
+                    <p>Wanneer u alle formulieren hebt ingevuld zal u een overzicht krijgen van wat u hebt ingevoerd.  Verander nu het bedrag dat u wil overschrijven naar "30".</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the amount of money?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het bedrag aan te passen ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s07" name="s06_dex_altinp">
+                <userGuidance xml:lang="en">
+                    <p>Imagine you want to transfer money from one account of yours to another one. For this purpose three consecutive forms will be presented to you. Please enter:</p>
+                    <p>- "Pete" for account holder in all forms</p>
+                    <p>- "999" as Bank Code in all forms</p>
+                    <p>- "1234" for the account you want to transfer money from</p>
+                    <p>- "5678" for the account you want to transfer money to</p>
+                    <p>- "20" as amount of money you want to have transferred </p>
+                    <p/>
+                    <p>Once you have completed all forms an overview of what you have entered will be presented to you. Please correct now the amount of money to be transferred to "30".      </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Stel u voor dat u geld wil overschrijven van een van uw rekeningen naar een andere. Omwille van deze reden zullen u drie opeenvolgende formulieren getoond worden. </p>
+                    <p>Voer het volgende in:</p>
+                    <p>- "Pete" voor rekeninghouder (account holder)</p>
+                    <p>- "999" als bank code in alle formulieren</p>
+                    <p>- "1234" voor de rekening waarvan u geld wil overschrijven</p>
+                    <p>- "5678" voor de rekening waarnaar u geld wil overschrijven</p>
+                    <p>- "20" als het bedrag dat u wil overschrijven</p>
+                    <p/>
+                    <p>Wanneer u alle formulieren hebt ingevuld zal u een overzicht krijgen van wat u hebt ingevoerd.  Verander nu het bedrag dat u wil overschrijven naar "30".</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the amount of money?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het bedrag aan te passen ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="alternative input devices"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s08" name="s07_lowvis_magni">
+                <userGuidance xml:lang="en">
+                    <p>Imagine you want to transfer money from one account of yours to another one. For this purpose three consecutive forms will be presented to you. Please enter:</p>
+                    <p>- "Pete" for account holder in all forms</p>
+                    <p>- "999" as Bank Code in all forms</p>
+                    <p>- "1234" for the account you want to transfer money from</p>
+                    <p>- "5678" for the account you want to transfer money to</p>
+                    <p>- "20" as amount of money you want to have transferred </p>
+                    <p/>
+                    <p>Once you have completed all forms an overview of what you have entered will be presented to you. Please correct now the amount of money to be transferred to "30".      </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Stel u voor dat u geld wil overschrijven van een van uw rekeningen naar een andere. Omwille van deze reden zullen u drie opeenvolgende formulieren getoond worden. </p>
+                    <p>Voer het volgende in:</p>
+                    <p>- "Pete" voor rekeninghouder (account holder)</p>
+                    <p>- "999" als bank code in alle formulieren</p>
+                    <p>- "1234" voor de rekening waarvan u geld wil overschrijven</p>
+                    <p>- "5678" voor de rekening waarnaar u geld wil overschrijven</p>
+                    <p>- "20" als het bedrag dat u wil overschrijven</p>
+                    <p/>
+                    <p>Wanneer u alle formulieren hebt ingevuld zal u een overzicht krijgen van wat u hebt ingevoerd.  Verander nu het bedrag dat u wil overschrijven naar "30".</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the amount of money?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het bedrag aan te passen ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="magnification software"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files sequential="true">
+      <file hrefLang="en" xlink:href="../testfiles/sc3.3.3_l2_002_01.jsp"/>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.3.3_l2_002_02.jsp"/>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.3.3_l2_002_03.jsp"/>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.3.3_l2_002_04.jsp"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.3_minimize-error-context-help" primary="yes">
+      <locations expectedResult="pass">
+                <!--@@todo check that locations refer to the GENERATED CODE! (Pointers in rule elements for previous WCAG draft can be left alone.)-->
+      </locations>
+      <functionalOutcome>
+        <p>The user is able to correct the input.</p>
+      </functionalOutcome>
+      <techComment>
+
+                <p>
+					This test case maps to technique
+					<html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G98">
+							G98: Providing the ability for the user to
+							review and correct answers before submitting
+						</html:a>
+                    </html:span>
+                </p>
+
+                <p>
+					This test case maps to technique
+					<html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#SCR18">
+							SCR18: Providing client-side validation and
+							alert (Scripting)
+						</html:a>
+                    </html:span>
+                </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

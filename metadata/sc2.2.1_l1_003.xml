@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc2.2.1_l1_003" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document that refreshes every 5 seconds to display a new "random" quote. The page refreshes automatically, but gives the user the opportunity to toggle the refresh on or off. In addition, there is also a link to get a refresh without acitvating or deactivating the <html:em>automatic</html:em> refresh.</description>
+    <title>Auto-refreshing content with a mechanism to toggle auto-refresh on or off</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-29</date>
+    <status>accepted for end user evaluation</status>
+        <!--@@migrated 2007-11-27-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="meta" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#edef-META">The meta element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because the user has the possibility to toggle the auto-refresh on or off.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+                <userGuidance xml:lang="en">
+                    <p>Note: it is possible that you are not able to perform the requested action.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent de gevraagde actie uit te voeren.</p>
+                </userGuidance>
+        <questions>
+                    <likertScale display="horizontal">
+            <questionText xml:lang="en">
+                            <p>How easy or difficult was it to stop the quotations from refreshing on the page?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Hoe makkelijk of moeilijk was het om het heropladen van de citaten op de pagina te stoppen ?</p>
+            </questionText>
+                        <likertLevel number="1">
+                            <label xml:lang="en">Very easy</label>
+                            <label xml:lang="nl">Zeer makkelijk</label>
+                            <value>1</value>
+                        </likertLevel>
+                        <likertLevel number="2">
+                            <label xml:lang="en">Easy</label>
+                            <label xml:lang="nl">Makkelijk</label>
+                            <value>2</value>
+                        </likertLevel>
+                        <likertLevel number="3">
+                            <label xml:lang="en">Neither easy nor difficult</label>
+                            <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+                            <value>3</value>
+                        </likertLevel>
+                        <likertLevel number="4">
+                            <label xml:lang="en">Difficult</label>
+                            <label xml:lang="nl">Moeilijk</label>
+                            <value>4</value>
+                        </likertLevel>
+                        <likertLevel number="5">
+                            <label xml:lang="en">Very difficult</label>
+                            <label xml:lang="nl">Zeer moeilijk</label>
+                            <value>5</value>
+                        </likertLevel>
+                    </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2"
+                        type="screenreader" version="0"/>
+          <UserAgent minimumLevel="2" type="browser" version="0"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario s02">
+                <userGuidance xml:lang="en">
+                    <p>Note: it is possible that you are not able to perform the requested action.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent de gevraagde actie uit te voeren</p>
+                </userGuidance>
+        <questions>
+                    <likertScale display="horizontal">
+            <questionText xml:lang="en">
+                            <p>How easy or difficult was it to stop the quotes from refreshing on the page?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Hoe makkelijk of moeilijk was het om het heropladen van de citaten op de pagina te stoppen ?</p>
+            </questionText>
+                        <likertLevel number="1">
+                            <label xml:lang="en">Very easy</label>
+                            <label xml:lang="nl">Zeer makkelijk</label>
+                            <value>1</value>
+                        </likertLevel>
+                        <likertLevel number="2">
+                            <label xml:lang="en">Easy</label>
+                            <label xml:lang="nl">Makkelijk</label>
+                            <value>2</value>
+                        </likertLevel>
+                        <likertLevel number="3">
+                            <label xml:lang="en">Neither easy nor difficult</label>
+                            <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+                            <value>3</value>
+                        </likertLevel>
+                        <likertLevel number="4">
+                            <label xml:lang="en">Difficult</label>
+                            <label xml:lang="nl">Moeilijk</label>
+                            <value>4</value>
+                        </likertLevel>
+                        <likertLevel number="5">
+                            <label xml:lang="en">Very difficult</label>
+                            <label xml:lang="nl">Zeer moeilijk</label>
+                            <value>5</value>
+                        </likertLevel>
+                    </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2"
+                        type="screenreader with magnification" version="0"/>
+          <UserAgent minimumLevel="2" type="browser" version="0"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario s03">
+                <userGuidance xml:lang="en">
+                    <p>Note: it is possible that you are not able to perform the requested action.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent de gevraagde actie uit te voeren.</p>
+                </userGuidance>
+        <questions>
+                    <likertScale display="horizontal">
+            <questionText xml:lang="en">
+                            <p>How easy or difficult was it to stop the quotes from refreshing on the page?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Hoe makkelijk of moeilijk was het om het heropladen van de citaten op de pagina te stoppen ?</p>
+            </questionText>
+                        <likertLevel number="1">
+                            <label xml:lang="en">Very easy</label>
+                            <label xml:lang="nl">Zeer makkelijk</label>
+                            <value>1</value>
+                        </likertLevel>
+                        <likertLevel number="2">
+                            <label xml:lang="en">Easy</label>
+                            <label xml:lang="nl">Makkelijk</label>
+                            <value>2</value>
+                        </likertLevel>
+                        <likertLevel number="3">
+                            <label xml:lang="en">Neither easy nor difficult</label>
+                            <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+                            <value>3</value>
+                        </likertLevel>
+                        <likertLevel number="4">
+                            <label xml:lang="en">Difficult</label>
+                            <label xml:lang="nl">Moeilijk</label>
+                            <value>4</value>
+                        </likertLevel>
+                        <likertLevel number="5">
+                            <label xml:lang="en">Very difficult</label>
+                            <label xml:lang="nl">Zeer moeilijk</label>
+                            <value>5</value>
+                        </likertLevel>
+                    </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2"
+                        type="Braille display" version="0"/>
+          <UserAgent minimumLevel="2" type="browser" version="0"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>deaf-blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04" name="Scenario s05">
+                <userGuidance xml:lang="en">
+                    <p>Note: it is possible that you are not able to perform the requested action.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent de gevraagde actie uit te voeren.</p>
+                </userGuidance>
+        <questions>
+                    <likertScale display="horizontal">
+            <questionText xml:lang="en">
+                            <p>How easy or difficult was it to stop the quotes from refreshing on the page?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Hoe makkelijk of moeilijk was het om het heropladen van de citaten op de pagina te stoppen ?</p>
+            </questionText>
+                        <likertLevel number="1">
+                            <label xml:lang="en">Very easy</label>
+                            <label xml:lang="nl">Zeer makkelijk</label>
+                            <value>1</value>
+                        </likertLevel>
+                        <likertLevel number="2">
+                            <label xml:lang="en">Easy</label>
+                            <label xml:lang="nl">Makkelijk</label>
+                            <value>2</value>
+                        </likertLevel>
+                        <likertLevel number="3">
+                            <label xml:lang="en">Neither easy nor difficult</label>
+                            <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+                            <value>3</value>
+                        </likertLevel>
+                        <likertLevel number="4">
+                            <label xml:lang="en">Difficult</label>
+                            <label xml:lang="nl">Moeilijk</label>
+                            <value>4</value>
+                        </likertLevel>
+                        <likertLevel number="5">
+                            <label xml:lang="en">Very difficult</label>
+                            <label xml:lang="nl">Zeer moeilijk</label>
+                            <value>5</value>
+                        </likertLevel>
+                    </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2"
+                        type="speech and hearing support software" version="0"/>
+          <UserAgent minimumLevel="2" type="browser" version="0"/>
+        </experience>
+        <disabilities>
+          <disability>ADHD</disability>
+          <disability>dyslexia</disability>
+          <disability>hard of hearing</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05" name="Scenario s07">
+                <userGuidance xml:lang="en">
+                    <p>Note: it is possible that you are not able to perform the requested action.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent de gevraagde actie uit te voeren.</p>
+                </userGuidance>
+        <questions>
+                    <likertScale display="horizontal">
+            <questionText xml:lang="en">
+                            <p>How easy or difficult was it to stop the quotes from refreshing on the page?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Hoe makkelijk of moeilijk was het om het heropladen van de citaten op de pagina te stoppen ?</p>
+            </questionText>
+                        <likertLevel number="1">
+                            <label xml:lang="en">Very easy</label>
+                            <label xml:lang="nl">Zeer makkelijk</label>
+                            <value>1</value>
+                        </likertLevel>
+                        <likertLevel number="2">
+                            <label xml:lang="en">Easy</label>
+                            <label xml:lang="nl">Makkelijk</label>
+                            <value>2</value>
+                        </likertLevel>
+                        <likertLevel number="3">
+                            <label xml:lang="en">Neither easy nor difficult</label>
+                            <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+                            <value>3</value>
+                        </likertLevel>
+                        <likertLevel number="4">
+                            <label xml:lang="en">Difficult</label>
+                            <label xml:lang="nl">Moeilijk</label>
+                            <value>4</value>
+                        </likertLevel>
+                        <likertLevel number="5">
+                            <label xml:lang="en">Very difficult</label>
+                            <label xml:lang="nl">Zeer moeilijk</label>
+                            <value>5</value>
+                        </likertLevel>
+                    </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2"
+                        type="alternative input devices" version="0"/>
+          <UserAgent minimumLevel="2" type="browser" version="0"/>
+        </experience>
+        <disabilities>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s06" name="Scenario s08">
+                <userGuidance xml:lang="en">
+                    <p>Note: it is possible that you are not able to perform the requested action.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent de gevraagde actie uit te voeren.</p>
+                </userGuidance>
+        <questions>
+                    <likertScale display="horizontal">
+            <questionText xml:lang="en">
+                            <p>How easy or difficult was it to stop the quotes from refreshing on the page?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Hoe makkelijk of moeilijk was het om het heropladen van de citaten op de pagina te stoppen ?</p>
+            </questionText>
+                        <likertLevel number="1">
+                            <label xml:lang="en">Very easy</label>
+                            <label xml:lang="nl">Zeer makkelijk</label>
+                            <value>1</value>
+                        </likertLevel>
+                        <likertLevel number="2">
+                            <label xml:lang="en">Easy</label>
+                            <label xml:lang="nl">Makkelijk</label>
+                            <value>2</value>
+                        </likertLevel>
+                        <likertLevel number="3">
+                            <label xml:lang="en">Neither easy nor difficult</label>
+                            <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+                            <value>3</value>
+                        </likertLevel>
+                        <likertLevel number="4">
+                            <label xml:lang="en">Difficult</label>
+                            <label xml:lang="nl">Moeilijk</label>
+                            <value>4</value>
+                        </likertLevel>
+                        <likertLevel number="5">
+                            <label xml:lang="en">Very difficult</label>
+                            <label xml:lang="nl">Zeer moeilijk</label>
+                            <value>5</value>
+                        </likertLevel>
+                    </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2"
+                        type="magnification software" version="0"/>
+          <UserAgent minimumLevel="2" type="browser" version="0"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s07" name="Scenario s09">
+                <userGuidance xml:lang="en">
+                    <p>Note: it is possible that you are not able to perform the requested action.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent de gevraagde actie uit te voeren.</p>
+                </userGuidance>
+        <questions>
+                    <likertScale display="horizontal">
+            <questionText xml:lang="en">
+                            <p>How easy or difficult was it to stop the quotes from refreshing on the page?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Hoe makkelijk of moeilijk was het om het heropladen van de citaten op de pagina te stoppen ?</p>
+            </questionText>
+                        <likertLevel number="1">
+                            <label xml:lang="en">Very easy</label>
+                            <label xml:lang="nl">Zeer makkelijk</label>
+                            <value>1</value>
+                        </likertLevel>
+                        <likertLevel number="2">
+                            <label xml:lang="en">Easy</label>
+                            <label xml:lang="nl">Makkelijk</label>
+                            <value>2</value>
+                        </likertLevel>
+                        <likertLevel number="3">
+                            <label xml:lang="en">Neither easy nor difficult</label>
+                            <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+                            <value>3</value>
+                        </likertLevel>
+                        <likertLevel number="4">
+                            <label xml:lang="en">Difficult</label>
+                            <label xml:lang="nl">Moeilijk</label>
+                            <value>4</value>
+                        </likertLevel>
+                        <likertLevel number="5">
+                            <label xml:lang="en">Very difficult</label>
+                            <label xml:lang="nl">Zeer moeilijk</label>
+                            <value>5</value>
+                        </likertLevel>
+                    </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2"
+                        type="Braille display" version="0"/>
+          <AssistiveTechnology minimumLevel="2"
+                        type="screenreader" version="0"/>
+          <UserAgent minimumLevel="2" type="browser" version="0"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc2.2.1_l1_003.jsp"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_2.2_time-limits-required-behaviors" primary="yes">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The page auto-refreshes periodically but gives the user the possibility to toggle the auto-refresh on or off.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+                <p>(The test case may map to "Providing a way for the user to turn the time limit off" in a future draft of <html:acronym>WCAG</html:acronym> 2.0.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.2_time-limits-required-behaviors" primary="no">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The page auto-refreshes periodically but gives the user the possibility to toggle the auto-refresh on or off.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.2.1_l1_004">sc2.2.1_l1_004</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.2_time-limits-required-behaviors" primary="no">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The page auto-refreshes periodically but gives the user the possibility to toggle the auto-refresh on or off.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

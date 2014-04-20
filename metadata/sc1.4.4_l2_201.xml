@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:btw="http://bentoweb.org/refs/TCDL1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sc1.4.4_l2_201" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing text that reflows when the font size is enlarged, but at a zoom factor of 200%, the text is truncated and the heading overlaps with the body text.</description>
+    <title>Resize text with loss of information [new]</title>
+    <dc:creator>Reinhard.Ruemer@jku.at</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2007-08-25</date>
+    <status>validated</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="h1" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/REC-html40/struct/global.html#h-7.5.5">The <html:code>h1</html:code> element
+          </specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="p" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/REC-html40/struct/text.html#h-9.3.1">The <html:code>p</html:code> element
+          </specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test case is intended to fail because the text is truncated or partially obscured when text is resized to 200%.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc1.4.4_l2_201.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_visual-audio-contrast-scale" primary="yes">
+      <locations expectedResult="fail">
+        <location line="14" column="5" xpath="/h:html/h:body/h:h1"/>
+        <location line="15" column="5" xpath="/h:html/h:body/h:p"/>
+      </locations>
+      <functionalOutcome>
+        <p>When the text is resized, some information is lost.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F69">F69: Failure of SC 1.4.4 and 1.4.7 when resizing visually rendered text up to 200 percent causes the text, image or controls to be clipped, truncated or obscured</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

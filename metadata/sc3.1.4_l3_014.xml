@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc3.1.4_l3_014" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>A short text with an acronym; the expansion of the acronym is provided before the acronym.</description>
+    <title>Acronym with expansion before the acronym</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-09-01</date>
+    <status>validated</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="acronym" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/text.html#edef-ACRONYM">Phrase elements: <html:code>EM</html:code>, <html:code>STRONG</html:code>, <html:code>DFN</html:code>, <html:code>CODE</html:code>, <html:code>SAMP</html:code>, <html:code>KBD</html:code>, <html:code>VAR</html:code>, <html:code>CITE</html:code>, <html:code>ABBR</html:code>, and <html:code>ACRONYM</html:code>
+          </specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because an expansion of the acronym is provided immediately before the acronym.</p>
+    </purpose>
+    <expertGuidance>
+      <p>Check whether an expansion of the acronym is available.</p>
+    </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc3.1.4_l3_014.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.1_meaning-located" primary="yes">
+      <locations expectedResult="pass">
+        <location line="9" column="34" xpath="/:html/:body/:p[1]/:span[1]"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can find the expanded form of the acronym.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case is the same as sc3.1.4_l3_002, but the order of the acronym and the expanded form is reversed.</p>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G97">G97: Providing the abbreviation immediately following the expanded form</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-located" primary="no">
+      <locations expectedResult="pass">
+        <location line="9" column="34" xpath="/:html/:body/:p[1]/:span[1]"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can find the expanded form of the acronym.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case is the same as sc3.1.4_l3_002, but the order of the acronym and the expanded form is reversed.</p>
+        <p>This test case maps to technique G97: Providing the abbreviation immediately following the expanded form (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#G97).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc3.1.4_l3_014">sc3.1.4_l3_014</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.1_meaning-located" primary="no">
+      <locations expectedResult="pass">
+        <location line="9" column="34" xpath="/:html/:body/:p[1]/:span[1]"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can find the expanded form of the acronym.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case is the same as sc3.1.4_l3_002 (previously xhtml1_wcag2_20050630_3.1_l3_sc3_002), but the order of the acronym and the expanded form is reversed.
+          The 23 November 2005 version of "Understanding <html:acronym>WCAG</html:acronym> 2.0 lists "providing the abbreviation immediately following the first use of the expanded form within the delivery unit"
+          as a "sufficient technique".
+          See http://www.w3.org/TR/2005/WD-UNDERSTANDING-WCAG20-20051123/#meaning-located.
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

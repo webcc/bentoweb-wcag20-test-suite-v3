@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.2.2_l1_002" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+    <!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing a video <html:code>object</html:code> with audio description.</description>
+    <title>Video with audio description</title>
+    <dc:creator>evlach@aegean.gr</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-08-28</date>
+    <status>validated</status>
+        <!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="object" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#h-13.3.1">Rules for rendering objects</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>The test case is intended to pass as there is audio description <html:code>object</html:code>.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s02" name="Scenario s02 blind braille">
+                <userGuidance xml:lang="en">
+                    <p>Make sure you have the sound on your computer turned on.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+                </userGuidance>
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+                            <p>Did you hear an audio description of the video?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Hoorde u een audiobeschrijving van de video ?</p>
+            </questionText>
+            <optionYes value="+1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p/>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p/>
+            </optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="Braille display"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.2.2_l1_002.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.2_media-equiv-audio-desc" primary="yes">
+      <locations expectedResult="pass">
+        <location column="10" line="12" xpath="/h:html/h:body/h:div[1]/h:object"/>
+      </locations>
+      <functionalOutcome>
+        <p>There is an audio description.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element does contain audio description.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.2_media-equiv-audio-desc" primary="no">
+      <locations expectedResult="pass">
+        <location column="10" line="12" xpath="/h:html/h:body/h:div[1]/h:object"/>
+      </locations>
+      <functionalOutcome>
+        <p>There is an audio description.
+          (The test case needs further testing.)
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element does contain audio description.</p>
+      </techComment>
+    </rule>
+        <!-- rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.1_text-equiv-text-doc" primary="no">
+      <locations expectedResult="pass">
+        <location line="12" column="10" xpath="/h:html/h:body/h:p/h:div/h:object" />
+      </locations>
+      <functionalOutcome>
+        <p>There is no link for a descriptive transcript of the video.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element does not contain a <html:code>a href</html:code> to a descriptive transcript of the video.</p>
+      </techComment>
+    </rule-->
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

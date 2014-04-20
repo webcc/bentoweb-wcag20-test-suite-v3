@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc2.1.1_l1_008" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing a server-side image map having redundant text links with <html:code>accesskey</html:code> attributes.</description>
+    <title>Client side image map with text links in map element and access keys</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de [evlach@aegean.gr]</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-09-01</date>
+    <status>draft</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement><elementName localname="map" namespace="http://www.w3.org/1999/xhtml"/><specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-MAP">Server-side image maps: the MAP and AREA elements</specReference></testElement>
+        <testElement><elementName localname="object" namespace="http://www.w3.org/1999/xhtml"/><specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-OBJECT">Generic inclusion: the OBJECT element</specReference></testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test case is intended to fail because when handling the image map with keyboard only you have no idea which link has focus.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>automatic</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc2.1.1_l1_008.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_2.1_keyboard-operation-keyboard-operable" primary="yes">
+      <locations expectedResult="fail">
+        <location line="14" column="79" xpath="/:html/:body/:div/:map/:p/:a[1]"/>
+        <location line="15" column="81" xpath="/:html/:body/:map/:div/:p/:a[2]"/>
+        <location line="16" column="81" xpath="/:html/:body/:map/:div/:p/:a[3]"/>
+      </locations>
+      <functionalOutcome>
+        <p>Handling with keyboard only is not possible.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Handling with keyboard only is not possible, because there is no hint which link or active region has the focus.</p>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.1_keyboard-operation-keyboard-operable" primary="no">
+      <locations expectedResult="pass">
+        <location line="14" column="79" xpath="/:html/:body/:div/:map/:p/:a[1]"/>
+        <location line="15" column="81" xpath="/:html/:body/:map/:div/:p/:a[2]"/>
+        <location line="16" column="81" xpath="/:html/:body/:map/:div/:p/:a[3]"/>
+      </locations>
+      <functionalOutcome>
+        <p>Rapid keyboard access is possible for image map regions.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Rapid keyboard access is possible for image map regions.</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.1.1_l1_008">sc2.1.1_l1_008</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050211_internal_2.1_keyboard-operation-keyboard-operable" primary="no">
+      <locations expectedResult="pass">
+        <location line="14" column="79" xpath="/:html/:body/:div/:map/:p/:a[1]"/>
+        <location line="15" column="81" xpath="/:html/:body/:map/:div/:p/:a[2]"/>
+        <location line="16" column="81" xpath="/:html/:body/:map/:div/:p/:a[3]"/>
+      </locations>
+      <functionalOutcome>
+        <p>Rapid keyboard access is possible for image map regions.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

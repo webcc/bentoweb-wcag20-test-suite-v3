@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc2.4.8_l3_007" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with a list of books that are available in different formats. The link text only contains the name of the format, but hidden text inside the link text also mentions the title. A <html:acronym>CSS</html:acronym> rule is used to hide the title inside the link text.
+    </description>
+    <title>Link purpose provided with hidden link text</title>
+    <dc:creator>evlach@aegean.gr</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2006-10-25</date>
+    <status>draft</status>
+    <!--@@Fix bug by updating to 17 May 2007 working draft, then change status to "draft".-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="a" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#edef-A">The <html:code>a</html:code> element
+          </specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">
+      <label>Cascading Style Sheets, level 2</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>
+        This test case is intended to pass because the <html:code>a</html:code>
+        element includes a hidden <html:code>span</html:code> element describing link purpose.
+      
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc2.4.8_l3_007.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_2.4_navigation-mechanisms-link" primary="yes">
+      <locations expectedResult="cannotTell">
+        <location line="15" column="17" xpath="/:html/:body/:dl/:dd[1]/:a/:span"/>
+        <location line="17" column="12" xpath="/:html/:body/:dl/:dd[2]/:a/:span"/>
+        <location line="19" column="65" xpath="/:html/:body/:dl/:dd[3]/:a/:span"/>
+        <location line="20" column="64" xpath="/:html/:body/:dl/:dd[4]/:a/:span"/>
+      </locations>
+      <functionalOutcome>
+        <p>The hidden text of the link helps people understand the link purpose.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#C7">C7: Using CSS to hide a portion of the link text</html:a></html:span>
+        </p>
+      </techComment>
+    </rule>
+    <rule primary="no" id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.4_navigation-mechanisms-link">
+      <locations expectedResult="pass">
+        <location line="15" column="17" xpath="/:html/:body/:dl/:dd[1]/:a/:span"/>
+        <location line="17" column="12" xpath="/:html/:body/:dl/:dd[2]/:a/:span"/>
+        <location line="19" column="65" xpath="/:html/:body/:dl/:dd[3]/:a/:span"/>
+        <location line="20" column="64" xpath="/:html/:body/:dl/:dd[4]/:a/:span"/>
+      </locations>
+      <functionalOutcome>
+        <p>The hidden text of the link helps people understand the link purpose.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique C7: Supplementing link text with hidden text (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#C7).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.4.8_l3_007">sc2.4.8_l3_007</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

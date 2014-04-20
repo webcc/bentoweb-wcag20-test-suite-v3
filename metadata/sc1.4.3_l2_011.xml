@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:btw="http://bentoweb.org/refs/TCDL1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sc1.4.3_l2_011" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document with an internal style sheet that defines (foreground) colour, but no background colour.</description>
+    <title>Colour but no background-colour (CSS)</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2006-08-08</date>
+    <status>validated</status><!--V_20080111-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">
+      <label><html:acronym>CSS</html:acronym> 2.0 Specification</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test is intended to fail because no background is specified with the colour (common failure F24).</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>automatic</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc1.4.3_l2_011.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.4_visual-audio-contrast-contrast" primary="yes">
+      <locations expectedResult="fail">
+        <location line="5" column="28" xpath="/h:html/h:head/h:style"/>
+      </locations>
+      <functionalOutcome>
+        <p>No background is specified with the colour.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F24">F24: Failure of SC 1.4.3 and 1.4.5 due to specifying foreground colors without specifying background colors or vice versa</html:a></html:span></p>
+      </techComment>
+    </rule>
+    <rule primary="no" id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.4_visual-audio-contrast-contrast">
+      <locations expectedResult="fail">
+        <location line="5" column="28" xpath="/h:html/h:head/h:style"/>
+      </locations>
+      <functionalOutcome>
+        <p>No background is specified with the colour.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.4.1_l2_011">sc1.4.1_l2_011</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.4_visual-audio-contrast-contrast" primary="no">
+      <locations expectedResult="fail">
+        <location line="5" column="28" xpath="/h:html/h:head/h:style"/>
+      </locations>
+      <functionalOutcome>
+        <p>No background is specified with the colour.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

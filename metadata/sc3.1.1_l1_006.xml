@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc3.1.1_l1_006" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A page with content in American English. 
+      The <html:code>lang</html:code> and <html:code>xml:lang</html:code> attribute on the <html:code>html</html:code> element contain the correct language and subcode: "en-US" for American English.
+    </description>
+    <title>Correct language code and subcode for content in American English</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-02</date>
+    <status>validated</status><!--V_20080111--><!--@@migrated 2007-12-14-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="lang" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/dirlang.html#adef-lang">Specifying the language of content: the <html:code>lang</html:code> attribute</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because the primary natural language is correctly defined. Subcodes to identify versions of languages are not required.</p>
+    </purpose>
+    <expertGuidance>
+      <p>This test case can be evaluated automatically when using a test tool with reliable automatic language recognition for American English, support for <html:code>lang</html:code> and <html:code>xml:lang</html:code> attributes and language tags.</p>
+    </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>automatic</testMode>
+      </testModes>
+      <scenario id="s01" name="sc01 blin lowv (screen reader)">
+        <userGuidance xml:lang="en">
+          <p>You need a screen reader that supports American English (e.g. by selecting automatic language recognition).
+           We will present you a sentence in American English. Please just listen to the text and how it sounds to you. 
+          </p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>U hebt een schermlezer nodig die Amerikaans Engels ondersteunt (bv. door het selecteren van automatische taalherkenning). U krijgt een zin in het Amerikaans Engels te horen. Luister gewoon naar de tekst en hoe hij klinkt.</p>
+        </userGuidance>
+        <questions>
+          <multipleChoice select="one" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Did your screen reader read the text in American English ?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Las uw schermlezer de tekst in het Amerikaans Engels voor ?</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">sounded like American English</label>
+              <label xml:lang="nl">het klonk als Amerikaans Engels</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded like British English</label>
+              <label xml:lang="nl">het klonk als Brits Engels</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded somehow different</label>
+              <label xml:lang="nl">het klonk enigszins anders</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader" />
+          <UserAgent minimumLevel="2" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="sc02 lowv (screen reader with magnification)">
+        <userGuidance xml:lang="en">
+          <p>You need a screen reader that supports American English (e.g. by selecting automatic language recognition).
+            We will present you a sentence in American English. Please just listen to the text and how it sounds to you. 
+          </p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>U hebt een schermlezer nodig die Amerikaans Engels ondersteunt (bv. door het selecteren van automatische taalherkenning). U krijgt een zin in het Amerikaans Engels te horen. Luister gewoon naar de tekst en hoe hij klinkt.</p>
+        </userGuidance>
+        <questions>
+          <multipleChoice select="one" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Did your screen reader read the text in American English ?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Las uw schermlezer de tekst in het Amerikaans Engels voor ?</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">sounded like American English</label>
+              <label xml:lang="nl">het klonk als Amerikaans Engels</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded like British English</label>
+              <label xml:lang="nl">het klonk als Brits Engels</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded how different</label>
+              <label xml:lang="nl">het klonk enigszins anders</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader with magnification" />
+          <UserAgent minimumLevel="2" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="sc03 ADHA apha dysc dysl fill idisLdis (talking browser)">
+        <userGuidance xml:lang="en">
+          <p>You need a talking browser that supports American English (e.g. by selecting automatic language recognition).
+            We will present you a sentence in American English. Please just listen to the text and how it sounds to you. 
+          </p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>U hebt een sprekende browser nodig die Amerikaans Engels ondersteunt (bv. door het selecteren van automatische taalherkenning). U krijgt een zin in het Amerikaans Engels te horen. Luister gewoon naar de tekst en hoe hij klinkt.</p>
+        </userGuidance>
+        <questions>
+          <multipleChoice select="one" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Did your talking browser read the text in American English ?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Las uw sprekende browser de tekst in het Amerikaans Engels voor ?</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">sounded like American English</label>
+              <label xml:lang="nl">het klonk als Amerikaans Engels</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded like British English</label>
+              <label xml:lang="nl">het klonk als Brits Engels</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded somehow different</label>
+              <label xml:lang="nl">het klonk enigszins anders</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="talking browser" />
+        </experience>
+        <disabilities>
+          <disability>ADHD</disability>
+          <disability>aphasia</disability>
+          <disability>dexterity impairment</disability>
+          <disability>dyscalculus</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+          <disability>low vision</disability>
+          <disability>motor impairment</disability>
+          <disability>no disability</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc3.1.1_l1_006.html" hrefLang="en-US" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.1_meaning-doc-lang-id" primary="yes">
+      <locations expectedResult="fail"><!--@@changed from pass!!-->
+        <location line="3" column="44" xpath="/h:html/@xml:lang" />
+        <location line="3" column="61" xpath="/h:html/@lang" />
+      </locations>
+      <functionalOutcome>
+        <p>The browser should be able find the primary language and the language version of the document.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>html</html:code> element has correct <html:code>lang</html:code> and <html:code>xml:lang</html:code> attributes: faucet and tub are American English, not British English.</p>
+        <p>
+          <html:acronym>IBM</html:acronym> Home Page Reader 3.0 German version, set to "automatic language recognition", and JAWS 7.1, German version, 
+          reads the test file in German.
+          JAWS 8.0 set to American English reads the test file as American English, both with Internet Explorer 6.0 and Firefox 2.0 (tested on Windows 2000).
+          JAWS 8.0 set to British English reads the test file as British English, both with Internet Explorer 6.0 and Firefox 2.0 (tested on Windows 2000).
+        </p>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H57">H57: Using language attributes on the html element</html:a></html:span>.</p>
+        <!-- @@WCAG feedback (see mail 2007-11-23: If authors can't rely on language subcodes begin supported or correctly interpreted, then techniques H57 and H58 (<http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/Overview.html#H57> and below) need "User Agent and Assistive Technology Support Notes" that states this.
+        -->
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-doc-lang-id" primary="no">
+      <locations expectedResult="pass">
+        <location line="3" column="44" xpath="/h:html/@xml:lang" />
+        <location line="3" column="61" xpath="/h:html/@lang" />
+      </locations>
+      <functionalOutcome>
+        <p>The browser can find the primary language and the language version of the document.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>html</html:code> element has correct <html:code>lang</html:code> and <html:code>xml:lang</html:code> attributes: faucet and tub are American English, not British English.</p>
+        <p>
+          <html:acronym>IBM</html:acronym> Home Page Reader 3.0 German version, set to "automatic language recognition", and JAWS 7.1, German version, 
+          reads the test file in German.
+          JAWS 8.0 set to American English reads the test file as American English, both with Internet Explorer 6.0 and Firefox 2.0 (tested on Windows 2000).
+          JAWS 8.0 set to British English reads the test file as British English, both with Internet Explorer 6.0 and Firefox 2.0 (tested on Windows 2000).
+        </p>
+        <p>This test case maps to technique H57: Using the lang attribute of the html element (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#H57).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc3.1.1_l1_006">sc3.1.1_l1_006</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.1_meaning-doc-lang-id" primary="no">
+      <locations expectedResult="pass">
+        <location line="3" column="44" xpath="/h:html/@xml:lang" />
+        <location line="3" column="61" xpath="/h:html/@lang" />
+      </locations>
+      <functionalOutcome>
+        <p>The browser can find the primary language and the language version of the document.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>html</html:code> element has correct <html:code>lang</html:code> and <html:code>xml:lang</html:code> attributes: faucet and tub are American English, not British English.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

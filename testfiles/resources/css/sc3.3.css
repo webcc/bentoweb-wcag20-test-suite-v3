@@ -1,0 +1,174 @@
+input, label, form, div {
+  margin: 0em;
+  padding: 0em;
+  float: none;
+}
+label {
+  line-height: 200%; /*for more space between the single lines of the form*/
+}
+
+input[type=radio] + label, input[type=checkbox] + label {
+  line-height: 100%;
+  margin-bottom:0.7em;
+  margin-left:0.3em;
+}
+
+input[type=checkbox], input[type=radio] {
+  margin-bottom:0.7em;
+}
+
+body {
+  font-family: Verdana, Helvetica, sans-serif;
+}
+
+img {
+  border:0;
+}
+
+.leftcolleft {
+  display: block;
+  float: left;
+  margin-right: 1em;
+}
+
+.leftcol {
+/*  display: block; */
+  float: left;
+  text-align: right;
+  margin-right: 1em;
+  width: 8em;
+}
+
+.leftcolmedium {
+/*  display: block; */
+  float: left;
+  text-align: right;
+  margin-right: 1em;
+  width: 12em;
+}
+
+.leftcollarge {
+/*  display: block; */
+  float: left;
+  text-align: right;
+  margin-right: 1em;
+  width: 19em;
+}
+
+.leftcolxlarge {
+/*  display: block; */
+  float: left;
+  text-align: right;
+  margin-right: 1em;
+  width: 25em;
+}
+
+.leftcolnormal {
+/*  display: block; */
+  float: left;
+  text-align: right;
+  margin-right: 1em;
+  width: 19em;
+}
+
+/*
+.leftcolmedium {
+  display: block;
+  float: left;
+  text-align: right;
+  margin-right: 1em;
+  width: 10em;
+}
+*/
+
+.midcol {
+  display: block;
+  float: left;
+  margin-top: 0.1em;
+  margin-right: 1em;
+  margin-left: 0.2em;
+}
+
+.show1 {
+  background: #FFFFE0;
+  border: 1px solid #CD853F;
+  padding: 0.8em;
+}
+
+input, select, textarea {
+  display: block;
+  float: left;
+  margin-top: 0.2em;
+}
+
+input.checkbox {
+  display: inline;
+  float: none;
+  margin-top: 0;
+}
+
+form br {
+  clear: left;
+}
+
+input#submit {
+  float: none;
+  clear: left;
+}
+
+form {
+  background: #FFFFE0;
+  border: 1px solid #CD853F;
+  padding: 0.8em;
+  width: 40em;
+}
+
+.space {
+  clear: both;
+  padding-top: 0.5em;
+}
+
+.nospace {
+  padding-right: 0em;
+}
+
+.errfrm {
+  float: none;
+  background: #FFFFE0;
+  border: 2px solid #ff0000;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
+}
+
+.noerrfrm {
+  float: left;
+  border: 2px solid #00ff00;
+}
+
+#error {
+  background: #FFFFE0;
+  border: 2px solid #ff0000;
+  padding: 0.8em;
+  width: 35em;
+}
+
+.cookieshow {
+  background: #FFFFE0;
+  border: 2px solid #00ff00;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 30em;
+}
+
+.errTxt {
+  color: red;
+  font-weight: bold;
+}
+
+ol {
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+}
+

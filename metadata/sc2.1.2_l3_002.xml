@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc2.1.2_l3_002" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing a span of text that uses Javascript for blinking to draw attention to sale prices. There is no keyboard-accessible or other mechanism that allows the user to stop the blinking.</description>
+    <title>Blinking text with JavaScript without a keyboard-accessible mechanism to stop it</title>
+    <dc:creator>evlach@aegean.gr</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-01</date>
+    <status>accepted QA</status><!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="span" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/html4/struct/global.html#edef-SPAN">Grouping elements: the <html:code>DIV</html:code> and <html:code>SPAN</html:code> elements</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">
+      <label><html:acronym>CSS</html:acronym> 2.0 Specification</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">
+      <label>Standard <html:acronym>ECMA</html:acronym>-262 : ECMAScript Language Specification, 3rd edition (December 1999)</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test case is intended to fail because the blinking cannot be stopped through a keyboard interface.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc2.1.2_l3_002.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_2.1_keyboard-operation-all-funcs" primary="yes">
+      <locations expectedResult="fail">
+        <location column="22" line="28" xpath="/h:html/h:body/h:p/h:blink[@onload]"/>
+      </locations>
+      <functionalOutcome>
+        <p>The blinking does not stop in less than 3 seconds, and the content does not provide a mechanism that allows the user to stop it.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p><!-- @@WCAG feedback -->
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.1_keyboard-operation-all-funcs" primary="no">
+      <locations expectedResult="fail">
+        <location column="22" line="28" xpath="/h:html/h:body/h:p/h:blink[@onload]"/>
+      </locations>
+      <functionalOutcome>
+        <p>The blinking does not stop in less than 3 seconds, and the content does not provide a mechanism that allows the user to stop it.
+          This test case needs re-testing with a new question in the scenarios.<!--@@override-->
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.1.2_l3_002">sc2.1.2_l3_002</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.1_keyboard-operation-all-funcs" primary="no">
+      <locations expectedResult="fail">
+        <location column="22" line="28" xpath="/h:html/h:body/h:p/h:blink[@onload]"/>
+      </locations>
+      <functionalOutcome>
+        <p>The blinking does not stop in less than 3 seconds, and the content does not provide a mechanism that allows the user to stop it.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

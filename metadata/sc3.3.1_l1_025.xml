@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.3.1_l1_025" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing two mandatory text input fields (first name, last name) that are already filled and set to read-only. In addition, it contains one text input field for entering the date of birth with mandatory input. If the user submits and no date is entered or the date is invalid, the error is identified and described to the user in text below the form (JavaScript).</description>
+    <title>Mandatory text input field with error correction (date)</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2006-12-21</date>
+    <status>accepted for end user evaluation</status>
+        <!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/html4/interact/forms.html#h-17.4">The INPUT element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="label" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/html4/interact/forms.html#h-17.9.1">The LABEL element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/scripts.html#adef-onclick">Intrinsic events: onclick</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">
+      <label>Standard <html:acronym>ECMA</html:acronym>-262 : ECMAScript Language Specification, 3rd edition (December 1999)</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>The document is intended to fail, because the input error is specified and presented to the user in text but screenreader users may not notice the error message that is presented below the form.</p>
+    </purpose>
+        <expertGuidance>
+            <p>For the design of accessible forms it is particularly important to verify appropriateness with assistive technologies like screen readers and ensure proper navigation for users who can access the form by keyboard only. Therefore the expert user is advised to evaluate the form also in this respect. Beyond this it should be mentioned that in order to ensure accessibility of a form presented on a website, it might be necessary to validate the design by the target user group.</p>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s05" name="S5_dex_mot(altinp)">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where several items are already filled in, but the last one is empty. For the empty item you are asked to provide a date of birth. To provoke an error, please fill in 45/45/206 as date and submit the form. Once the error screen has appeared, please correct the date.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zult een formulier te zien krijgen waarin verschillende invoergegevens reeds ingevuld zijn, maar het laatste is leeg. Voor het lege veld zal u gevraagd worden een geboortedatum in te vullen. Om een fout te veroorzaken, vul 45/45/206 in als geboortedatum en verstuur het formulier (via de submit knop). Nadat het scherm met de foutmelding is verschenen, verbeter de datum.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the date?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk de datum te verbeteren ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u hebt ondervonden. Alle opmerkingen zijn welkom!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="alternative input devices"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s08" name="S8_apha_dysc_dysl_fill_idis_ldis(talkbr)">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where several items are already filled in, but the last one is empty. For the empty item you are asked to provide a date of birth. To provoke an error, please fill in 45/45/206 as date and submit the form. Once the error screen has appeared, please correct the date.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zult een formulier te zien krijgen waarin verschillende invoergegevens reeds ingevuld zijn, maar het laatste is leeg. Voor het lege veld zal u gevraagd worden een geboortedatum in te vullen. Om een fout te veroorzaken, vul 45/45/206 in als geboortedatum en verstuur het formulier (via de submit knop). Nadat het scherm met de foutmelding is verschenen, verbeter de datum.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the date?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk de datum te verbeteren ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u hebt ondervonden. Alle opmerkingen zijn welkom!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="talking browser"/>
+        </experience>
+        <disabilities>
+          <disability>aphasia</disability>
+          <disability>dyscalculus</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.3.1_l1_025.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.3_minimize-error-identified" primary="yes">
+      <locations expectedResult="fail"/>
+      <functionalOutcome>
+        <p>Before submission, the error is specified and presented to the user.
+          However, user testing with JAWS and HomePage Reader highlighted the following problem:
+          after submission of the form without a real date, the focus remains on the submit button, so screenreader users may not notice the error message below the form.
+                    <!--@@WCAG feedback-->
+                </p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.
+          (The test case may map to "Providing client-side validation and adding error text via the DOM (future link)" in a future draft.)
+        </p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.5_minimize-error-identified" primary="no">
+      <locations expectedResult="fail"/>
+      <functionalOutcome>
+        <p>Before submission, the error is specified and presented to the user.
+          However, user testing with JAWS and HomePage Reader highlighted the following problem:
+          after submission of the form without a real date, the focus remains on the submit button, so screenreader users may not notice the error message below the form.
+                    <!--@@WCAG feedback-->
+                </p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.
+          (The test case may map to "Providing client-side validation and adding error text via the DOM (future link)" in a future draft.)
+        </p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.5.1_l1_025">sc2.5.1_l1_025</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.5_minimize-error-identified" primary="no">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>Before submission, the error is specified and presented to the user.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smil xmlns:qt="http://www.apple.com/quicktime/resources/smilextensions" 
+  xmlns="http://www.w3.org/TR/REC-smil" qt:time-slider="true">
+  <head>
+    <layout>
+      <root-layout background-color="black" height="266" width="320"/>
+      <region id="videoregion" background-color="black" top="26" left="0" 
+      height="190" width="320"/>
+    </layout>
+  </head>
+  <body>
+    <par>
+      <video dur="0:00:05.00" region="videoregion" src="sc1.2.2_l1_001.mov" 
+      alt="Sales Demo"/>
+
+    </par>
+  </body>
+</smil> 

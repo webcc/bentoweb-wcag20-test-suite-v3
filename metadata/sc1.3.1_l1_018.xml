@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.3.1_l1_018" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing a simple data <html:code>table</html:code> (two columns, four rows) without a <html:code>summary</html:code> attribute.</description>
+    <title>A simple data table without a summary attribute</title>
+    <dc:creator>evlach@aegean.gr</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-29</date>
+    <status>accepted QA</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="table" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/tables.html#h-11.2.1">The TABLE element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test case is intended to fail as there is no <html:code>summary</html:code> attribute for the <html:code>table</html:code>.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>automatic</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.3.1_l1_018.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule
+        id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.3_content-structure-separation-programmatic" primary="yes">
+      <locations expectedResult="fail">
+        <location column="9" line="16" xpath="/:html/:body/:table"/>
+      </locations>
+      <functionalOutcome>
+        <p>The data table does not have a summary attribute</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.3_content-structure-separation-programmatic" primary="no">
+      <locations expectedResult="fail">
+        <location column="9" line="16" xpath="/:html/:body/:table"/>
+      </locations>
+      <functionalOutcome>
+        <p>The data table does not have a summary attribute</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.3_content-structure-separation-programmatic" primary="no">
+      <locations expectedResult="fail">
+        <location column="9" line="16" xpath="/:html/:body/:table"/>
+      </locations>
+      <functionalOutcome>
+        <p>The data table does not have a summary attribute</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

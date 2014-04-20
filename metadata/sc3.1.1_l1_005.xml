@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc3.1.1_l1_005" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A page with the first few sentences of Theodor Fontane's novel "Effi Briest", in German. 
+      The <html:code>html</html:code> element has no <html:code>lang</html:code> and <html:code>xml:lang</html:code> attributes, but the <html:code>body</html:code> element has a <html:code>lang</html:code> attribute with the value for German ("de").
+    </description>
+    <title>Correct <html:code>lang</html:code> attribute on <html:code>body</html:code> for primary language of content in German</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-01</date>
+    <status>validated</status><!--V_20080111--><!--@@migrated 2007-12-14-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="lang" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/dirlang.html#adef-lang">Specifying the language of content: the <html:code>lang</html:code> attribute</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because the primary natural language of the content is correctly defined. 
+        Tests should show that defining the primary natural language on the  <html:code>body</html:code> element instead of the <html:code>html</html:code> element does not cause problems.
+        It is not strictly required that the language code should be defined on the <html:code>html</html:code> element, although that is what would be expected. 
+        Only the primary language is tested here, not language changes inside the content.
+      </p>
+    </purpose>
+    <expertGuidance>
+      <p>This test case can be evaluated automatically when using a test tool with reliable automatic language recognition for German and support for <html:code>lang</html:code> and <html:code>xml:lang</html:code> attributes and language tags. For a list of language identification tools, see http://odur.let.rug.nl/~vannoord/TextCat/competitors.html.</p>
+    </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>automatic</testMode>
+      </testModes>
+      <scenario id="s01" name="sc01 blind lowv (scren reader)">
+        <userGuidance xml:lang="en">
+          <p>You need a screen reader that supports both English and German (e.g. by selecting automatic language recognition).
+            We will present you a paragraph of a German text. Please just listen to the text. It is not necessary to understand the content.
+          </p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>U hebt een schermlezer nodig die zowel Engels als Duits ondersteunt (bv. door het selecteren van automatische taalherkenning). U krijgt een stukje tekst in het Duits te horen. Luister gewoon naar de tekst, het is niet noodzakelijk dat u ook de inhoud begrijpt.</p>
+        </userGuidance>
+        <questions>
+          <multipleChoice select="one" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Did your screen reader read the text as if it were English or German ?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Las uw schermlezer de tekst met een Duitse of een Engelse uitspraak voor ?</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">sounded like English</label>
+              <label xml:lang="nl">het klonk als Engels</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded like German</label>
+              <label xml:lang="nl">het klonk als Duits</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded somehow different</label>
+              <label xml:lang="nl">het klonk enigszins anders</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"  />
+          <UserAgent minimumLevel="2" type="browser"  />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="sc02 lowv (screen redaer with magnification)">
+        <userGuidance xml:lang="en">
+          <p>You need a screen reader that supports both English and German (e.g. by selecting automatic language recognition).
+            We will present you a paragraph of a German text. Please just listen to the text. It is not necessary to understand the content.
+          </p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>U hebt een schermlezer nodig die zowel Engels als Duits ondersteunt (bv. door het selecteren van automatische taalherkenning). U krijgt een stukje tekst in het Duits te horen. Luister gewoon naar de tekst, het is niet noodzakelijk dat u ook de inhoud begrijpt.</p>
+        </userGuidance>
+        <questions>
+          <multipleChoice select="one" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Did your screen reader read the text as if it were English or German ?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Las uw schermlezer de tekst met een Duitse of een Engelse uitspraak voor ?</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">sounded like English</label>
+              <label xml:lang="nl">het klonk als Engels</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded like German</label>
+              <label xml:lang="nl">het klonk als Duits</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded somehow different</label>
+              <label xml:lang="nl">het klonk enigszins anders</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader with magnification"  />
+          <UserAgent minimumLevel="2" type="browser"  />
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="sc03 ADHD ...to no diss (Talking browser)">
+        <scenarioNotes>
+          <p>Just to garantee that none of the test participants is excluded. Normally non of this users will use a talking browser</p>
+        </scenarioNotes>
+        <userGuidance xml:lang="en">
+          <p>You need a talking browser that supports both English and German (e.g. by selecting automatic language recognition).
+            We will present you a paragraph of a German text. Please just listen to the text. It is not necessary to understand the content.
+          </p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>U hebt een sprekende browser nodig die zowel Engels als Duits ondersteunt (bv. door het selecteren van automatische taalherkenning). U krijgt een stukje tekst in het Duits te horen. Luister gewoon naar de tekst, het is niet noodzakelijk dat u ook de inhoud begrijpt.</p>
+        </userGuidance>
+        <questions>
+          <multipleChoice select="one" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Did your talking browser read the text as if it were English or German ?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Las uw sprekende browser de tekst met een Duitse of een Engelse uitspraak voor ?</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">sounded like English</label>
+              <label xml:lang="nl">het klonk als Engels</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded like German</label>
+              <label xml:lang="nl">het klonk als Duits</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">sounded somehow different</label>
+              <label xml:lang="nl">het klonk enigszins anders</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="talking browser"  />
+        </experience>
+        <disabilities>
+          <disability>ADHD</disability>
+          <disability>aphasia</disability>
+          <disability>dexterity impairment</disability>
+          <disability>dyscalculus</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+          <disability>low vision</disability>
+          <disability>motor impairment</disability>
+          <disability>no disability</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc3.1.1_l1_005.html" hrefLang="de" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.1_meaning-doc-lang-id" primary="yes">
+      <locations expectedResult="pass">
+        <location line="3" column="1" xpath="/h:html/@*" />
+        <location line="8" column="7" xpath="/h:html/h:body/@lang" />
+        <location line="8" column="16" xpath="/h:html/h:body/@xml:lang" />
+      </locations>
+      <functionalOutcome>
+        <p>The browser cannot find the primary language of the document but it may be able to find the primary language of the content.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>html</html:code> element has no <html:code>lang</html:code> or <html:code>xml:lang</html:code> attributes but the <html:code>body</html:code> has appropriate <html:code>lang</html:code> and <html:code>xml:lang</html:code> attributes.</p>
+        <p>
+          <html:acronym>IBM</html:acronym> Home Page Reader 3.0 German version, set to "automatic language recognition", and JAWS 7.1, German version, 
+          reads the test file in German. [@@double check for HPR]
+          JAWS 8.0 on Windows 2000 reads the text file in German, both with Internet Explorer 6.0 and with Firefox 2.
+        </p>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H57">H57: Using language attributes on the html element</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-doc-lang-id" primary="no">
+      <locations expectedResult="cannotTell">
+        <location line="3" column="1" xpath="/h:html/@*" />
+        <location line="8" column="7" xpath="/h:html/h:body/@lang" />
+        <location line="8" column="16" xpath="/h:html/h:body/@xml:lang" />
+      </locations>
+      <functionalOutcome>
+        <p>The browser cannot find the primary language of the document but it may be able to find the primary language of the content.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>html</html:code> element has no <html:code>lang</html:code> or <html:code>xml:lang</html:code> attributes but the <html:code>body</html:code> has appropriate <html:code>lang</html:code> and <html:code>xml:lang</html:code> attributes.</p>
+        <p>
+          <html:acronym>IBM</html:acronym> Home Page Reader 3.0 German version, set to "automatic language recognition", and JAWS 7.1, German version, 
+          reads the test file in German.
+          JAWS 8.0 on Windows 2000 reads the text file in German, both with Internet Explorer 6.0 and with Firefox 2.
+        </p>
+        <p>This test case maps to technique H57: Using the lang attribute of the html element (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#H57).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc3.1.1_l1_005">sc3.1.1_l1_005</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.1_meaning-doc-lang-id" primary="no">
+      <locations expectedResult="cannotTell">
+        <location line="3" column="1" xpath="/h:html/@*" />
+        <location line="8" column="7" xpath="/h:html/h:body/@lang" />
+        <location line="8" column="16" xpath="/h:html/h:body/@xml:lang" />
+      </locations>
+      <functionalOutcome>
+        <p>The browser cannot find the primary language of the document but it may be able to find the primary language of the content.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>html</html:code> element has no <html:code>lang</html:code> or <html:code>xml:lang</html:code> attributes but the <html:code>body</html:code> has appropriate <html:code>lang</html:code> and <html:code>xml:lang</html:code> attributes.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

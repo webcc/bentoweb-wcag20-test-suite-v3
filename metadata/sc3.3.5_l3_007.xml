@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.3.5_l3_007" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:btw="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+    <!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing three text input fields. A link after the last input field leads to a help page with descriptive information about the text input field. The new page is opened with a linked image calling a JavaScript function.</description>
+    <title>Text input field with help link (linked image)</title>
+    <dc:creator>Reinhard.Ruemer@jku.at</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-25</date>
+    <status>validated</status>
+        <!--@@Fix bug by updating to 17 May 2007 working draft, then change status to "draft".-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/REC-html40/interact/forms.html#h-17.4">Form input element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="a" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/REC-html40/struct/links.html#h-12.2">The A element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="img" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/REC-html40/struct/objects.html#h-13.2">Including an image: the IMG element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>The test case is intended to pass, because the help link provides context-sensitive help for the text input field.</p>
+    </purpose>
+        <expertGuidance>
+            <p>JavaScript must be enabled for the test files to work as intended.</p>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.3.5_l3_007.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.3_minimize-error-context-help" primary="yes">
+      <locations expectedResult="pass">
+                <!--@@todo check that locations refer to the GENERATED CODE! (Pointers in rule elements for previous WCAG draft can be left alone.)-->
+        <location column="128" line="22" xpath="/:html/:body/:form/:div/:a/@href"/>
+        <location column="154" line="22" xpath="/:html/:body/:form/:div/:img"/>
+        <location column="70" line="22" xpath="/:html/:body/:form/:div/:input[3]"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can get help for the input field ‘Desired position’.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Test file uses <html:code>&lt;a href="javascript: help()"&gt;&lt;img src='resou…</html:code> to link to the help file.
+        </p>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G71">G71: Providing a help link on every Web page</html:a>
+                    </html:span>
+                </p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.5_minimize-error-context-help" primary="no">
+      <locations expectedResult="pass">
+        <location column="130" line="21" xpath="/:html/:body/:form/:div/:a/@href"/>
+        <location column="156" line="21" xpath="/:html/:body/:form/:div/:img"/>
+        <location column="72" line="21" xpath="/:html/:body/:form/:div/:input"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can get help for the input field ‘Desired position’.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.5.4_l3_007">sc2.5.4_l3_007</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.5_minimize-error-context-help" primary="no">
+      <locations expectedResult="pass">
+        <location column="127" line="21" xpath="/:html/:body/:form/:div/:a/@href"/>
+        <location column="156" line="21" xpath="/:html/:body/:form/:div/:img"/>
+        <location column="72" line="21" xpath="/:html/:body/:form/:div/:input"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can get help for the input field ‘Desired position’.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Test file uses <html:code>&lt;a href="javascript: help()"&gt;&lt;img src='resou…</html:code> to link to the help file.
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

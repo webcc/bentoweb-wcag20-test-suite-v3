@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc4.1.1_l1_006" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>An <html:acronym>XHTML</html:acronym> file that is not well-formed because there is an <html:code>img</html:code> element that has two <html:code>alt</html:code> attributes instead of one. 
+      Both <html:code>alt</html:code> attributes contain a different text alternative. It is not clear if the first or the last attribute will take precedence in user agents and assistive technologies.
+    </description>
+    <title>Well-formedness error: duplicate attributes</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-10-05</date>
+    <status>validated</status><!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="img" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/2002/REC-xhtml1-20020801/#strict">Strictly Conforming Documents</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because elements have complete start and end tags that are nested according to specifications (even if one element has duplicate attributes).</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>experts</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+        <questions>
+          <multipleChoice select="one" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Which description of the image did you hear?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Welke beschrijving van het plaatje hoorde U?</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">A programmer using Notepad++</label>
+
+              <label xml:lang="nl">A programmer using Notepad++</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">A screenshot of Notepad++</label>
+
+              <label xml:lang="nl">A screenshot of Notepad++</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Both these descriptions</label>
+
+              <label xml:lang="nl">Beide beschrijvingen</label>
+              <value>-2</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Neither of these descriptions</label>
+
+              <label xml:lang="nl">Geen van de beschrijvingen</label>
+              <value>-3</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">I'm not sure</label>
+
+              <label xml:lang="nl">Ik ben niet zeker</label>
+              <value>-4</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader" />
+          <AssistiveTechnology minimumLevel="3" type="Braille display" />
+          <UserAgent minimumLevel="3" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc4.1.1_l1_006.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_4.1_ensure-compat-parses" primary="yes">
+      <locations expectedResult="pass">
+        <location line="11" column="82" xpath="/h:html/h:body/h:p/h:img/@alt" />
+        <location line="11" column="117" xpath="/h:html/h:body/h:p/h:img/@alt" />
+      </locations>
+      <functionalOutcome>
+        <p>The document is not well-formed: the image has two <html:code>alt</html:code> attributes; the user may not get the correct alternative text.</p>
+      </functionalOutcome>
+      <techComment>
+        <p><html:acronym>XML</html:acronym> 1.0, Third Edition: <html:q cite="http://www.w3.org/TR/2004/REC-xml-20040204/Overview.html#uniqattspec">An attribute name MUST NOT appear more than once in the same start-tag or empty-element tag.</html:q></p>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+        <p>(The error in the test file is not covered by failure <html:span><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/Overview.html#F70">F70: Failure of SC 4.1.1 due to incorrect use of start and end tags or attribute markup</html:a></html:span>.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_4.1_ensure-compat-parses" primary="no">
+      <locations expectedResult="fail">
+        <location line="11" column="82" xpath="/h:html/h:body/h:p/h:img/@alt" />
+        <location line="11" column="117" xpath="/h:html/h:body/h:p/h:img/@alt" />
+      </locations>
+      <functionalOutcome>
+        <p>The document is not well-formed: the image has two <html:code>alt</html:code> attributes; the user may not get the correct alternative text.</p>
+      </functionalOutcome>
+      <techComment>
+        <p><html:acronym>XML</html:acronym> 1.0, Third Edition: <html:q cite="http://www.w3.org/TR/2004/REC-xml-20040204/Overview.html#uniqattspec">An attribute name MUST NOT appear more than once in the same start-tag or empty-element tag.</html:q></p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc4.1.1_l1_006">sc4.1.1_l1_006</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050211_internal_4.1_use-spec-avoid-spec-no-exception" primary="no">
+      <locations expectedResult="fail">
+        <location line="11" column="82" xpath="/h:html/h:body/h:p/h:img/@alt" />
+        <location line="11" column="117" xpath="/h:html/h:body/h:p/h:img/@alt" />
+      </locations>
+      <functionalOutcome>
+        <p>The document is not well-formed: the image has two <html:code>alt</html:code> attributes; the use may not get the correct alternative text.</p>
+      </functionalOutcome>
+      <techComment>
+        <p><html:acronym>XML</html:acronym> 1.0, Third Edition: <html:q cite="http://www.w3.org/TR/2004/REC-xml-20040204/Overview.html#uniqattspec">An attribute name MUST NOT appear more than once in the same start-tag or empty-element tag.</html:q></p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc2.4.1_l1_001" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A set of web pages - the web site of the fictitious newspaper The Narnia Times - that has a top navigation section at the top of each page.
+      At the top of each page is an invisible skiplink to the main content. This skiplink is implemented with a single-pixel image 
+      with an <html:code>alt</html:code> attribute saying: "Skip to main content".
+      Note that this skiplink points to an anchor (<html:code>a</html:code> element with <html:code>name</html:code> and <html:code>id</html:code> attributes)
+      inside a <html:code>div</html:code> element with a width defined in a <html:acronym>CSS</html:acronym> stylesheet.
+      Setting this width is important to make the skiplink work in Internet Explorer 6, as described by Jim Thatcher in the
+      article "Skip Navigation" (http://www.jimthatcher.com/skipnav.htm).
+    </description>
+    <title>Set of web pages with invisible skiplink (to main content) at the top</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2006-10-11</date>
+    <status>validated</status>
+        <!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="a" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#edef-A">The <html:code>A</html:code> element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because there is an invisible skiplink at the top of every page.
+        Only the use of skip navigation to skip repeated information is tested here.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+                            <p>Did your device follow the (skip to main content) when you click it, so you can directly read the (main) information? </p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Volgde uw toestel de (skip to main content) wanneer u het aanklikt, zodat u direct de (main) informatie kan lezen? </p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p/>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p/>
+            </optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="Braille display"/>
+          <UserAgent minimumLevel="3" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>deaf-blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario s02 ">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+                            <p>Did your device follow the (skip to main content) when you click it, so you can directly read the (main) information?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Volgde uw toestel de (skip to main content) wanneer u het aanklikt, zodat u direct de (main) informatie kan lezen?</p>
+            </questionText>
+                        <!-- @@ tense mismatch -->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p/>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p/>
+            </optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="screenreader"/>
+          <UserAgent minimumLevel="3" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>deaf-blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario s03">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+                            <p>Did your device follow the (skip to main content) when you click it, so you can directly read the (main) information ?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Volgde uw toestel de (skip to main content) wanneer u het aanklikt, zodat u direct de (main) informatie kan lezen?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p/>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p/>
+            </optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="3" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc2.4.1_l1_001.html"/>
+      <file hrefLang="en" xlink:href="../testfiles/sc2.4.1_l1_001_arts.html"/>
+      <file hrefLang="en" xlink:href="../testfiles/sc2.4.1_l1_001_world.html"/>
+      <file hrefLang="en" xlink:href="../testfiles/sc2.4.1_l1_001_business.html"/>
+      <file hrefLang="en" xlink:href="../testfiles/sc2.4.1_l1_001_sports.html"/>
+      <file hrefLang="en" xlink:href="../testfiles/sc2.4.1_l1_001_jobs.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_2.4_navigation-mechanisms-skip" primary="yes">
+      <locations expectedResult="pass">
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_arts.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_world.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_business.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_sports.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_jobs.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+      </locations>
+      <functionalOutcome>
+        <p>Screen reader users can use the invisible skip link to skip the top navigation and go to the main content.
+          However, sighted users are unlikely to find the link.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G1">G1: Adding a link at the top of each page that goes directly to the main content area</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.4_navigation-mechanisms-title" primary="no">
+      <locations expectedResult="pass">
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_arts.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_world.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_business.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_sports.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+        <location column="1" line="19" xlink:href="../testfiles/sc2.4.1_l1_001_jobs.html" xpath="/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']"/>
+      </locations>
+      <functionalOutcome>
+        <p>Screen reader users can use the invisible skip link to skip the top navigation and go to the main content.
+          However, sighted users are unlikely to find the link.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique G1: Adding a link at the top of each page that goes directly to the main content area (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#G1).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.4.1_l1_001">2.4.1_l1_001</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

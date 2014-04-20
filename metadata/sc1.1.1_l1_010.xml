@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.1.1_l1_010" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with a client-side image map; the image represents a traffic light. The <html:code>img</html:code> element has an <html:code>alt</html:code> attribute that duplicates the <html:code>src</html:code> attribute with the <html:acronym>URI</html:acronym> to the image instead of an appriopriate text alternative.</description>
+    <title>Alt attribute for image in image map: <html:acronym>URL</html:acronym> instead of text alternative</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-26</date>
+    <status>accepted QA</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="img" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#adef-alt">How to specify alternate text</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="map" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#idx-client-side_image_map-1">How to create client-side image maps</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="area" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-AREA">Client-side image maps: the <html:code>map</html:code> and <html:code>area</html:code> elements</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because the <html:code>alt</html:code> attribute of the <html:code>img</html:code> element contains a <html:acronym>URL</html:acronym>,
+        so the text alternative does not serve the same purpose, nor does it present the same information as the image.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>automatic</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.1.1_l1_010.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.1_text-equiv-all" primary="yes">
+      <locations expectedResult="fail">
+        <location column="7" line="15" xpath="/h:html/h:body/h:div/h:p[2]/h:img/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has no proper text description associated with it (the <html:acronym>URL</html:acronym> of the image file).</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has a <html:code>alt</html:code> attribute containing (the <html:acronym>URL</html:acronym> of the image file).</p>
+        <p>(In Mozilla 1.7.3, SeaMonkey 1.1, Firefox 1.0, 1.5 and 2.0, the map does not work if the <html:code>map</html:code> element has only an <html:code>id</html:code> and no <html:code>name</html:code> attribute.)</p>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F30">F30: Failure of SC 1.1.1 due to using text alternatives that are not alternatives (e.g. filenames or placeholder text)</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.1_text-equiv-all" primary="no">
+      <locations expectedResult="fail">
+        <location column="7" line="15" xpath="/h:html/h:body/h:div/h:p[2]/h:img/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has no proper text description associated with it (the <html:acronym>URL</html:acronym> of the image file).</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has a <html:code>alt</html:code> attribute containing (the <html:acronym>URL</html:acronym> of the image file).</p>
+        <p>(In Mozilla 1.7.3 and Firefox 1.0, the map does not work if the <html:code>map</html:code> element has only an <html:code>id</html:code> and no <html:code>name</html:code> attribute.)</p>
+        <p>This test case maps to failure F30: Failure of SC 1.1.1 due to using text alternatives that are not alternatives (e.g. filenames or placeholder text) (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#F30).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.1.1_l1_010">sc1.1.1_l1_010</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.1_text-equiv-informative" primary="no">
+      <locations expectedResult="fail">
+        <location column="7" line="15" xpath="/h:html/h:body/h:div/h:p[2]/h:img/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has no proper text description associated with it (the <html:acronym>URL</html:acronym> of the image file).</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has a <html:code>alt</html:code> attribute containing (the <html:acronym>URL</html:acronym> of the image file).</p>
+        <p>(In Mozilla 1.7.3 and Firefox 1.0, the map does not work if the <html:code>map</html:code> element has only an <html:code>id</html:code> and no <html:code>name</html:code> attribute.)</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

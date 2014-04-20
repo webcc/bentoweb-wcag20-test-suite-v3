@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Name, Role and Value of Fake Form Controls (BenToWeb Testfile)</title>
+<style type="text/css">
+  body {
+    font-family: 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
+    font-size: 1em;
+  }
+  input, select { font-size: 1em; vertical-align: middle; }
+  option { margin-right: .3em; }
+</style>
+<!-- script type="text/javascipt" src="resources/scripts/sc4.1.2_l1_208.js"></script-->
+<script type="text/javascript">
+var CHECKED = "resources/images/sc4.1.2_l1_208_checked.gif";
+var UNCHECKED = "resources/images/sc4.1.2_l1_208_unchecked.gif";
+
+function toggleCheckbox(imgId) {
+  var theImg = document.getElementById(imgId);
+ 
+  if ( theImg.src.lastIndexOf(CHECKED)!= -1 ) {
+    theImg.src = UNCHECKED;
+    // additional code omitted
+  }
+  else {
+    theImg.src = CHECKED;
+    // additional code omitted
+  }
+}
+</script>
+</head>
+<body>
+  <form action="sc1.1.1_l1_045_processformdummy.html">
+   <p><span onclick="toggleCheckbox('license')"><img src="resources/images/sc4.1.2_l1_208_unchecked.gif" id="license" alt="" /> I accept the license agreement</span></p>
+   <p><input class="submit" type="submit" value="Submit form" />
+   </p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc1.4.2_l1_003" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing reference to sound via the object element being inserted via scripting.</description>
+    <title>Background sound with object element via scripting</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-11</date>
+    <status>validated</status><!--V_20071214--><!--@@fix Should have been L1!-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="object" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-OBJECT">Generic inclusion: the OBJECT element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="script" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/scripts.html#edef-SCRIPT">The SCRIPT element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">
+      <label>Standard <html:acronym>ECMA</html:acronym>-262: <html:acronym>ECMA</html:acronym>Script Language Specification</label>
+    </recommendation><!-- @@@baseline! -->
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test is intended to fail because the sound cannot be stopped in Firefox or Opera.</p>
+    </purpose>
+    <expertGuidance>
+      <p>The browser must be JavaScript-enabled.</p>
+    </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01 blind speech IE5">
+        <userGuidance xml:lang="en">
+          <p>Please ensure that your browser has JavaScript enabled.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat in uw browser JavaScript is ingeschakeld.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you stop the music playing?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u het spelen van de muziek stopzetten ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If you can, explain what you did.  If you cannot, is it a JavaScript problem?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, leg uit wat u deed. Indien nee, is het een probleem met JavaScript?</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" version="5.0" type="browser" product="Microsoft Internet Explorer"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario s02 blind speech IE5.5">
+        <userGuidance xml:lang="en">
+          <p>Please ensure that your browser has JavaScript enabled.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat in uw browser JavaScript is ingeschakeld.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you stop the music playing?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u het spelen van de muziek stopzetten?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If you can, explain what you did. If you cannot, is it a JavaScript problem?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, leg uit wat u deed. Indien nee, is het een probleem met JavaScript?</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" version="5.5" type="browser" product="Microsoft Internet Explorer"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario s03 blind speech IE6.0">
+        <userGuidance xml:lang="en">
+          <p>Please ensure that your browser has JavaScript enabled.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat in uw browser JavaScript is ingeschakeld.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you stop the music playing?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u het spelen van de muziek stopzetten?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If you can, explain what you did. If you cannot, is it a JavaScript problem?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, leg uit wat u deed. Indien nee, is het een probleem met JavaScript?</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" version="6.0" type="browser" product="Microsoft Internet Explorer"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04" name="Scenario s04 blind speech FF">
+        <userGuidance xml:lang="en">
+          <p>Please ensure that your browser has JavaScript enabled.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat in uw browser JavaScript is ingeschakeld.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you stop the music playing?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u het spelen van de muziek stopzetten?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If you can, explain what you did. If you cannot, is it a JavaScript problem?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, leg uit wat u deed. Indien nee, is het een probleem met JavaScript?</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" version="5.0" type="browser" product="Firefox"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05" name="Scenario s05 blind speech Opera">
+        <userGuidance xml:lang="en">
+          <p>Please ensure that your browser has JavaScript enabled.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat in uw browser JavaScript is ingeschakeld.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you stop the music playing?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u het spelen van de muziek stopzetten?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If you can, explain what you did. If you cannot, is it a JavaScript problem?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, leg uit wat u deed. Indien nee, is het een probleem met JavaScript?</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" type="browser" product="Opera"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc1.4.2_l2_003.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.4_visual-audio-contrast-dis-audio" primary="yes">
+      <locations expectedResult="fail">
+        <location line="8" column="38" xpath="/h:html/h:body/h:p/h:script"/>
+        <location xpath="/h:html/h:body/h:p/h:object"/>
+      </locations>
+      <functionalOutcome>
+        <p>Background sound cannot be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element causes plays a sound that cannot be stopped, except in Internet Explorer (by pressing the <html:kbd>Esc</html:kbd> button).</p>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F23">F23: Failure of SC 1.4.2 due to playing a sound longer than 3 seconds where there is no mechanism to turn it off</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule primary="no" id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.4_visual-audio-contrast-dis-audio">
+      <locations expectedResult="fail">
+        <location line="8" column="38" xpath="/h:html/h:body/h:p/h:script"/>
+        <location xpath="/h:html/h:body/h:p/h:object"/>
+      </locations>
+      <functionalOutcome>
+        <p>Background sound cannot be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element causes plays a sound that cannot be stopped.
+        </p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.4.2_l2_003">sc1.4.2_l2_003</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.4_visual-audio-contrast-dis-audio" primary="no">
+      <locations expectedResult="fail">
+        <location line="8" column="38" xpath="/h:html/h:body/h:p/h:script"/>
+        <location xpath="/h:html/h:body/h:p/h:object"/>
+      </locations>
+      <functionalOutcome>
+        <p>Background sound cannot be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element causes plays a sound that cannot be stopped.
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

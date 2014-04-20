@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:btw="http://bentoweb.org/refs/TCDL1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sc1.4.3_l2_017" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing text on a background image specified via CSS.</description>
+    <title>Contrast for foreground text and background image</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-11</date>
+    <status>draft</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">
+      <label><html:acronym>CSS</html:acronym> 2.0 Specification</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test is intended to fail because the luminosity contrast ratio is lower than 5.</p>
+    </purpose>
+    <expertGuidance>
+      <p>The formula to be used for calculating the luminosity contrast ratio can be found at http://www.w3.org/TR/2006/WD-WCAG20-20060427/appendixA.html#luminosity-contrastdef.</p>
+    </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc1.4.3_l2_017.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.4_visual-audio-contrast-contrast" primary="yes">
+      <locations expectedResult="fail"><!-- Although there is no corresponding common failure for G18 or G145, I think it's a fail -->
+        <location line="5" column="28" xpath="/:html/:head/:style"/>
+      </locations>
+      <functionalOutcome>
+        <p>The foreground and background colours don't have enough contrast.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The luminosity contrast ratio is 4.35.</p>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+      </techComment>
+    </rule>
+    <rule primary="no" id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.4_visual-audio-contrast-contrast">
+      <locations expectedResult="fail"><!-- Although there is no corresponding common failure for G18 or G145, I think it's a fail -->
+        <location line="5" column="28" xpath="/:html/:head/:style"/>
+      </locations>
+      <functionalOutcome>
+        <p>The foreground and background colours don't have enough contrast.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.4.1_l2_017">sc1.4.1_l2_017</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.4_visual-audio-contrast-contrast" primary="no">
+      <locations expectedResult="cannotTell"/>
+      <functionalOutcome>
+        <p>The WCAG WG hasn't provided threshold values for colour contrast yet.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

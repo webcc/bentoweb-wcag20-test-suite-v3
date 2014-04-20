@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.3.1_l1_129" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>
+			CSS used to enhance the presentation of semantic markup.
+    </description>
+    <title>Presentational elements in order to convey information
+			and/or relationships.
+    </title>
+    <dc:creator>evlach@aegean.gr</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-28</date>
+    <status>accepted QA</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+            <label>
+                <html:acronym>XHTML</html:acronym>
+				™ 1.0 The Extensible HyperText Markup Language
+				(Second Edition)
+			</label>
+      <testElements>
+        <testElement>
+          <elementName localname="dfn" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/html401/struct/text.html#edef-DFN">
+						Phrase elements
+					</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">
+            <label>
+                <html:acronym>CSS</html:acronym>
+				2.0 Specification
+			</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>
+				The test case is intended to pass as
+				CSS is used to enhance the presentation of semantic markup.
+			</p>
+    </purpose>
+        <expertGuidance>
+            <p>Check whether CSS has been used in order to convey information.</p>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>experts</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.3.1_l1_129.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.3_content-structure-separation-programmatic" primary="yes">
+      <locations expectedResult="pass">
+        <location column="1" line="10" xpath="/:html/:body/:p/:dfn"/>
+      </locations>
+      <functionalOutcome>
+        <p>
+					CSS has been used to enhance the presentation of semantic markup.
+				</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.3_content-structure-separation-programmatic" primary="no">
+      <locations expectedResult="pass">
+        <location column="1" line="10" xpath="/:html/:body/:p/:dfn"/>
+      </locations>
+      <functionalOutcome>
+        <p>
+					CSS has been used to enhance the presentation of semantic markup.
+				</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

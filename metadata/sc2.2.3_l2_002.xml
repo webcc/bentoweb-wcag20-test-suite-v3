@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc2.2.3_l2_002" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with content that is too long to fit on most current computer displays. 
+      The document starts scrolling down when the user activates the &#8216;start scrolling&#8217; button at the top of the document. 
+      There is no mechanism to stop the scrolling once it has started; other user actions, such as pressing the "Home" key, only take effect after the scrolling has ended. 
+      However, the scroll effect does not come back until the page has been refreshed. 
+      (If the entire content fitted into the browser window, no scrolling would be visible; hence the length of the document.)
+    </description>
+    <title>Page starts scrolling down at user request but cannot be stopped</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-09-30</date>
+    <status>validated</status><!--V_20080111-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement><elementName localname="script" namespace="http://www.w3.org/1999/xhtml"/><specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/scripts.html#edef-SCRIPT">The <html:code>script</html:code> element</specReference></testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">
+      <label>Standard <html:acronym>ECMA</html:acronym>-262: <html:acronym>ECMA</html:acronym>Script Language Specification</label>
+      <testElements>
+        <testElement><elementName localname="scrollTo()"/><specReference xlink:href="http://www.w3schools.com/htmldom/met_win_scrollto.asp">The <html:code>scrollTo()</html:code> method</specReference></testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because there is no mechanism to stop or pause the scrolling. 
+        Only the scrolling is tested here, not the table structure or other aspects of the content.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc2.2.3_l2_002.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_2.2_time-limits-pause" primary="yes">
+      <locations expectedResult="fail">
+        <location line="31" column="12" xpath="/h:html/h:body/h:p[1]/h:button/@onclick"/>
+        <location line="31" column="49" xpath="/h:html/h:body/h:p[1]/h:button/@onkeypress"/>
+        <location line="17" column="1" xpath="/h:html/h:head/h:script"/>
+      </locations>
+      <functionalOutcome>
+        <p>The page starts crolling when the user clicks the button at the top of the page without giving the user the opportunity to stop the scrolling.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F16">F16: Failure of SC 2.2.3 due to including scrolling content where movement is not essential to the activity without also including a mechanism to pause and restart the content</html:a></html:span>.</p>
+        <p>(Success criterion 2.2.3 does not exempt content that scrolls on user request.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.2_time-limits-pause" primary="no">
+      <locations expectedResult="fail">
+        <location line="31" column="12" xpath="/h:html/h:body/h:p[1]/h:button/@onclick"/>
+        <location line="31" column="49" xpath="/h:html/h:body/h:p[1]/h:button/@onkeypress"/>
+        <location line="17" column="1" xpath="/h:html/h:head/h:script"/>
+      </locations>
+      <functionalOutcome>
+        <p>The page starts crolling when the user clicks the button at the top of the page without giving the user the opportunity to stop the scrolling.</p>
+      </functionalOutcome>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.2_time-limits-pause" primary="no">
+      <locations expectedResult="fail">
+        <location line="31" column="12" xpath="/h:html/h:body/h:p[1]/h:button/@onclick"/>
+        <location line="31" column="49" xpath="/h:html/h:body/h:p[1]/h:button/@onkeypress"/>
+        <location line="17" column="1" xpath="/h:html/h:head/h:script"/>
+      </locations>
+      <functionalOutcome>
+        <p>The page starts crolling when the user clicks the button at the top of the page without giving the user the opportunity to stop the scrolling.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:btw="http://bentoweb.org/refs/TCDL1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sc2.4.6_l2_005" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with a frameset; the frameset has a navigation frame at the left and a content frame at the right. 
+      Activating a link in the navigation frame causes the corresponding document to be loaded in the content frame. 
+      The <html:code>title</html:code> attributes on the <html:code>frame</html:code> elements are "Nav" and "Cont", respectively.
+    </description>
+    <title>Non-descriptive title for a frame in a frameset</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-09-30</date>
+    <status>rejected QA</status>
+    <!--@@@move to SC2.4.9.-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>&#8482;1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement><elementName localname="frameset" namespace="http://www.w3.org/1999/xhtml"/><specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/present/frames.html#edef-FRAMESET">The <html:code>frameset</html:code> element</specReference></testElement>
+        <testElement><elementName localname="frame" namespace="http://www.w3.org/1999/xhtml"/><specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/present/frames.html#edef-FRAME">The <html:code>frame</html:code> element</specReference></testElement>
+        <testElement><elementName localname="title" namespace="http://www.w3.org/1999/xhtml"/><specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#adef-title">The <html:code>title</html:code> attribute</specReference></testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because the <html:code>title</html:code> attributes on the <html:code>frame</html:code> elements are not descriptive. 
+        Only the frameset document is tested here, not the documents that are loaded into the frames.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc2.4.6_l2_005.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_2.4_navigation-mechanisms-descriptive" primary="yes">
+      <locations expectedResult="fail">
+        <!--@@todo check that locations refer to the GENERATED CODE! (Pointers in rule elements for previous WCAG draft can be left alone.)-->
+        <location xlink:href="../testfiles/sc2.4.5_l3_005.html" line="36" column="74" xpath="/:html/:frameset/:frame[1]/@title"/>
+        <location xlink:href="../testfiles/sc2.4.5_l3_005.html" line="37" column="72" xpath="/:html/:frameset/:frame[2]/@title"/>
+      </locations>
+      <functionalOutcome>
+        <p>The titles of the two frames are too short and therefore do not help people understand what type of content will be loaded in these frames.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H64">H64: Using the title attribute of the frame element</html:a></html:span>
+        </p>
+      </techComment>
+    </rule>
+    <rule primary="no" id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.4_navigation-mechanisms-descriptive">
+      <locations expectedResult="fail">
+        <location xlink:href="../testfiles/sc2.4.5_l3_005.html" line="36" column="74" xpath="/:html/:frameset/:frame[1]/@title"/>
+        <location xlink:href="../testfiles/sc2.4.5_l3_005.html" line="37" column="72" xpath="/:html/:frameset/:frame[2]/@title"/>
+      </locations>
+      <functionalOutcome>
+        <p>The titles of the two frames are too short and therefore do not help people understand what type of content will be loaded in these frames.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.4.5_l3_005">sc2.4.5_l3_005</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.4_navigation-mechanisms-title" primary="no">
+      <locations expectedResult="fail">
+        <location xlink:href="../testfiles/sc2.4.5_l3_005.html" line="36" column="74" xpath="/:html/:frameset/:frame[1]/@title"/>
+        <location xlink:href="../testfiles/sc2.4.5_l3_005.html" line="37" column="72" xpath="/:html/:frameset/:frame[2]/@title"/>
+      </locations>
+      <functionalOutcome>
+        <p>The titles of the two frames are too short and therefore do not help people understand what type of content will be loaded in these frames.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

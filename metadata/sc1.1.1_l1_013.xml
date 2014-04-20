@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.1.1_l1_013" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with an <html:code>object</html:code> element in an image map. The <html:code>object</html:code> element embeds an image in <html:acronym>PNG</html:acronym> format, and 
+      contains another <html:code>object</html:code> element that embeds the <html:acronym>GIF</html:acronym> version of the same image. This second <html:code>object</html:code> element 
+      contains an <html:code>img</html:code> element with the same <html:acronym>GIF</html:acronym> image.
+      The <html:code>alt</html:code> attribute of the <html:code>img</html:code> element identifies the image and conveys the same information.
+      The <html:code>object</html:code> elements do not have a <html:code>title</html:code> attribute or any other text alternative except the <html:code>alt</html:code> attribute of the <html:code>img</html:code> element.
+    </description>
+    <title>Alternative text for two nested objects with image map (below object) and image (inside object)</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-08-26</date>
+    <status>integrate feedback</status>
+        <!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="img" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#adef-alt">How to specify alternate text</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="object" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#h-13.3">General Inclusion: The <html:code>object</html:code> element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="map" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#idx-client-side_image_map-1">How to create client-side image maps</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="area" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-AREA">Client-side image maps: the <html:code>map</html:code> and <html:code>area</html:code> elements</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because the image has an appropriate text alternative in the <html:code>img</html:code> element that serves as a fallback for the innermost <html:code>object</html:code> element. 
+        However, browser support for the <html:code>object</html:code> element may determine if this test case is accessible or not. Internet Explorer (version 6 or earlier) has weak or no support for the <html:code>object</html:code> element. 
+        Only the image itself is tested, not the image map.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s06" name="Scenario s06 blind braille IE6">
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Did you understand what was in the image? </p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Begreep u wat er te zien was in de afbeelding ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If you were not sure what was in the image, please indicate why this was unclear.</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien u niet zeker bent over wat er in de afbeelding getoond werd, geef aan waarom dit onduidelijk was.</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <AssistiveTechnology minimumLevel="2" type="Braille display"/>
+          <UserAgent minimumLevel="1"
+                        product="Microsoft Internet Explorer"
+                        type="browser" version="6.0"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s09" name="Scenario s09 lowvis mag IE6">
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Did you understand what was in the image?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Begreep u wat er te zien was in de afbeelding ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If you were not sure what was in the image, please indicate why this was unclear.</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien u niet zeker bent over wat er in de afbeelding getoond werd, geef aan waarom dit onduidelijk was.</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="1"
+                        product="Microsoft Internet Explorer"
+                        type="browser" version="6"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s10" name="Scenario s10 blind braille IE7">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+                            <p>Did you understand what was in the image?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p/>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien u niet zeker bent over wat er in de afbeelding getoond werd, geef aan waarom dit onduidelijk was.</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If you were not sure what was in the image, please indicate why this was unclear.</p>
+            </optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <AssistiveTechnology minimumLevel="2" type="Braille display"/>
+          <UserAgent minimumLevel="2"
+                        product="Microsoft Internet Explorer"
+                        type="browser" version="7.0"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s11" name="Scenario s11 lowvis mag IE7">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+                            <p>Did you understand what was in the image?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p/>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien u niet zeker bent over wat er in de afbeelding getoond werd, geef aan waarom dit onduidelijk was.</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If you were not sure what was in the image, please indicate why this was unclear.</p>
+            </optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="1"
+                        product="Microsoft Internet Explorer" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.1.1_l1_013.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.1_text-equiv-all" primary="yes">
+      <locations expectedResult="cannotTell">
+        <location column="7" line="16" xpath="/h:html/h:body/h:div/h:object/h:object/h:img/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has a fallback with a text description.
+          User testing with screen reader users provided the following results: all users of speech output could understand the image, and all users of a Braille display could understand the image.
+          (All were users of Internet Explorer 6 or 7.)
+          The test case needs further testing with Braille display users (Internet Explorer 6 and 7) and screen magnification users (Internet Explorer 6 and 7), to understand the extent of the problems.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element has an <html:code>img</html:code> element with an <html:code>alt</html:code> attribute as a fallback .
+          Since there is no direct text alternative, it is not entirely clear if this code is accessible.
+        </p>
+        <p>(In Mozilla 1.7.3 and Firefox 1.0, the map does not work if the <html:code>map</html:code> element has only an <html:code>id</html:code> and no <html:code>name</html:code> attribute.)</p>
+                <p>(Internet Explorer 6.0 does not support <html:code>object</html:code> so the test does not work in this browser - tested on both Windows 2000 and Windows XP Professional.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.1_text-equiv-all" primary="no">
+      <locations expectedResult="cannotTell">
+        <location column="7" line="16" xpath="/h:html/h:body/h:div/h:object/h:object/h:img/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has a fallback with a text description.
+          User testing with screen reader users provided the following results: all users of speech output could understand the image, and all users of a Braille display could understand the image.
+          (All were users of Internet Explorer 6 or 7.)
+          The test case needs further testing with Braille display users (Internet Explorer 6 and 7) and screen magnification users (Internet Explorer 6 and 7), to understand the extent of the problems.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element has an <html:code>img</html:code> element with an <html:code>alt</html:code> attribute as a fallback .
+          Since there is no direct text alternative, it is not entirely clear if this code is accessible.
+        </p>
+        <p>(In Mozilla 1.7.3 and Firefox 1.0, the map does not work if the <html:code>map</html:code> element has only an <html:code>id</html:code> and no <html:code>name</html:code> attribute.)</p>
+                <p>(Internet Explorer 6.0 does not support <html:code>object</html:code> so the test does not work in this browser - tested on both Windows 2000 and Windows XP Professional.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.1_text-equiv-informative" primary="no">
+      <locations expectedResult="cannotTell">
+        <location column="7" line="16" xpath="/h:html/h:body/h:div/h:object/h:object/h:img/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has a fallback with a text description.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element has an <html:code>img</html:code> element with an <html:code>alt</html:code> attribute as a fallback .
+          Since there is no direct text alternative, it is not entirely clear if this code is accessible.
+        </p>
+        <p>(In Mozilla 1.7.3 and Firefox 1.0, the map does not work if the <html:code>map</html:code> element has only an <html:code>id</html:code> and no <html:code>name</html:code> attribute.)</p>
+                <p>(Internet Explorer does not support <html:code>object</html:code> so the test does not work in this browser.)</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

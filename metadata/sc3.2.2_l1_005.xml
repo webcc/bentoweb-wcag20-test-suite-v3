@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc3.2.2_l1_005" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing a checkbox; when the checkbox state changes a MIDI file is loaded with an external player.</description>
+    <title>Change of user agent when changing the setting of a checkbox</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-25</date>
+    <status>validated</status><!--V_20071214-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/scripts.html#adef-onchange"/>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test is intended to fail because a change in checkbox state changes the user agent.</p>
+    </purpose>
+    <expertGuidance>
+      <p>Check whether there is any change of context caused by a change of any form control or field setting.</p>
+    </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc3.2.2_l1_005.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.2_consistent-behavior-unpredictable-change" primary="yes">
+      <locations expectedResult="fail">
+        <location line="10" column="105" xpath="/h:html/h:body/h:p[2]/h:input/@onchange"/>
+      </locations>
+      <functionalOutcome>
+        <p>An external player is unexpectedly activated when the user changes the setting of a checkbox.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The JavaScript in the onchange attribute causes the browser to load a resource, that the browser is not able to handle natively.</p>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F37">F37: Failure of SC 3.2.2 due to launching a new window without prior warning when the status of a radio button, check box or select list is changed</html:a></html:span></p>
+      </techComment>
+    </rule>
+    <rule primary="no" id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.2_consistent-behavior-unpredictable-change">
+      <locations expectedResult="fail">
+        <location line="10" column="105" xpath="/h:html/h:body/h:p[2]/h:input/@onchange"/>
+      </locations>
+      <functionalOutcome>
+        <p>Change of user agent onchange.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The JavaScript in the onchange attribute causes the browser to load a resource, that the browser is not able to handle natively.</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc3.2.2_l1_005">sc3.2.2_l1_005</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.2_consistent-behavior-unpredictable-change" primary="no">
+      <locations expectedResult="fail">
+        <location line="10" column="105" xpath="/h:html/h:body/h:p[2]/h:input/@onchange"/>
+      </locations>
+      <functionalOutcome>
+        <p>Change of user agent onchange.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The JavaScript in the onchange attribute causes the browser to load a resource, that the browser is not able to handle natively.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

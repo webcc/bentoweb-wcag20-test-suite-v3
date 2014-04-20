@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc1.3.2_l1_004" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>This is a test case the sequence in which content can be arranged in a page. In this test, an excerpt from Shakespeare's Henry V and its German translation are juxtaposed in a table, 
+      and each speech is in a separate table cell, so that the sequence is: English speech, German translation, English speech, German translation, etcetera.
+      However, the <html:acronym>CSS</html:acronym> stylesheet switches the English text and the German translation, but not the column headings.
+      (In a browser with good <html:acronym>CSS</html:acronym> support, the columns with the text and translation are transposed. In Internet Explorer 6 and earlier, this effect does not work as intended.)
+    </description>
+    <title>Table structure does not help understanding of text and translation due to CSS positioning</title>
+    <dc:creator>christophe.strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-01</date>
+    <status>accepted for end user evaluation</status><!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="table" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/tables.html#edef-TABLE">The <html:code>table</html:code> element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/" baseline="included">
+      <label>Cascading Style Sheets, level 2: <html:acronym>CSS</html:acronym>2 Specification</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because the stylesheet mixes up the sequence of the content.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+              <p>Does the sequence of the English text and its translation make sense to you?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Heeft de volgorde van de engelse tekst en de vertaling daarvan enige samenhang  voor U?</p>
+            </questionText>
+            <optionYes value="-1" />
+            <optionNo value="1" />
+            <optionOther xml:lang="en"><p /></optionOther>
+            <optionOther xml:lang="nl"><p /></optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="1" type="screenreader" />
+          <UserAgent minimumLevel="1" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>deaf-blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario s02">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+              <p>Does the sequence of the English text and its translation make sense to you?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Heeft de volgorde van de engelse tekst en de vertaling daarvan enige samenhang  voor U?</p>
+            </questionText>
+            <optionYes value="-1" />
+            <optionNo value="1" />
+            <optionOther xml:lang="en"><p /></optionOther>
+            <optionOther xml:lang="nl"><p /></optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="Braille display" />
+          <UserAgent minimumLevel="1" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>deaf-blindness</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc1.3.2_l1_004.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.3_content-structure-separation-sequence" primary="yes">
+      <locations expectedResult="fail">
+        <location line="17" column="3" xpath="/h:html/h:head/h:style[1]" />
+        <location line="18" column="3" xpath="/h:html/h:head/h:style[1]" />
+      </locations>
+      <functionalOutcome>
+        <p>The sequence in which the content is arranged visually is not meaningful.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The sequence of content (<html:acronym>XHTML</html:acronym>) can be programatically determined, but the <html:acronym>CSS</html:acronym> mixes up the sequence.</p>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F1">F1: Failure of SC 1.3.2 due to changing the meaning of content by positioning information with CSS</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.3_content-structure-separation-sequence" primary="no">
+      <locations expectedResult="fail">
+        <location line="17" column="3" xpath="/h:html/h:head/h:style[1]" />
+        <location line="18" column="3" xpath="/h:html/h:head/h:style[1]" />
+      </locations>
+      <functionalOutcome>
+        <p>The sequence in which the content is arranged visually is not meaningful.
+          (The test case needs further testing.)
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The sequence of content (<html:acronym>XHTML</html:acronym>) can be programatically determined, but the <html:acronym>CSS</html:acronym> mixes up the sequence.</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.3.3_l1_004">sc1.3.3_l1_004</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.3_content-structure-separation-sequence" primary="no">
+      <locations expectedResult="fail">
+        <location line="17" column="3" xpath="/h:html/h:head/h:style[1]" />
+        <location line="18" column="3" xpath="/h:html/h:head/h:style[1]" />
+      </locations>
+      <functionalOutcome>
+        <p>The sequence in which the content is arranged visually is not meaningful.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The sequence of content (<html:acronym>XHTML</html:acronym>) can be programatically determined, but the <html:acronym>CSS</html:acronym> mixes up the sequence.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG1_19990505_5.3" primary="no">
+      <locations expectedResult="pass" />
+      <functionalOutcome>
+        <p>The sequence in which the content is arranged is meaningful.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The table makes sense when linearised, but only if  <html:acronym>CSS</html:acronym> is turned off.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

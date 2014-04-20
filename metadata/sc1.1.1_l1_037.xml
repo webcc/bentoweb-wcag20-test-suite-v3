@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.1.1_l1_037" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with an image map that contains two areas with links to another file. Both <html:code>area</html:code> elements have an <html:code>alt</html:code> attribute that conveys the same information as the area.
+      The second area/link refers to an <html:acronym>MP3</html:acronym> file; below the image map is a link to a transcript.
+    </description>
+    <title>Text transcript for links to audio: transcript link below image map</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-31</date>
+    <status>accepted QA</status>
+        <source>
+            <testSuite xlink:href="http://www.w3.org/WAI/GL/WCAG20/tests/">
+                <name>
+                    <html:acronym>HTML</html:acronym> Test Suite for <html:acronym>WCAG</html:acronym> 2.0</name>
+            </testSuite>
+            <sourceFile changed="true" xlink:href="http://www.w3.org/WAI/GL/WCAG20/tests/testfiles/66-2.html">
+        <dc:creator>Chris Ridpath</dc:creator>
+            </sourceFile>
+            <comment>
+                <p>Changed title; renamed MP3 file; added meta - content-type element; changed <html:acronym>URL</html:acronym>s.</p>
+                <p>Audio transcript converted from plain text to <html:acronym>XHTML</html:acronym>.</p>
+            </comment>
+        </source>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="img" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#adef-alt">How to specify alternate text</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="area" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-AREA">Client-side image maps: the <html:code>map</html:code> and <html:code>area</html:code> elements</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because there is a full transcript for the sound file referenced by <html:code>area</html:code> link.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>experts</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.1.1_l1_037.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.1_text-equiv-all" primary="yes">
+      <locations expectedResult="pass">
+        <location column="7" line="14" xpath="/:html/:body/:p[3]/:a/@href"/>
+      </locations>
+      <functionalOutcome>
+        <p>The sound file linked by the second image map area has a text transcript.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G94">G94: Providing short text alternative for non-text content that serves the same purpose and presents the same information as the non-text content</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.1_text-equiv-all" primary="no">
+      <locations expectedResult="pass">
+        <location column="7" line="14" xpath="/:html/:body/:p[3]/:a/@href"/>
+      </locations>
+      <functionalOutcome>
+        <p>The sound file linked by the second image map area has a text transcript.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.1.1_l1_037">sc1.1.1_l1_037</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.1_text-equiv-informative" primary="no">
+      <locations expectedResult="pass">
+        <location column="7" line="14" xpath="/:html/:body/:p[3]/:a/@href"/>
+      </locations>
+      <functionalOutcome>
+        <p>The sound file linked by the second image map area has a text transcript.</p>
+      </functionalOutcome>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.1_text-equiv-functional" primary="no">
+      <locations expectedResult="pass">
+        <location column="112" line="12" xpath="/:html/:body/p[2]/:map/:area[2]/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The text description of the second image map area contains all non-decorative text in the image.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>alt</html:code> attribute of the second <html:code>area</html:code> element contains all non-decorative text in the image.
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

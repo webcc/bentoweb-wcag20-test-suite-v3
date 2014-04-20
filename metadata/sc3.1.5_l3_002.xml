@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.1.5_l3_002" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A text that requires a reading ability above the upper secondary education level, without a summary or other supplement that may help people with certain cognitive disabilities to understand the text, and without an alternate version that is easy to read.</description>
+    <title>Difficult text without summary or other supplement</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-09-02</date>
+    <status>validated</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because there is no summary or other supplement to help the reader understand the text, nor an alternate version that is easy to read. 
+        Only the reading level is tested here, not the other aspects of the document (descriptive section titles, expanded forms for abbreviations, etcetera).
+      </p>
+    </purpose>
+        <expertGuidance>
+            <p>Check whether there is a summary or other supplement to help the reader understand the text, or an alternate version that is easy to read.</p>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.1.5_l3_002.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.1_meaning-supplements" primary="yes">
+      <locations expectedResult="fail"/>
+      <functionalOutcome>
+        <p>There is no supplement that helps readers with a reading level that is not higher than lower secondary education level.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-supplements" primary="no">
+      <locations expectedResult="fail"/>
+      <functionalOutcome>
+        <p>There is no supplement that helps readers with a reading level that is not higher than lower secondary education level.</p>
+      </functionalOutcome>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.1_meaning-supplements" primary="no">
+      <locations expectedResult="fail"/>
+      <functionalOutcome>
+        <p>There is no supplement that helps readers with a reading level that is not higher than lower secondary education level.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc3.1.3_l3_005" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with text in English that contains nautical terms. 
+      Below the text is a glossary with the nautical terms that are used in the text; there are links between the nautical terms in the text and the corresponding glossary entries. 
+      Browsers that support the <html:acronym>CSS</html:acronym> pseudo-selector <html:code>:onfocus</html:code> will highlight the glossary entry when a user activates the link to the term. 
+      (This works in Mozilla and Firefox but not in Internet Explorer 6 or Opera 7.54.) 
+      [Some links, for phrases that don't have or don't need a glossary entry, lead to a dummy page.]
+    </description>
+    <title>English text with glossary of nautical terms - nautical terms link to glossary entries</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-01</date>
+    <status>validated</status><!--V_20071214--><!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="dl" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/lists.html#edef-DL">Definition lists: the <html:code>DL</html:code>, <html:code>DT</html:code> and <html:code>DD</html:code>elements</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="a" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#edef-A">The <html:code>A</html:code> element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because a definition list near the bottom of the page helps the user to find definitions of words and there are links between the terms in the text and the corresponding definitions. 
+        Only the availability of definitions is tested here, not any other links or features in the test file.
+      </p>
+    </purpose>
+    <expertGuidance><p>Check whether there is a mechanism available for identifying specific definitions of words or phases from nautic jargon used in this test file.</p></expertGuidance>
+    <requiredTests>
+      <testModes><testMode>oneExpert</testMode></testModes>
+      <scenario id="s01" name="Scenario s01">
+        <userGuidance xml:lang="en"><p>A specialized text with nautical terms is presented to you. Please read the first paragraph and find in the dictionary the definitions of the words &#8216;cruisers&#8217; and &#8216;destroyers&#8217; one after another. Then read the second paragraph and find the definition of the word &#8216;turrets&#8217;.</p></userGuidance>
+        <userGuidance xml:lang="nl"><p>Er wordt u een gespecialiseerde tekst met termen uit de zeevaart getoond. Lees de eerste paragraaf en zoek in het woordenboek de definities van de woorden &#8216;cruisers&#8217; and &#8216;destroyers&#8217; , het ene woord na het andere. Lees dan de tweede paragraaf en zoek de definitie van het woord &#8216;turrets&#8217;.</p></userGuidance>
+        <questions>
+          <likertScale display="horizontal">
+            <questionText xml:lang="en"><p>How easy or difficult was it to find the word definitions?</p></questionText>
+            <questionText xml:lang="nl"><p>Hoe makkelijk of moeilijk was het om de definities van de woorden te vinden ?</p></questionText>
+            <likertLevel number="1">
+              <label xml:lang="en">Very easy</label>
+              <label xml:lang="nl">Zeer makkelijk</label>
+              <value>1</value>
+            </likertLevel>
+            <likertLevel number="2">
+              <label xml:lang="en">Easy</label>
+              <label xml:lang="nl">Makkelijk</label>
+              <value>2</value>
+            </likertLevel>
+            <likertLevel number="3">
+              <label xml:lang="en">Neither easy nor difficult</label>
+              <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+              <value>3</value>
+            </likertLevel>
+            <likertLevel number="4">
+              <label xml:lang="en">Difficult</label>
+              <label xml:lang="nl">Moeilijk</label>
+              <value>4</value>
+            </likertLevel>
+            <likertLevel number="5">
+              <label xml:lang="en">Very difficult</label>
+              <label xml:lang="nl">Zeer moeilijk</label>
+              <value>5</value>
+            </likertLevel>
+          </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="alternative input devices" />
+          <UserAgent minimumLevel="1" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario s02">
+        <userGuidance xml:lang="en"><p>In this test a specialized text with nautical terms is presented to you. Please read the first paragraph and find in the dictionary the definitions of the words &#8216;cruisers&#8217; and &#8216;destroyers&#8217; one after another. Then read the second paragraph and find the definition of the word &#8216;turrets&#8217;.</p></userGuidance>
+        <userGuidance xml:lang="nl"><p>Er wordt u een gespecialiseerde tekst met termen uit de zeevaart getoond. Lees de eerste paragraaf en zoek in het woordenboek de definities van de woorden &#8216;cruisers&#8217; and &#8216;destroyers&#8217; , het ene woord na het andere. Lees dan de tweede paragraaf en zoek de definitie van het woord &#8216;turrets&#8217;.</p></userGuidance>
+        <questions>
+          <likertScale display="horizontal">
+            <questionText xml:lang="en"><p>How easy or difficult was it easy to find the word definitions?</p></questionText>
+            <questionText xml:lang="nl"><p>Hoe makkelijk of moeilijk was het om de definities van de woorden te vinden ?</p></questionText>
+            <likertLevel number="1">
+              <label xml:lang="en">Very easy</label>
+              <label xml:lang="nl">Zeer makkelijk</label>
+              <value>1</value>
+            </likertLevel>
+            <likertLevel number="2">
+              <label xml:lang="en">Easy</label>
+              <label xml:lang="nl">Makkelijk</label>
+              <value>2</value>
+            </likertLevel>
+            <likertLevel number="3">
+              <label xml:lang="en">Neither easy or difficult</label>
+              <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+              <value>3</value>
+            </likertLevel>
+            <likertLevel number="4">
+              <label xml:lang="en">Difficult</label>
+              <label xml:lang="nl">Moeilijk</label>
+              <value>4</value>
+            </likertLevel>
+            <likertLevel number="5">
+              <label xml:lang="en">Very difficult</label>
+              <label xml:lang="nl">Zeer moeilijk</label>
+              <value>5</value>
+            </likertLevel>
+          </likertScale>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="3" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario s03">
+        <userGuidance xml:lang="en"><p>In this test a specialized text with nautical terms is presented to you. Please read the first paragraph and find in the dictionary the definitions of the words &#8216;cruisers&#8217; and &#8216;destroyers&#8217; one after another. Then read the second paragraph and find the definition of the word &#8216;turrets&#8217;.</p></userGuidance>
+        <userGuidance xml:lang="nl"><p>Er wordt u een gespecialiseerde tekst met termen uit de zeevaart getoond. Lees de eerste paragraaf en zoek in het woordenboek de definities van de woorden &#8216;cruisers&#8217; and &#8216;destroyers&#8217; , het ene woord na het andere. Lees dan de tweede paragraaf en zoek de definitie van het woord &#8216;turrets&#8217;.</p></userGuidance>
+        <questions>
+          <likertScale display="horizontal">
+            <questionText xml:lang="en"><p>How easy or difficult was it to find the word definitions?</p></questionText>
+            <questionText xml:lang="nl"><p>Hoe makkelijk of moeilijk was het om de definities van de woorden te vinden ?</p></questionText>
+            <likertLevel number="1">
+              <label xml:lang="en">Very easy</label>
+              <label xml:lang="nl">Zeer makkelijk</label>
+              <value>1</value>
+            </likertLevel>
+            <likertLevel number="2">
+              <label xml:lang="en">Easy</label>
+              <label xml:lang="nl">Makkelijk</label>
+              <value>2</value>
+            </likertLevel>
+            <likertLevel number="3">
+              <label xml:lang="en">Neither easy or difficult</label>
+              <label xml:lang="nl">Niet makkelijk maar ook niet moeilijk</label>
+              <value>3</value>
+            </likertLevel>
+            <likertLevel number="4">
+              <label xml:lang="en">Difficult</label>
+              <label xml:lang="nl">Moeilijk</label>
+              <value>4</value>
+            </likertLevel>
+            <likertLevel number="5">
+              <label xml:lang="en">Very difficult</label>
+              <label xml:lang="nl">Zeer moeilijk</label>
+              <value>5</value>
+            </likertLevel>
+          </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" version="0" type="screenreader" />
+          <UserAgent minimumLevel="3" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files><file xlink:href="../testfiles/sc3.1.3_l3_005.html" hrefLang="en"/></files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.1_meaning-idioms" primary="yes">
+      <locations expectedResult="pass">
+        <location line="52" column="1" xpath="/h:html/h:body/h:dl"/>
+        <location line="20" column="138" xpath="/h:html/h:body/h:p[2]/h:a[1]/@href"/>
+        <location line="21" column="210" xpath="/h:html/h:body/h:p[2]/h:a[2]/@href"/>
+        <location line="22" column="4" xpath="/h:html/h:body/h:p[2]/h:a[3]/@href"/>
+        <location line="22" column="111" xpath="/h:html/h:body/h:p[2]/h:a[4]/@href"/>
+        <location line="24" column="149" xpath="/h:html/h:body/h:p[1]/h:a[1]/@href"/>
+        <location line="26" column="20" xpath="/h:html/h:body/h:p[1]/h:a[2]/@href"/>
+        <location line="27" column="49" xpath="/h:html/h:body/h:p[4]/h:a[1]/@href"/>
+        <location line="27" column="128" xpath="/h:html/h:body/h:p[4]/h:a[2]/@href"/>
+        <location line="27" column="237" xpath="/h:html/h:body/h:p[4]/h:a[3]/@href"/>
+        <location line="28" column="69" xpath="/h:html/h:body/h:p[4]/h:a[4]/@href"/>
+        <location line="29" column="79" xpath="/h:html/h:body/h:p[4]/h:a[5]/@href"/>
+        <location line="29" column="139" xpath="/h:html/h:body/h:p[4]/h:a[6]/@href"/>
+        <location line="30" column="116" xpath="/h:html/h:body/h:p[4]/h:a[7]/@href"/>
+        <location line="34" column="59" xpath="/h:html/h:body/h:p[6]/h:a[1]/@href"/>
+        <location line="34" column="168" xpath="/h:html/h:body/h:p[6]/h:a[2]/@href"/>
+        <location line="35" column="13" xpath="/h:html/h:body/h:p[6]/h:a[3]/@href"/>
+        <location line="36" column="82" xpath="/h:html/h:body/h:p[6]/h:a[4]/@href"/>
+        <location line="37" column="69" xpath="/h:html/h:body/h:p[6]/h:a[5]/@href"/>
+        <location line="41" column="47" xpath="/h:html/h:body/h:p[7]/h:a[1]/@href"/>
+        <location line="62" column="31" xpath="/h:html/h:body/h:dl/h:dd[@id='dtBridge']/h:a[1]/@href"/>
+        <location line="62" column="127" xpath="/h:html/h:body/h:dl/h:dd[@id='dtBridge']/h:a[2]/@href"/>
+      </locations>
+      <functionalOutcome><p>The user can find definitions for words in text content.</p></functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G55">G55: Linking to definitions</html:a></html:span>.</p>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H40">H40: Using definition lists</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-idioms" primary="no">
+      <locations expectedResult="pass">
+        <location line="52" column="1" xpath="/h:html/h:body/h:dl"/>
+        <location line="20" column="138" xpath="/h:html/h:body/h:p[2]/h:a[1]/@href"/>
+        <location line="21" column="210" xpath="/h:html/h:body/h:p[2]/h:a[2]/@href"/>
+        <location line="22" column="4" xpath="/h:html/h:body/h:p[2]/h:a[3]/@href"/>
+        <location line="22" column="111" xpath="/h:html/h:body/h:p[2]/h:a[4]/@href"/>
+        <location line="24" column="149" xpath="/h:html/h:body/h:p[1]/h:a[1]/@href"/>
+        <location line="26" column="20" xpath="/h:html/h:body/h:p[1]/h:a[2]/@href"/>
+        <location line="27" column="49" xpath="/h:html/h:body/h:p[4]/h:a[1]/@href"/>
+        <location line="27" column="128" xpath="/h:html/h:body/h:p[4]/h:a[2]/@href"/>
+        <location line="27" column="237" xpath="/h:html/h:body/h:p[4]/h:a[3]/@href"/>
+        <location line="28" column="69" xpath="/h:html/h:body/h:p[4]/h:a[4]/@href"/>
+        <location line="29" column="79" xpath="/h:html/h:body/h:p[4]/h:a[5]/@href"/>
+        <location line="29" column="139" xpath="/h:html/h:body/h:p[4]/h:a[6]/@href"/>
+        <location line="30" column="116" xpath="/h:html/h:body/h:p[4]/h:a[7]/@href"/>
+        <location line="34" column="59" xpath="/h:html/h:body/h:p[6]/h:a[1]/@href"/>
+        <location line="34" column="168" xpath="/h:html/h:body/h:p[6]/h:a[2]/@href"/>
+        <location line="35" column="13" xpath="/h:html/h:body/h:p[6]/h:a[3]/@href"/>
+        <location line="36" column="82" xpath="/h:html/h:body/h:p[6]/h:a[4]/@href"/>
+        <location line="37" column="69" xpath="/h:html/h:body/h:p[6]/h:a[5]/@href"/>
+        <location line="41" column="47" xpath="/h:html/h:body/h:p[7]/h:a[1]/@href"/>
+        <location line="62" column="31" xpath="/h:html/h:body/h:dl/h:dd[@id='dtBridge']/h:a[1]/@href"/>
+        <location line="62" column="127" xpath="/h:html/h:body/h:dl/h:dd[@id='dtBridge']/h:a[2]/@href"/>
+      </locations>
+      <functionalOutcome><p>The user can find definitions for words in text content.</p></functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique G55: Linking to definitions (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#G55) and to technique H40: Using definition lists (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#H40).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc3.1.3_l3_005">sc3.1.3_l3_005</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.1_meaning-idioms" primary="no">
+      <locations expectedResult="pass">
+        <location line="52" column="1" xpath="/h:html/h:body/h:dl"/>
+        <location line="20" column="138" xpath="/h:html/h:body/h:p[2]/h:a[1]/@href"/>
+        <location line="21" column="210" xpath="/h:html/h:body/h:p[2]/h:a[2]/@href"/>
+        <location line="22" column="4" xpath="/h:html/h:body/h:p[2]/h:a[3]/@href"/>
+        <location line="22" column="111" xpath="/h:html/h:body/h:p[2]/h:a[4]/@href"/>
+        <location line="24" column="149" xpath="/h:html/h:body/h:p[1]/h:a[1]/@href"/>
+        <location line="26" column="20" xpath="/h:html/h:body/h:p[1]/h:a[2]/@href"/>
+        <location line="27" column="49" xpath="/h:html/h:body/h:p[4]/h:a[1]/@href"/>
+        <location line="27" column="128" xpath="/h:html/h:body/h:p[4]/h:a[2]/@href"/>
+        <location line="27" column="237" xpath="/h:html/h:body/h:p[4]/h:a[3]/@href"/>
+        <location line="28" column="69" xpath="/h:html/h:body/h:p[4]/h:a[4]/@href"/>
+        <location line="29" column="79" xpath="/h:html/h:body/h:p[4]/h:a[5]/@href"/>
+        <location line="29" column="139" xpath="/h:html/h:body/h:p[4]/h:a[6]/@href"/>
+        <location line="30" column="116" xpath="/h:html/h:body/h:p[4]/h:a[7]/@href"/>
+        <location line="34" column="59" xpath="/h:html/h:body/h:p[6]/h:a[1]/@href"/>
+        <location line="34" column="168" xpath="/h:html/h:body/h:p[6]/h:a[2]/@href"/>
+        <location line="35" column="13" xpath="/h:html/h:body/h:p[6]/h:a[3]/@href"/>
+        <location line="36" column="82" xpath="/h:html/h:body/h:p[6]/h:a[4]/@href"/>
+        <location line="37" column="69" xpath="/h:html/h:body/h:p[6]/h:a[5]/@href"/>
+        <location line="41" column="47" xpath="/h:html/h:body/h:p[7]/h:a[1]/@href"/>
+        <location line="62" column="31" xpath="/h:html/h:body/h:dl/h:dd[@id='dtBridge']/h:a[1]/@href"/>
+        <location line="62" column="127" xpath="/h:html/h:body/h:dl/h:dd[@id='dtBridge']/h:a[2]/@href"/>
+      </locations>
+      <functionalOutcome><p>The user can find definitions for words in text content.</p></functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings><namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/></namespaceMappings>
+</testCaseDescription>

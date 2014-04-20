@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.3.5_l3_015" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing one text input field and a button to perform a spell check for the entered text.</description>
+    <title>Spell check for text input (check direct)</title>
+    <dc:creator>Daniela.Ortner@jku.at</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2006-09-14</date>
+    <status>accepted for end user evaluation</status>
+        <!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/REC-html40/interact/forms.html#h-17.4">Form input element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="script" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/REC-html40/interact/scripts.html#h-18.2.1">Form SCRIPT element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+        <!-- @@JavaScript in baseline?? -->
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>The test case is intended to pass, because a mechanisms for performing a spell check is provided.</p>
+    </purpose>
+        <expertGuidance>
+            <p/>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="S1_blin_lowv_(scr)">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where several items are already filled in, but the last one is empty. There is a spell checking facility available for the last item to support the user in avoiding typing mistakes. Please type in "salsman" (deliberately misspelled) and see whether you find it usable.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zult een formulier te zien krijgen waarin verschillende invoergegevens reeds ingevuld zijn, maar het laatste is leeg. Er is een spellingscontrole functionaliteit beschikbaar voor het laatste veld, om de gebruiker te ondersteunen bij het vermijden van typfouten. Typ het woord "salsman" (opzettelijk verkeerd gespeld) en kijk of u dit bruikbaar vindt.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was the spell checking facility usable?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was de spellingscontrole functionaliteit bruikbaar ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u hebt ondervonden. Alle opmerkingen zijn welkom!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04" name="S4_lowv(magni)">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where several items are already filled in, but the last one is empty. There is a spell checking facility available for the last item to support the user in avoiding typing mistakes. Please type in "salsman" (deliberately misspelled) and see whether you find it usable.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zult een formulier te zien krijgen waarin verschillende invoergegevens reeds ingevuld zijn, maar het laatste is leeg. Er is een spellingscontrole functionaliteit beschikbaar voor het laatste veld, om de gebruiker te ondersteunen bij het vermijden van typfouten. Typ het woord "salsman" (opzettelijk verkeerd gespeld) en kijk of u dit bruikbaar vindt.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was the spell checking facility usable?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was de spellingscontrole functionaliteit bruikbaar ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u hebt ondervonden. Alle opmerkingen zijn welkom!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="magnification software"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05" name="S5_dex_mot(altinp)">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where several items are already filled in, but the last one is empty. There is a spell checking facility available for the last item to support the user in avoiding typing mistakes. Please type in "salsman" (deliberately misspelled) and see whether you find it usable.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zult een formulier te zien krijgen waarin verschillende invoergegevens reeds ingevuld zijn, maar het laatste is leeg. Er is een spellingscontrole functionaliteit beschikbaar voor het laatste veld, om de gebruiker te ondersteunen bij het vermijden van typfouten. Typ het woord "salsman" (opzettelijk verkeerd gespeld) en kijk of u dit bruikbaar vindt.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was the spell checking facility usable?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was de spellingscontrole functionaliteit bruikbaar ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u hebt ondervonden. Alle opmerkingen zijn welkom!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="alternative input devices"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s07" name="S7_apha_adhd_cvd_deaf_dysc_dysl_fill_hhea_idis_ldis_none">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where several items are already filled in, but the last one is empty. There is a spell checking facility available for the last item to support the user in avoiding typing mistakes. Please type in "salsman" (deliberately misspelled) and see whether you find it usable.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zult een formulier te zien krijgen waarin verschillende invoergegevens reeds ingevuld zijn, maar het laatste is leeg. Er is een spellingscontrole functionaliteit beschikbaar voor het laatste veld, om de gebruiker te ondersteunen bij het vermijden van typfouten. Typ het woord "salsman" (opzettelijk verkeerd gespeld) en kijk of u dit bruikbaar vindt.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was the spell checking facility usable?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was de spellingscontrole functionaliteit bruikbaar ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u hebt ondervonden. Alle opmerkingen zijn welkom!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>ADHD</disability>
+          <disability>aphasia</disability>
+          <disability>colour vision deficiency</disability>
+          <disability>deafness</disability>
+          <disability>dyscalculus</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>hard of hearing</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+          <disability>no disability</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s08" name="S8_apha_dysc_dysl_fill_idis_ldis(talkbr)">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where several items are already filled in, but the last one is empty. There is a spell checking facility available for the last item to support the user in avoiding typing mistakes. Please type in "salsman" (deliberately misspelled) and see whether you find it usable.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zult een formulier te zien krijgen waarin verschillende invoergegevens reeds ingevuld zijn, maar het laatste is leeg. Er is een spellingscontrole functionaliteit beschikbaar voor het laatste veld, om de gebruiker te ondersteunen bij het vermijden van typfouten. Typ het woord "salsman" (opzettelijk verkeerd gespeld) en kijk of u dit bruikbaar vindt.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was the spell checking facility usable?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was de spellingscontrole functionaliteit bruikbaar ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u hebt ondervonden. Alle opmerkingen zijn welkom!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="talking browser"/>
+        </experience>
+        <disabilities>
+          <disability>aphasia</disability>
+          <disability>dyscalculus</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.3.5_l3_015.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.3_minimize-error-context-help" primary="yes">
+      <locations expectedResult="fail">
+        <location column="5" line="6" xpath="/h:html/h:head/h:script"/>
+        <location column="152" line="23" xpath="/h:html/h:body/h:form/h:div/h:input[2]/@onclick"/>
+        <location column="180" line="23" xpath="/h:html/h:body/h:form/h:div/h:input[2]/@onkeypress"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can spellcheck the text in the input field.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+                <p>(Spellchecking is mentioned in a "future technique": "Providing spell checking and suggestions for text input if applicable to the language (future link)".)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.5_minimize-error-context-help" primary="no">
+      <locations expectedResult="fail">
+                <!--@@changed from pass!!-->
+        <location column="5" line="6" xpath="/h:html/h:head/h:script"/>
+        <location column="152" line="23" xpath="/h:html/h:body/h:form/h:div/h:input[2]/@onclick"/>
+        <location column="180" line="23" xpath="/h:html/h:body/h:form/h:div/h:input[2]/@onkeypress"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can spellcheck the text in the input field.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.5.4_l3_015">sc2.5.4_l3_015</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.5_minimize-error-context-help" primary="no">
+      <locations expectedResult="pass">
+        <location column="5" line="6" xpath="/h:html/h:head/h:script"/>
+        <location column="152" line="23" xpath="/h:html/h:body/h:form/h:div/h:input[2]/@onclick"/>
+        <location column="180" line="23" xpath="/h:html/h:body/h:form/h:div/h:input[2]/@onkeypress"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can spellcheck the text in the input field.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

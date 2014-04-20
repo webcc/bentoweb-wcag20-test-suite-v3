@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="BenToWeb_TS_v3" default="validateXMLSchema" basedir=".">
+    
+    <!-- ================================= 
+          Importing libraries
+         ================================= -->
+    <import file="util/ant/tcdl11.lib.xml" />
+
+    <tstamp>
+      <format property="TODAY" pattern="yyyyMMdd" locale="be" />
+    </tstamp>
+
+    <!-- ================================= 
+          Properties
+         ================================= -->
+    <property name="status.file" value="${basedir}/status" />
+    <property name="scenarios.file" value="${basedir}/scenarios.csv" />
+    <property name="scenarios.questions.file" value="${basedir}/questions.csv" />
+    <property name="out.dir" value="${basedir}/out" />
+
+    <!-- ================================= 
+          Validating TCDL files
+         ================================= -->
+	<target name="validateXML">
+		<echo message="Validating XML files with Xerces." />
+		<xmlvalidate classname="org.apache.xerces.parsers.SAXParser"
+			classpath="${lib.dir.apache.xerces}/xercesImpl.jar:${lib.dir.apache.xerces}/xml-apis.jar"
+			failonerror="true">
+			<attribute name="http://apache.org/xml/features/validation/schema" value="true" />
+			<attribute name="http://xml.org/sax/features/namespaces" value="true" />
+			<fileset dir="metadata/" includes="*.xml" />
+		</xmlvalidate>
+	</target>
+
+    <!-- ================================= 
+          Validating TCDL files
+         ================================= -->
+	<target name="validateXMLSchema">
+		<echo message="Validating XML files with Xerces." />
+		<tcdl11.val failonerror="true">
+			<fileset dir="metadata/" includes="*.xml" />
+		</tcdl11.val>
+	</target>
+
+    <!-- ================================= 
+          Classify TCDL files
+         ================================= -->
+	<target name="classifyTCDL">
+		<echo message="Analyzing TCDL files." />
+        <echo file="${status.file}.${TODAY}.csv" append="false"
+            message="Test Case ID|TC Author|Desc of TC|Expected outcome|Status|Test Mode|Scenarios|${line.separator}" />
+        <xslt style="../XHTML1_TestSuite2/util/xslt/classifyTC.xsl"
+            basedir="metadata/" includes="*.xml" excludes="*99*.xml"
+            destdir="${out.dir}" extension=".txt"
+            filenameparameter="filename" />
+        <fixcrlf srcdir="${out.dir}" eol="lf" fixlast="true" eof="remove" />
+        <concat destfile="${status.file}.${TODAY}.csv" eol="lf" append="true">
+            <fileset dir="out/" includes="*.txt" />
+        </concat>
+        <delete dir="${out.dir}" />
+	</target>
+
+  <!-- ================================= 
+        Classify TCDL files; include technique mappings
+       ================================= -->
+	<target name="classifyTCDLwithTechniques">
+      <echo message="Analyzing TCDL files." />
+      <echo file="${status.file}.${TODAY}.techs.csv" append="false"
+          message="Test Case ID|TC Author|Desc of TC|Expected outcome|Status|Test Mode|Scenarios|Failures|General Techs|HTML Techs|CSS Techs|Script Techs|${line.separator}" />
+      <xslt style="../XHTML1_TestSuite2/util/xslt/classifyTC.xsl"
+          basedir="metadata/" includes="*.xml" excludes="*99*.xml"
+          destdir="${out.dir}" extension=".txt"
+          filenameparameter="filename">
+        <param name="techniques" expression="TRUE" />
+      </xslt>
+      <fixcrlf srcdir="${out.dir}" eol="lf" fixlast="true" eof="remove" />
+      <concat destfile="${status.file}.${TODAY}.techs.csv" eol="lf" append="true">
+          <fileset dir="out/" includes="*.txt" />
+      </concat>
+      <delete dir="${out.dir}" />
+	</target>
+
+    <!-- ================================= 
+          Scenarios and disability types
+         ================================= -->
+    <target name="classifyScenariosDisabilityType">
+        <echo message="Classifying scenarios and disability types." />
+        <copy file="../XHTML1_TestSuite2/util/scenario.header.txt" tofile="${scenarios.file}"
+    		overwrite="true" />
+        <xslt style="../XHTML1_TestSuite2/util/xslt/classifyScenarios.xsl"
+            basedir="metadata/" includes="*.xml" excludes="*99*.xml"
+            destdir="${out.dir}" extension=".txt"
+            filenameparameter="filename" />
+        <fixcrlf srcdir="${out.dir}" eol="lf" fixlast="true" eof="remove" />
+        <concat destfile="${scenarios.file}" eol="lf" append="true">
+            <fileset dir="out/" includes="*.txt">
+                <size value="1" when="more"/>
+            </fileset>
+        </concat>
+        <delete dir="${out.dir}" />
+    </target>
+
+    <!-- ================================= 
+          Scenarios, disabilities and questions types
+         ================================= -->
+    <target name="classifyScenariosDisabilityQuestionType">
+        <echo message="Classifying scenarios, disabilities and questions types." />
+        <copy file="../XHTML1_TestSuite2/util/scenario.disability.header.txt"
+            tofile="${scenarios.questions.file}" overwrite="true" />
+        <xslt style="../XHTML1_TestSuite2/util/xslt/classifyScenariosQuestions.xsl"
+            basedir="metadata/" includes="*.xml" excludes="*99*.xml"
+            destdir="${out.dir}" extension=".txt"
+            filenameparameter="filename" />
+        <fixcrlf srcdir="${out.dir}" eol="lf" fixlast="true" eof="remove" />
+        <concat destfile="${scenarios.questions.file}" eol="lf" append="true">
+            <fileset dir="out/" includes="*.txt">
+                <size value="1" when="more"/>
+            </fileset>
+        </concat>
+        <delete dir="${out.dir}" />
+    </target>
+
+  <!-- ================================= 
+        Generate mapping between TS3 and TS2 test cases
+       ================================= -->
+	<target name="mappingTS3_TS2">
+		<echo message="Analyzing TCDL files." />
+      <echo file="TS3_mapping_${TODAY}.csv" append="false"
+          message="TS3 ID|Title (TS3)|TS2 ID|${line.separator}" />
+      <xslt style="util/xslt/mappingTS3_TS2.xslt"
+          basedir="metadata/" includes="*.xml" excludes="*99*.xml"
+          destdir="${out.dir}" extension=".txt"
+          filenameparameter="filename" />
+      <fixcrlf srcdir="${out.dir}" eol="lf" fixlast="true" eof="remove" />
+      <concat destfile="TS3_mapping_${TODAY}.csv" eol="lf" append="true">
+          <fileset dir="out/" includes="*.txt" />
+      </concat>
+      <delete dir="${out.dir}" />
+	</target>
+
+</project>

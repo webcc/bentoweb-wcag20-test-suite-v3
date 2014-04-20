@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title> Help avoid mistakes and make it easy to correct them</title>
+    <!--<script type="text/javascript" src="resources/scripts/check.js">-->
+    <link rel="stylesheet" media="screen,projection" href="resources/css/sc3.3.css" type="text/css" />
+    <script type="text/javascript">
+    <!--
+function simplecheck() {
+    var errStr="Registration was not successful: \n";
+    var day = document.getElementById("id1").value;
+    var month = document.getElementById("id2").value;
+    var year = document.getElementById("id3").value;
+    var i=0;
+    var ok = true;
+
+    if (day=="") {
+      errStr = errStr + "The date is incomplete! Please fill in the 'day' (e.g. '01', '28'). \n";
+      ok = false;
+    }
+    if (month=="") {
+      errStr = errStr + "The date is incomplete! Please fill in the 'month' (e.g. '02', '11'). \n";
+      ok = false;
+    }
+    if (year=="") {
+      errStr = errStr + "The date is incomplete! Please fill in the 'year' (e.g. '1977', '2003'). \n";
+      ok = false;
+    }
+  
+	if (day!="" && !isInteger(day)) {
+		errStr = errStr + "The value for 'day' does not seem to be a number. \n";
+      	ok = false;
+	}
+	if (month!="" && !isInteger(month)) {
+		errStr = errStr + "The value for 'month' does not seem to be a number. \n";
+      	ok = false;
+	}
+	if (year!="" && !isInteger(year)) {
+		errStr = errStr + "The value for 'year' does not seem to be a number. \n";
+      	ok = false;
+	}
+    
+    if (day!="" && isInteger(day) && ((day<1)||(day>31) || day.length < 2)) {
+		errStr = errStr + "'Day' should be of format 'dd' and a value between 01 and 31 (e.g. 01, 28). \n";
+		ok = false;
+    }
+   	if (month!="" && isInteger(month) && ((month<1)||(month>12) || month.length < 2)) {
+		errStr = errStr + "'Month' should be of format 'mm' and a value between 01 and 12 (e.g. 02, 11). \n";
+		ok = false;
+    }
+    if (year!="" && isInteger(year) && ((year<1900)||(year>2050) || year.length < 4)) {
+		errStr = errStr + "'Year' should be of format 'yyyy' and a value between 1900 and 2050 (e.g. 1977, 2003). \n";
+		ok = false;
+    }
+	if (ok)	{
+		document.getElementById("form").submit();
+	} else {
+		alert(errStr);
+	}	
+
+//    old version of error feedback
+//=================================
+//    if ((month=="")||(day=="")||(year=="")) {
+//      alert("Registration was not successful: The date is incomplete! Please fill in all fields (e.g. '25/10/1999').")
+//      return;
+//    }
+//    if ((!isInteger(month))||(!isInteger(day))||(!isInteger(year))) {
+//		if (!isInteger(month)) {
+//			errStr="month";
+//			i++;
+//		}
+//		if (!isInteger(day)) {
+//			errStr+= (errStr=="")?"day":", day";
+//			i++;
+//		}
+//		if (!isInteger(year)) {
+//			errStr+= (errStr=="")?"year":", year";
+//			i++;
+//		}
+//		if (i==1)
+//			alert("Registration was not successful: "+errStr+" does not seem to be a number.");
+//		if (i>1)
+//			alert("Registration was not successful: "+errStr+" do not seem to be numbers.");
+//		return; 
+//    }
+//	var ok = true;
+//    if ((day<1)||(day>31) || day.length < 2) {
+//		alert("Registration was not successful: day should be of format 'dd' and a value between 01 and 31 (e.g. 01, 28).");
+//		ok = false;
+//    }
+//        if ((month<1)||(month>12) || month.length < 2) {
+//		alert("Registration was not successful: month should be of format 'mm' and a value between 01 and 12 (e.g. 02, 11).");
+//		ok = false;
+//    }
+//    if ((year<1900)||(year>2050) || year.length < 4) {
+//		alert("Registration was not successful: year should be of format 'yyyy' and a value between 1900 and 2050 (e.g. 1977, 2003).");
+//		ok = false;
+//    }
+//	if (ok)	
+//		document.getElementById("form").submit();
+
+}
+
+function isInteger(s){
+	var i;
+    for (i = 0; i < s.length; i++){
+        // Check that current character is number.
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    // All characters are numbers.
+    return true;
+}  
+	//-->
+    </script>
+  </head>
+  <body>
+   <h1>Registration</h1>
+	 <p>Fields marked with an asterisk (*) are mandatory.</p>
+    <form action="processformdummy.html" method="post" id="form">
+    <div>
+       <label class="leftcollarge" for="first">First name * : </label><input readonly="readonly" type="text" id="first" value="John" /><br />
+       <label class="leftcollarge" for="last">Last name * : </label><input readonly="readonly" type="text" id="last" value="Smith" /><br />
+       <div class="leftcollarge">
+	    	Date 
+		    <label for="id1">(dd/</label><label for="id2">mm/</label><label for="id3">yyyy)</label> * :
+		</div>
+		<input type="text" name="day" id="id1" size="1" maxlength="2" />
+	    <input type="text" name="month" id="id2" size="1" maxlength="2" />
+    	<input type="text" name="year" id="id3" size="2" maxlength="4" /><br />
+		<div class="space"><input type="button" value="submit" onclick="simplecheck()"  /><br/></div>
+	</div>
+    </form>
+  </body>
+
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2006
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+</html>

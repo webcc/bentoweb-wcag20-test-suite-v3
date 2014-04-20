@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc3.1.3_l3_003" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with text in English where a few words or phrases are used in an unusual or restricted way. 
+      The <html:code>head</html:code> element contains a <html:code>link</html:code> element that references a glossary where these terms are explained. 
+      Some user agents use this <html:code>link </html:code> element to generate an additional (navigation) bar that enables the user to access the glossary.
+    </description>
+    <title>Text with link to external glossary for words used in unusual or restricted way</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-01</date>
+    <status>accepted for end user evaluation</status><!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="link" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#edef-LINK">Document relationships: the <html:code>link</html:code> element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="link" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/types.html#type-links">Link types</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because there is a link to a glossary for the words that are used in an unusual or restricted way. 
+        However, browser support for the <html:code>link</html:code> element will determine if a user can access the glossary.
+      </p>
+    </purpose>
+    <expertGuidance>
+      <p>Check whether there is a mechanism available for identifying specific definitions of words or phases used in an unusual or restricted way.</p>
+    </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+              <p>Can you find a definition for the term multimedia?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kunt U een definitie vinden voor multimedia?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en"><p /></optionOther>
+            <optionOther xml:lang="nl"><p /></optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" version="0" type="screenreader" />
+          <UserAgent minimumLevel="1" type="browser" product="Mozilla" />
+          <UserAgent minimumLevel="1" version="7" type="browser" product="Opera" />
+          <UserAgent minimumLevel="1" version="8" type="browser" product="Opera" />
+          <UserAgent minimumLevel="1" version="9" type="browser" product="Opera" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc3.1.3_l3_003.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.1_meaning-idioms" primary="yes">
+      <locations expectedResult="cannotTell">
+        <location line="7" column="7" xpath="/h:html/h:head/h:link[@rel='Glossary']/@href" />
+      </locations>
+      <functionalOutcome>
+        <p>The user can find definitions of technical terms.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>Whether the user can find the link to the glossary (defined by the <html:code>link</html:code> element) really depends on the user agent.
+          Mozilla 1.7.3, SeaMonkey, Opera 7.54 and Opera 9.02 support this type of links; Internet Explorer 6.0, 7.O (and earlier versions) and Firefox 2.0 (and earlier versions) don't.
+          (Firefox add-ons MetaTags (https://addons.mozilla.org/firefox/1668/) and
+           cmSiteNavigationToolbar (https://addons.mozilla.org/firefox/1324/) can display this type of links.
+           There is a &lt;Link&gt; toolbar for Internet Explorer 5.0 or higher at http://www.draig.de/LinkBar/index.en.html.)
+        </p>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H60">H60: Using the link element to link to a glossary</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-idioms" primary="no">
+      <locations expectedResult="cannotTell">
+        <location line="7" column="7" xpath="/h:html/h:head/h:link[@rel='Glossary']/@href" />
+      </locations>
+      <functionalOutcome>
+        <p>The user can find definitions of technical terms.
+          (The test case needs further testing.)
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>Whether the user can find the link to the glossary (defined by the <html:code>link</html:code> element) really depends on the user agent.
+          Mozilla 1.7.3, SeaMonkey, Opera 7.54 and Opera 9.02 support this type of links; Internet Explorer 6.0, 7.O (and earlier versions) and Firefox 2.0 (and earlier versions) don't.
+          (Firefox add-ons MetaTags (https://addons.mozilla.org/firefox/1668/) and
+           cmSiteNavigationToolbar (https://addons.mozilla.org/firefox/1324/) can display this type of links.
+           There is a &lt;Link&gt; toolbar for Internet Explorer 5.0 or higher at http://www.draig.de/LinkBar/index.en.html.)
+        </p>
+        <p>This test case maps to technique H60: Using the link element to link to a glossary (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#H60).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc3.1.3_l3_003">sc3.1.3_l3_003</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.1_meaning-idioms" primary="no">
+      <locations expectedResult="cannotTell">
+        <location line="7" column="7" xpath="/h:html/h:head/h:link[@rel='Glossary']/@href" />
+      </locations>
+      <functionalOutcome>
+        <p>The user can find definitions of technical terms.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Whether the user can find the link to the glossary (defined by the <html:code>link</html:code> element) really depends on the user agent.
+          Mozilla 1.7.3 and Opera 7.54 support this type of links; Internet Explorer and Firefox 1.0 don't.
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

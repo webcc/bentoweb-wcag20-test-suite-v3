@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc4.1.2_l1_206" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with a simple search form. The search form contains a text field (with a label) and a pulldown menu. The pulldown menu (created with a <html:code>select</html:code> element) has a <html:code>title</html:code> attribute that identifies it. 
+      (The <html:code>title</html:code> attribute is used instead of the <html:code>label</html:code> element because the pulldown menu is immediately adjacent to the text field.) All the user interface components are created with standard <html:acronym>XHTML</html:acronym> without scripting.
+    </description>
+    <title>Name, role and value for pulldown menu in form [new]</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2007-08-24</date>
+    <status>validated</status><!--V_20071214-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/" baseline="included">
+      <label>
+        <html:acronym>XHTML</html:acronym>&#8482; 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="select" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#edef-SELECT">The <html:code>select</html:code>, <html:code>optgroup</html:code>, and <html:code>option</html:code> elements</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="title" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#adef-title">The <html:code>title</html:code> attribute</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/" baseline="excluded">
+      <label>Cascading Style Sheets, level 2: <html:acronym>CSS</html:acronym>2 Specification</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test case is intended to pass because the <html:code>select</html:code> element has a <html:code>title</html:code> attribute that describes its purpose.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc4.1.2_l1_206.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_4.1_ensure-compat-rsv" primary="yes">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>Users of assistive technology can determine the title of the pulldown menu.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G108">G108: Using markup features to expose the name and role, allow user-settable properties to be directly set, and provide notification of changes</html:a></html:span>
+         and to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H65">H65: Using the title attribute to identify form controls when the label element cannot be used</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <!-- namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings-->
+</testCaseDescription>

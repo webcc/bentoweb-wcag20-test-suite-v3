@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc4.1.1_l1_001" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>An <html:acronym>XHTML</html:acronym> file that is not well-formed because the <html:code>em</html:code> and <html:code>strong</html:code> elements overlap while they should nest.
+      This makes the structure ambiguous and might cause problems, for example for <html:acronym>IBM</html:acronym> Home Page Reader (see '<html:acronym>HTML</html:acronym> 4.01 validity errors' at http://www.w3.org/2005/Talks/0908-wcag/validity-errors.html.
+      (As a consequence of this ambiguity, some user agents may render the order of the words in the sentence in an order that does not make sense.)
+    </description>
+    <title>Well-formedness error: overlapping elements</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-10-04</date>
+    <status>validated</status><!--@@migrated 2007-11-27-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="em" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/2002/REC-xhtml1-20020801/#h-4.1">Documents must be well-formed</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="strong" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/2002/REC-xhtml1-20020801/#h-4.1">Documents must be well-formed</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because the markup is ambiguous and may cause problems for assistive technologies.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario IBM HPR">
+        <userGuidance xml:lang="en">
+          <p>Please set your browser so that maximum information about the presentation of text is available.</p>
+        </userGuidance>
+        <questions>
+          <openQuestion>
+            <questionText xml:lang="en">
+              <p>Which words are presented in italic, which in bold?</p>
+            </questionText>
+            <space>
+              <rows>5</rows>
+              <columns>10</columns>
+            </space>
+          </openQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="talking browser" product="IBM Home Page Reader" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario other SR">
+        <userGuidance xml:lang="en">
+          <p>Please set your screen reader so that maximum information about the presentation of text is available.</p>
+        </userGuidance>
+        <questions>
+          <openQuestion>
+            <questionText xml:lang="en">
+              <p>Which words are presented in italic and which in bold?</p>
+            </questionText>
+            <space>
+              <rows>5</rows>
+              <columns>10</columns>
+            </space>
+          </openQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader" />
+          <UserAgent minimumLevel="2" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario braille display">
+        <userGuidance xml:lang="en">
+          <p>Please set your braille display/screen reader so that maximum information about the presentation of text is available.</p>
+        </userGuidance>
+        <questions>
+          <openQuestion>
+            <questionText xml:lang="en">
+              <p>Which words are presented in italic and which in bold?</p>
+            </questionText>
+            <space>
+              <rows>5</rows>
+              <columns>10</columns>
+            </space>
+          </openQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="Braille display" />
+          <UserAgent minimumLevel="2" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>deaf-blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc4.1.1_l1_001.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_4.1_ensure-compat-parses" primary="yes">
+      <locations expectedResult="fail">
+        <location line="9" column="15" xpath="/h:html/h:body/h:p/h:em/h:strong" />
+      </locations>
+      <functionalOutcome>
+        <p>The syntax of the document is not correct; the content may be rendered in an incorrect order.
+          <html:acronym>IBM</html:acronym> Home Page Reader 3.0 reads: <html:q>If you have nothing then don't say it to say</html:q>.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The document is not well-formed: the <html:code>strong</html:code> element is not completely nested inside the <html:code>em</html:code> element.
+          See 'Common <html:acronym>HTML</html:acronym> 4.01 validity errors and their effect on accessibility' at http://www.w3.org/2005/Talks/0908-wcag/validity-errors.html
+          and 'Tag Soup: How <html:acronym>UA</html:acronym>s handle &lt;x&gt; &lt;y&gt; &lt;/x&gt; &lt;/y&gt;' at http://ln.hixie.ch/?start=1037910467&amp;count=1.
+        </p>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F70">F70: Failure of SC 4.1.1 due to incorrect use of start and end tags or attribute markup</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_4.1_ensure-compat-parses" primary="no">
+      <locations expectedResult="fail">
+        <location line="9" column="15" xpath="/h:html/h:body/h:p/h:em/h:strong" />
+      </locations>
+      <functionalOutcome>
+        <p>The syntax of the document is not correct; the content may be rendered in an incorrect order.
+          <html:acronym>IBM</html:acronym> Home Page Reader 3.0 reads: <html:q>If you have nothing then don't say it to say</html:q>.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc4.1.1_l1_001">sc4.1.1_l1_001</html:a></html:span>.</p>
+        <p>The document is not well-formed: the <html:code>strong</html:code> element is not completely nested inside the <html:code>em</html:code> element.
+          See 'Common <html:acronym>HTML</html:acronym> 4.01 validity errors and their effect on accessibility' at http://www.w3.org/2005/Talks/0908-wcag/validity-errors.html
+          and 'Tag Soup: How <html:acronym>UA</html:acronym>s handle &lt;x&gt; &lt;y&gt; &lt;/x&gt; &lt;/y&gt;' at http://ln.hixie.ch/?start=1037910467&amp;count=1.
+        </p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050211_internal_4.1_use-spec-avoid-spec-no-exception" primary="no">
+      <locations expectedResult="fail">
+        <location line="9" column="15" xpath="/h:html/h:body/h:p/h:em/h:strong" />
+      </locations>
+      <functionalOutcome>
+        <p>The syntax of the document is not correct; the content may be rendered in an incorrect order.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The document is not well-formed: the <html:code>strong</html:code> element is not completely nested inside the <html:code>em</html:code> element.
+          See 'Common <html:acronym>HTML</html:acronym> 4.01 validity errors and their effect on accessibility' at http://www.w3.org/2005/Talks/0908-wcag/validity-errors.html
+          and 'Tag Soup: How <html:acronym>UA</html:acronym>s handle &lt;x&gt; &lt;y&gt; &lt;/x&gt; &lt;/y&gt;' at http://ln.hixie.ch/?start=1037910467&amp;count=1.
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

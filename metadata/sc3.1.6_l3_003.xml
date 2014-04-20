@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.1.6_l3_003" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A web page that contains a sentence where the meaning of the word ‘row’? can be determined with the provided pronunciation information (provided with simple Ruby annotation).
+      In user agents that support Ruby (and <html:acronym>XHTML</html:acronym> 1.1), the pronunciation is displayed alongside the annotated word in a smaller font. 
+    </description>
+    <title>Ambiguous word (homograph) with pronunciation information in simple Ruby annotation (<html:acronym>XHTML</html:acronym> 1.1)</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2006-08-30</date>
+    <status>accepted for end user evaluation</status>
+        <!--@@migrated 2007-11-27-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml11/">
+            <label>
+                <html:acronym>XHTML</html:acronym>™ 1.1 - Module-based <html:acronym>XHTML</html:acronym>
+            </label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/ruby/">
+            <label>Ruby Annotation</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because pronunciation information is provided.</p>
+    </purpose>
+        <expertGuidance>
+            <p>Check whether you can identify the meaning of the word ‘row&#8217;? (without knowing the pronunciation).</p>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+        <questions>
+                    <multipleChoice display="horizontal" select="one">
+            <questionText xml:lang="en">
+                            <p>What were the people doing when they were asked the time?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>What waren de mensen aan het doen toen hun gevraagd werd hoe laat het was ?</p>
+            </questionText>
+                        <choice>
+                            <label xml:lang="en">Having a fight</label>
+                            <label xml:lang="nl">Aan het vechten</label>
+                            <value>-1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">Moving a boat</label>
+                            <label xml:lang="nl">Een boot aan het verplaatsen</label>
+                            <value>-2</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">I do not know</label>
+                            <label xml:lang="nl">Ik weet het niet</label>
+                            <value>-3</value>
+                        </choice>
+                    </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2"
+                        type="screenreader" version="0"/>
+          <UserAgent minimumLevel="1" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.1.6_l3_003.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.1_meaning-pronunciation" primary="yes">
+      <locations expectedResult="pass">
+        <location column="60" line="9" xpath="/h:html/h:body/h:p/h:ruby/h:rt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can determine ‘row�? here means ‘line, queue&#8217;? and not ‘noisy argument, quarrel&#8217;?.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H62">H62: Using the ruby element</html:a></html:span>.</p>
+        <p>For more heteronyms see <html:span><html:a href="http://www-personal.umich.edu/~cellis/heteronym.html">The Heteronym Page</html:a></html:span>.</p>
+        <p>The example is inspired by http://archive.tivocommunity.com/tivo-vb/history/topic/51900-1.html. See also <html:span><html:a href="http://www.websters-online-dictionary.org/definition/row">‘row&#8217; in Webster's online dictionary</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-pronunciation" primary="no">
+      <locations expectedResult="pass">
+        <location column="60" line="9" xpath="/h:html/h:body/h:p/h:ruby/h:rt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The user can determine ‘row�? here means ‘line, queue&#8217;? and not ‘noisy argument, quarrel&#8217;?.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc3.1.6_l3_003">sc3.1.6_l3_003</html:a></html:span>.</p>
+        <p>This test case maps to technique H62: Using the ruby element (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#H62).</p>
+        <p>For more heteronyms see <html:span><html:a href="http://www-personal.umich.edu/~cellis/heteronym.html">The Heteronym Page</html:a></html:span>.</p>
+        <p>The example is inspired by http://archive.tivocommunity.com/tivo-vb/history/topic/51900-1.html. See also <html:span><html:a href="http://www.websters-online-dictionary.org/definition/row">‘row&#8217; in Webster's online dictionary</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

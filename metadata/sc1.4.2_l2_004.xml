@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc1.4.2_l2_004" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing a reference to sound via the object element being inserted via scripting plus a stop button.</description>
+    <title>Background sound with object element via scripting plus a stop button</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-11</date>
+    <status>pending bugfix</status><!-- button does not stop background sound?! -->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="object" namespace=""/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-OBJECT"/>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">
+      <label>Standard <html:acronym>ECMA</html:acronym>-262: <html:acronym>ECMA</html:acronym>Script Language Specification</label>
+    </recommendation><!-- @@@baseline! -->
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test is intended to pass because the sound can be stopped by activating the HTML 'stop background music' button.</p>
+    </purpose>
+    <expertGuidance>
+      <p>The browser must be JavaScript-enabled.</p>
+    </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc1.4.2_l2_004.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.4_visual-audio-contrast-dis-audio" primary="yes">
+      <locations expectedResult="pass">
+        <location line="17" column="38" xpath="/h:html/h:body/h:p/h:script"/>
+        <location xpath="/h:html/h:body/h:p/h:object"/>
+        <location xpath="/h:html/h:body/h:p/h:input"/>
+        <location line="6" column="36" xpath="/h:html/h:head/h:script"/>
+      </locations>
+      <functionalOutcome>
+        <p>Background sound can be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element plays a sound that can be stopped by activating the stop button.
+        </p>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+      </techComment>
+    </rule>
+    <rule primary="no" id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.4_visual-audio-contrast-dis-audio">
+      <locations expectedResult="pass">
+        <location line="17" column="38" xpath="/h:html/h:body/h:p/h:script"/>
+        <location xpath="/h:html/h:body/h:p/h:object"/>
+        <location xpath="/h:html/h:body/h:p/h:input"/>
+        <location line="6" column="36" xpath="/h:html/h:head/h:script"/>
+      </locations>
+      <functionalOutcome>
+        <p>Background sound can be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element plays a sound that can be stopped by activating the stop button.
+        </p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.4.2_l2_004">sc1.4.2_l2_004</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.4_visual-audio-contrast-dis-audio" primary="no">
+      <locations expectedResult="pass">
+        <location line="17" column="38" xpath="/h:html/h:body/h:p/h:script"/>
+        <location xpath="/h:html/h:body/h:p/h:object"/>
+        <location xpath="/h:html/h:body/h:p/h:input"/>
+        <location line="6" column="36" xpath="/h:html/h:head/h:script"/>
+      </locations>
+      <functionalOutcome>
+        <p>Background sound can be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element plays a sound that can be stopped by activating the stop button.
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

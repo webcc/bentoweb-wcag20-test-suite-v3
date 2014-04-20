@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.1.2_l2_009" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+    <!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>A page with German content that contains a logo with a text alternative in English. 
+      The English text alternative of the image is provided in the <html:code>alt</html:code> attribute of the <html:code>img</html:code> element, which also has a <html:code>lang</html:code> attribute with the value "en" for English.
+    </description>
+    <title>Correct language identification for English text alternative for image in German text</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-09-01</date>
+    <status>validated</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="lang" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/dirlang.html#adef-lang">Specifying the language of content: the <html:code>lang</html:code> attribute</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because the language of the (English) text alternative of the image is correctly identified.</p>
+    </purpose>
+        <expertGuidance>
+            <p>Check whether the change in human language for the alt attribute of the image is correctly identified.</p>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.1.2_l2_009.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.1_meaning-other-lang-id" primary="yes">
+      <locations expectedResult="pass">
+        <location column="9" line="10" xpath="/:html/:body/:p[2]/:img[1]/@lang"/>
+      </locations>
+      <functionalOutcome>
+        <p>The browser can determine the human language of the text alternative for the image in the document.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H58">H58: Using language attributes to identify changes in the human language</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-other-lang-id" primary="no">
+      <locations expectedResult="pass">
+        <location column="9" line="10" xpath="/:html/:body/:p[2]/:img[1]/@lang"/>
+      </locations>
+      <functionalOutcome>
+        <p>The browser can determine the natural language of the text alternative for the image in the document.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique H58: Using the lang attribute to identify changes in the natural language (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#H58).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc3.1.2_l2_009">sc3.1.2_l2_009</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.1_meaning-other-lang-id" primary="no">
+      <locations expectedResult="pass">
+        <location column="9" line="10" xpath="/:html/:body/:p[2]/:img[1]/@lang"/>
+      </locations>
+      <functionalOutcome>
+        <p>The browser can determine the natural language of the text alternative for the image in the document.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

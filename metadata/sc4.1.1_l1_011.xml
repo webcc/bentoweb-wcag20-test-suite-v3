@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc4.1.1_l1_011" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>An <html:acronym>XHTML</html:acronym> file that is well-formed but not valid: although the markup is structurally correct, the ID values for the header cells in <html:code>thead</html:code> (table header) are illegal because they start with a number instead of a letter or underscore.
+      It cannot be predicted how assistive technology responds to this. However, since the header cells define their scope by means of the <html:code>scope</html:code> attribute, assistive technologies should not have problems to find the associations between data cells and their headers.
+    </description>
+    <title>Validity error: ID attributes start with number</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-10-05</date>
+    <status>accepted for end user evaluation</status>
+        <!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="table" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/2002/REC-xhtml1-20020801/#strict">Strictly Conforming Documents</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>This is a test case is intended to pass
+                <!-- even though the file is well-formed but invalid. However, it is not clear if this causes problems for assistive tecnologies -->.</p>
+    </purpose>
+        <expertGuidance>
+            <p/>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>experts</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+        <questions>
+                    <multipleChoice display="horizontal" select="multiple">
+            <questionText xml:lang="nl">
+                            <p>Als U navigeert door de tabel, kunt U dan vinden wat rij- en kolomtitels zijn voor iedere cel</p>
+            </questionText>
+            <questionText xml:lang="en">
+                            <p>When navigating around the table, can you find out what the row and column headers are for each cell?</p>
+            </questionText>
+                        <choice>
+                            <label xml:lang="en">Yes</label>
+                            <label xml:lang="nl">Ja</label>
+                            <value>1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">No</label>
+                            <label xml:lang="nl">Nee</label>
+                            <value>-1</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">Did not find any row or column headers.</label>
+                            <label xml:lang="nl">Ik heb geen rij- of kolomtitels gevonden.</label>
+                            <value>-2</value>
+                        </choice>
+                        <choice>
+                            <label xml:lang="en">Don't understand the question.</label>
+                            <label xml:lang="nl">Ik begrijp de vraag niet.</label>
+                            <value>-3</value>
+                        </choice>
+                    </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader"/>
+          <UserAgent minimumLevel="3" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc4.1.1_l1_011.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_4.1_ensure-compat-parses" primary="yes">
+      <locations expectedResult="pass">
+        <location column="23" line="19" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[1]/@id"/>
+        <location column="23" line="20" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[2]/@id"/>
+        <location column="23" line="21" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[3]/@id"/>
+        <location column="23" line="22" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[4]/@id"/>
+        <location column="11" line="27" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:th/@headers"/>
+        <location column="11" line="28" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:td[1]/@headers"/>
+        <location column="11" line="29" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:td[2]/@headers"/>
+        <location column="11" line="30" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:td[3]/@headers"/>
+        <location column="11" line="33" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:th/@headers"/>
+        <location column="11" line="34" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:td[1]/@headers"/>
+        <location column="11" line="35" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:td[2]/@headers"/>
+        <location column="11" line="36" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:td[3]/@headers"/>
+        <location column="11" line="39" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:th/@headers"/>
+        <location column="11" line="40" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:td[1]/@headers"/>
+        <location column="11" line="41" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:td[2]/@headers"/>
+        <location column="11" line="42" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:td[3]/@headers"/>
+        <location column="11" line="45" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:th/@headers"/>
+        <location column="11" line="46" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:td[1]/@headers"/>
+        <location column="11" line="47" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:td[2]/@headers"/>
+        <location column="11" line="48" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:td[3]/@headers"/>
+        <location column="11" line="51" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:th/@headers"/>
+        <location column="11" line="52" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:td[1]/@headers"/>
+        <location column="11" line="53" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:td[2]/@headers"/>
+        <location column="11" line="54" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:td[3]/@headers"/>
+        <location column="11" line="57" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:th/@headers"/>
+        <location column="11" line="58" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:td[1]/@headers"/>
+        <location column="11" line="59" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:td[2]/@headers"/>
+        <location column="11" line="60" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:td[3]/@headers"/>
+        <location column="11" line="63" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:th/@headers"/>
+        <location column="11" line="64" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:td[1]/@headers"/>
+        <location column="11" line="65" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:td[2]/@headers"/>
+        <location column="11" line="66" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:td[3]/@headers"/>
+      </locations>
+      <functionalOutcome>
+        <p>Depending on the browser or assistive technology, the user may not be able to find the row and column headers when navigating through the cells of the table.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_4.1_ensure-compat-parses" primary="no">
+      <locations expectedResult="pass">
+                <!--@@changed from fail!!-->
+        <location column="23" line="19" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[1]/@id"/>
+        <location column="23" line="20" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[2]/@id"/>
+        <location column="23" line="21" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[3]/@id"/>
+        <location column="23" line="22" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[4]/@id"/>
+        <location column="11" line="27" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:th/@headers"/>
+        <location column="11" line="28" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:td[1]/@headers"/>
+        <location column="11" line="29" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:td[2]/@headers"/>
+        <location column="11" line="30" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:td[3]/@headers"/>
+        <location column="11" line="33" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:th/@headers"/>
+        <location column="11" line="34" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:td[1]/@headers"/>
+        <location column="11" line="35" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:td[2]/@headers"/>
+        <location column="11" line="36" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:td[3]/@headers"/>
+        <location column="11" line="39" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:th/@headers"/>
+        <location column="11" line="40" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:td[1]/@headers"/>
+        <location column="11" line="41" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:td[2]/@headers"/>
+        <location column="11" line="42" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:td[3]/@headers"/>
+        <location column="11" line="45" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:th/@headers"/>
+        <location column="11" line="46" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:td[1]/@headers"/>
+        <location column="11" line="47" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:td[2]/@headers"/>
+        <location column="11" line="48" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:td[3]/@headers"/>
+        <location column="11" line="51" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:th/@headers"/>
+        <location column="11" line="52" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:td[1]/@headers"/>
+        <location column="11" line="53" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:td[2]/@headers"/>
+        <location column="11" line="54" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:td[3]/@headers"/>
+        <location column="11" line="57" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:th/@headers"/>
+        <location column="11" line="58" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:td[1]/@headers"/>
+        <location column="11" line="59" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:td[2]/@headers"/>
+        <location column="11" line="60" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:td[3]/@headers"/>
+        <location column="11" line="63" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:th/@headers"/>
+        <location column="11" line="64" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:td[1]/@headers"/>
+        <location column="11" line="65" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:td[2]/@headers"/>
+        <location column="11" line="66" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:td[3]/@headers"/>
+      </locations>
+      <functionalOutcome>
+        <p>Depending on the browser or assistive technology, the user may not be able to find the row and column headers when navigating through the cells of the table.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc4.1.1_l1_011">sc4.1.1_l1_011</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050211_internal_4.1_use-spec-avoid-spec-no-exception" primary="no">
+      <locations expectedResult="fail">
+        <location column="23" line="19" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[1]/@id"/>
+        <location column="23" line="20" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[2]/@id"/>
+        <location column="23" line="21" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[3]/@id"/>
+        <location column="23" line="22" xpath="/h:html/h:body/h:table/h:thead/h:tr/h:th[4]/@id"/>
+        <location column="11" line="27" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:th/@headers"/>
+        <location column="11" line="28" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:td[1]/@headers"/>
+        <location column="11" line="29" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:td[2]/@headers"/>
+        <location column="11" line="30" xpath="/h:html/h:body/h:table/h:tbody/h:tr[1]/h:td[3]/@headers"/>
+        <location column="11" line="33" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:th/@headers"/>
+        <location column="11" line="34" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:td[1]/@headers"/>
+        <location column="11" line="35" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:td[2]/@headers"/>
+        <location column="11" line="36" xpath="/h:html/h:body/h:table/h:tbody/h:tr[2]/h:td[3]/@headers"/>
+        <location column="11" line="39" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:th/@headers"/>
+        <location column="11" line="40" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:td[1]/@headers"/>
+        <location column="11" line="41" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:td[2]/@headers"/>
+        <location column="11" line="42" xpath="/h:html/h:body/h:table/h:tbody/h:tr[3]/h:td[3]/@headers"/>
+        <location column="11" line="45" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:th/@headers"/>
+        <location column="11" line="46" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:td[1]/@headers"/>
+        <location column="11" line="47" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:td[2]/@headers"/>
+        <location column="11" line="48" xpath="/h:html/h:body/h:table/h:tbody/h:tr[4]/h:td[3]/@headers"/>
+        <location column="11" line="51" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:th/@headers"/>
+        <location column="11" line="52" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:td[1]/@headers"/>
+        <location column="11" line="53" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:td[2]/@headers"/>
+        <location column="11" line="54" xpath="/h:html/h:body/h:table/h:tbody/h:tr[5]/h:td[3]/@headers"/>
+        <location column="11" line="57" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:th/@headers"/>
+        <location column="11" line="58" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:td[1]/@headers"/>
+        <location column="11" line="59" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:td[2]/@headers"/>
+        <location column="11" line="60" xpath="/h:html/h:body/h:table/h:tbody/h:tr[6]/h:td[3]/@headers"/>
+        <location column="11" line="63" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:th/@headers"/>
+        <location column="11" line="64" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:td[1]/@headers"/>
+        <location column="11" line="65" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:td[2]/@headers"/>
+        <location column="11" line="66" xpath="/h:html/h:body/h:table/h:tbody/h:tr[7]/h:td[3]/@headers"/>
+      </locations>
+      <functionalOutcome>
+        <p>Depending on the browser or assistive technology, the user may not be able to find the row and column headers when navigating through the cells of the table.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

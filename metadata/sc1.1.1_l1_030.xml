@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.1.1_l1_030" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with an image that represents a map of the Mediterranean in 180 <html:acronym>AD</html:acronym>. 
+      The document contains an <html:code>object</html:code> element that embeds the map in <html:acronym>GIF</html:acronym> format; inside the <html:code>object</html:code> element is an <html:code>img</html:code> element that embeds the same map in <html:acronym>JPEG</html:acronym> format.
+      The <html:code>img</html:code> element has an <html:code>alt</html:code> attribute, a <html:code>title</html:code> attribute but no <html:code>longdesc</html:code> attribute.
+      The <html:code>alt</html:code> attribute identifies the image but the image is too complex to be described in an attribute.
+      There is a long description inside the <html:code>object</html:code> element that identifies the image and conveys the same information.</description>
+    <title>Long description for complex image: image inside object; no longdesc that refers to long description inside object</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-08-30</date>
+    <status>validated</status>
+        <!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="object" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#h-13.3">General Inclusion: The <html:code>object</html:code> element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="img" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#adef-alt">How to specify alternate text</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because the <html:code>alt</html:code> attribute provides a short description but 
+        the long description (which contains an appropriate text alternative) is located <html:em>inside</html:em> the <html:code>object</html:code> element that loads the map. 
+        
+                
+                <!-- Poor support for the <html:code>object</html:code> element in some browsers may cause problems, especially because the long description is <html:em>inside</html:em> the <html:code>object</html:code> element.  -->
+        This test is for the long description rather than the <html:code>alt</html:code> attribute.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s05" name="Scenario s05 blind speech IE7">
+        <questions>
+          <yesNoQuestion>
+            <questionText xml:lang="en">
+                            <p>Were you able to access the long description of the map?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p/>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien er problemen waren met het benaderen van de lange beschrijving, omschrijf ze aub.</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If there were problems in accessing the long description, please describe them.</p>
+            </optionOther>
+          </yesNoQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2"
+                        product="Microsoft Internet Explorer"
+                        type="browser" version="7.0"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.1.1_l1_030.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.1_text-equiv-all" primary="yes">
+      <locations expectedResult="fail">
+                <!--@@changed from cannotTell!!-->
+        <location column="60" line="12" xpath="/h:html/h:body/h:div[1]/h:object[1]/h:img/@alt"/>
+        <location column="79" line="11" xpath="/h:html/h:body/h:div[1]/h:object[1]/"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has a short text description as well as a long one.
+          User testing provided the following results: users of screenreaders with Internet Explorer 6 or Firefox had problems accessing the long description of the map.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has an <html:code>alt</html:code> attribute and a <html:code>longdesc</html:code> attribute.</p>
+                <p>This test is identical to sc1.1.1_l1_029 but the long description inside the <html:code>object</html:code> element is no longer linked by means of the <html:code>longdesc</html:code> attribute.
+          Since browsers do not necessarily provide access to the content of the <html:code>object</html:code> if the object can be displayed, 
+          it is not certain that the long description is available to users.
+        </p>
+                <p>(Internet Explorer 6.0 does not support <html:code>object</html:code> and is supposed to display the fallback image, but refuses.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.1_text-equiv-all" primary="no">
+      <locations expectedResult="fail">
+                <!--@@changed from cannotTell!!-->
+        <location column="60" line="12" xpath="/h:html/h:body/h:div[1]/h:object[1]/h:img/@alt"/>
+        <location column="79" line="11" xpath="/h:html/h:body/h:div[1]/h:object[1]/"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has a short text description as well as a long one.
+          User testing provided the following results: users of screenreaders with Internet Explorer 6 or Firefox had problems accessing the long description of the map.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has an <html:code>alt</html:code> attribute and a <html:code>longdesc</html:code> attribute.</p>
+                <p>This test is identical to sc1.1.1_l1_029 but the long description inside the <html:code>object</html:code> element is no longer linked by means of the <html:code>longdesc</html:code> attribute.
+          Since browsers do not necessarily provide access to the content of the <html:code>object</html:code> if the object can be displayed, 
+          it is not certain that the long description is available to users.
+        </p>
+                <p>(Internet Explorer 6.0 does not support <html:code>object</html:code> and is supposed to display the fallback image, but refuses.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.1_text-equiv-informative" primary="no">
+      <locations expectedResult="cannotTell">
+        <location column="60" line="12" xpath="/h:html/h:body/h:div[1]/h:object[1]/h:img/@alt"/>
+        <location column="79" line="11" xpath="/h:html/h:body/h:div[1]/h:object[1]/"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has a short text description as well as a long one.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has an <html:code>alt</html:code> attribute and a <html:code>longdesc</html:code> attribute.</p>
+                <p>This test is identical to xhtml1_wcag2_20050630_1.1_l1_sc1_029 but the long description inside the <html:code>object</html:code> element is no longer linked by means of the <html:code>longdesc</html:code> attribute.
+          Since browsers do not necessarily provide access to the content of the <html:code>object</html:code> if the object can be displayed, 
+          it is not certain that the long description is available to users.
+        </p>
+                <p>(Internet Explorer 6.0 does not support <html:code>object</html:code> and is supposed to display the fallback image, but refuses.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050211_internal_4.1_use-spec-document-backward-compat-violations" primary="no">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The image has a text description.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has an <html:code>alt</html:code> attribute with appropriate alternative text and therefore the <html:code>img</html:code> element is valid.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

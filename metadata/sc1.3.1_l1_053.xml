@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.3.1_l1_053" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with a simple form that contains only a set of two radio buttons. Next to each of the <html:code>input</html:code> elements (<html:code>type="radio"</html:code>) is the <html:code>label</html:code> element for the field; the <html:code>label</html:code> elements are explicitly associated with the <html:code>input</html:code> elements by means of <html:code>for</html:code> and <html:code>id</html:code> attributes.</description>
+    <title>Radio buttons with explicitly associated labels</title>
+    <dc:creator>evlach@aegean.gr</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-30</date>
+    <status>accepted QA</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#edef-INPUT">The INPUT element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="label" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#edef-LABEL">The LABEL element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test case is intended to pass because the <html:code>input</html:code> elements have explicitly associated <html:code>label</html:code> elements.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>automatic</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.3.1_l1_053.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.3_content-structure-separation-programmatic" primary="yes">
+      <locations expectedResult="pass">
+        <location column="107" line="12" xpath="/h:html/h:body/h:form/h:fieldset/h:label[1]"/>
+        <location column="103" line="13" xpath="/h:html/h:body/h:form/h:fieldset/h:label[2]"/>
+      </locations>
+      <functionalOutcome>
+        <p>Assistive technology can find the labels for the radio buttons.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H44">H44: Using label elements to associate text labels with form controls</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.3_content-structure-separation-programmatic" primary="no">
+      <locations expectedResult="pass">
+        <location column="107" line="12" xpath="/h:html/h:body/h:form/h:fieldset/h:label[1]"/>
+        <location column="103" line="13" xpath="/h:html/h:body/h:form/h:fieldset/h:label[2]"/>
+      </locations>
+      <functionalOutcome>
+        <p>Assistive technology can find the labels for the radio buttons.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.3.1_l1_053">sc1.3.1_l1_053</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule  id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.3_content-structure-separation-programmatic" primary="no">
+      <locations expectedResult="pass">
+        <location column="36" line="11" xpath="/h:html/h:body/h:form/h:p/h:label"/>
+        <location column="51" line="12" xpath="/h:html/h:body/h:form/h:p/h:input[@type='radio']"/>
+      </locations>
+      <functionalOutcome>
+        <p>Assistive technology can find the label for the radio button.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

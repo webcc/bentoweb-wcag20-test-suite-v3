@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.3.4_l2_203" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with form controls for entering a phone number. There is no room for <html:code>label</html:code> elements between the input fields, so <html:code>title</html:code> attributes are used instead.
+      All the user interface components are created with standard <html:acronym>XHTML</html:acronym> without scripting.
+    </description>
+    <title>Title attribute label for text input field in form [new]</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de [Christophe.Strobbe@esat.kuleuven.be]</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2007-11-27</date>
+    <status>accepted for end user evaluation</status>
+        <!-- see sc4.1.2_l1_207 -->
+  </formalMetadata>
+  <technology>
+    <recommendation baseline="included" xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#edef-INPUT">The <html:code>input</html:code> element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="title" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#adef-title">The <html:code>title</html:code> attribute</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation baseline="excluded" xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">
+            <label>Cascading Style Sheets, level 2: <html:acronym>CSS</html:acronym>2 Specification</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>The test case is intended to pass because the <html:code>input</html:code> elements have a <html:code>title</html:code> attributes that describe their purpose.
+      </p>
+    </purpose>
+        <expertGuidance>
+            <p/>
+        </expertGuidance>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s01" name="sc01_bli_lowvis_scr">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where you should enter a phone number. The form for the phone number consists of three different fields: Country Code, Area code and Subscriber Code. Please enter 11 in the field Country Code, 22 in the field Area Code and 33 in the field Subscriber Code and submit the form. </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zal een formulier te zien krijgen waar u een telefoonnummer moet invoeren. Het telefoonnummer bestaat uit drie verschillende velden : landcode, regiocode en abbonneecode. Voer 11 in als landcode, 22 in het veld regiocode en 33 in het veld abbonneecode. Verstuur vervolgens het formulier (Submit).</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het telefoonnummer in te voeren ?</p>
+            </questionText>
+            <questionText xml:lang="en">
+                            <p>Was it easy to enter the phone number?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you have encountered. All comments are welcome! </p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="s02_bli_scr_brail">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where you should enter a phone number. The form for the phone number consists of three different fields: Country Code, Area code and Subscriber Code. Please enter 11 in the field Country Code, 22 in the field Area Code and 33 in the field Subscriber Code and submit the form. </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zal een formulier te zien krijgen waar u een telefoonnummer moet invoeren. Het telefoonnummer bestaat uit drie verschillende velden : landcode, regiocode en abbonneecode. Voer 11 in als landcode, 22 in het veld regiocode en 33 in het veld abbonneecode. Verstuur vervolgens het formulier (Submit).</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to enter the phone number?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het telefoonnummer in te voeren ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you have encountered. All comments are welcome! </p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <AssistiveTechnology minimumLevel="2" type="Braille display"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="s03_lowvis_scr_magni">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where you should enter a phone number. The form for the phone number consists of three different fields: Country Code, Area code and Subscriber Code. Please enter 11 in the field Country Code, 22 in the field Area Code and 33 in the field Subscriber Code and submit the form. </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zal een formulier te zien krijgen waar u een telefoonnummer moet invoeren. Het telefoonnummer bestaat uit drie verschillende velden : landcode, regiocode en abbonneecode. Voer 11 in als landcode, 22 in het veld regiocode en 33 in het veld abbonneecode. Verstuur vervolgens het formulier (Submit).</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to enter the phone number?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het telefoonnummer in te voeren ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you have encountered. All comments are welcome! </p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04" name="s04_dex_mot">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where you should enter a phone number. The form for the phone number consists of three different fields: Country Code, Area code and Subscriber Code. Please enter 11 in the field Country Code, 22 in the field Area Code and 33 in the field Subscriber Code and submit the form. </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zal een formulier te zien krijgen waar u een telefoonnummer moet invoeren. Het telefoonnummer bestaat uit drie verschillende velden : landcode, regiocode en abbonneecode. Voer 11 in als landcode, 22 in het veld regiocode en 33 in het veld abbonneecode. Verstuur vervolgens het formulier (Submit).</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to enter the phone number?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het telefoonnummer in te voeren ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you have encountered. All comments are welcome! </p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05" name="s05_dex_mot_altinp">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where you should enter a phone number. The form for the phone number consists of three different fields: Country Code, Area code and Subscriber Code. Please enter 11 in the field Country Code, 22 in the field Area Code and 33 in the field Subscriber Code and submit the form. </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zal een formulier te zien krijgen waar u een telefoonnummer moet invoeren. Het telefoonnummer bestaat uit drie verschillende velden : landcode, regiocode en abbonneecode. Voer 11 in als landcode, 22 in het veld regiocode en 33 in het veld abbonneecode. Verstuur vervolgens het formulier (Submit).</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to enter the phone number?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het telefoonnummer in te voeren ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you have encountered. All comments are welcome! </p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="alternative input devices"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s06" name="s06_adhd_dysl_ld">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where you should enter a phone number. The form for the phone number consists of three different fields: Country Code, Area code and Subscriber Code. Please enter 11 in the field Country Code, 22 in the field Area Code and 33 in the field Subscriber Code and submit the form. </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zal een formulier te zien krijgen waar u een telefoonnummer moet invoeren. Het telefoonnummer bestaat uit drie verschillende velden : landcode, regiocode en abbonneecode. Voer 11 in als landcode, 22 in het veld regiocode en 33 in het veld abbonneecode. Verstuur vervolgens het formulier (Submit).</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to enter the phone number?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het telefoonnummer in te voeren ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you have encountered. All comments are welcome! </p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="1" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>ADHD</disability>
+          <disability>colour vision deficiency</disability>
+          <disability>deafness</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+          <disability>hard of hearing</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s07" name="s07_lowvis_magni">
+                <userGuidance xml:lang="en">
+                    <p>You will be presented a form where you should enter a phone number. The form for the phone number consists of three different fields: Country Code, Area code and Subscriber Code. Please enter 11 in the field Country Code, 22 in the field Area Code and 33 in the field Subscriber Code and submit the form. </p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>U zal een formulier te zien krijgen waar u een telefoonnummer moet invoeren. Het telefoonnummer bestaat uit drie verschillende velden : landcode, regiocode en abbonneecode. Voer 11 in als landcode, 22 in het veld regiocode en 33 in het veld abbonneecode. Verstuur vervolgens het formulier (Submit).</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to enter the phone number?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk om het telefoonnummer in te voeren ?</p>
+            </questionText>
+            <!--questionText xml:lang="de">
+              <p/>
+            </questionText-->
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, beschrijf hier de problemen die u ervaren hebt. Alle bemerkingen zijn welkom!</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you have encountered. All comments are welcome! </p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="magnification software"/>
+          <UserAgent minimumLevel="2" type="browser"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.3.4_l2_203.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.3_minimize-error-cues" primary="yes">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>Users of assistive technology can determine the purpose of the input fields.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#H65">H65: Using the title attribute to identify form controls when the label element cannot be used</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+  </rules>
+    <!-- namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings-->
+</testCaseDescription>
+

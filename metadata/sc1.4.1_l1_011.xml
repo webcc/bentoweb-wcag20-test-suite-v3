@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:btw="http://bentoweb.org/refs/TCDL1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ id="sc1.4.1_l1_011"
+ xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing a conference schedule with three tracks. There are two tracks with three presentations each. Coloured icons are used to indicate the track in which a presentation belongs, and this information is also available through the icons' text alternatives but not in normal text.</description>
+    <title>Information available through coloured icons and their text alternatives [new]</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2007-12-07</date>
+    <status>draft</status><!--V_20071214-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="img" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#adef-alt">The alt attribute</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because the information which track the session belongs to is not visually evident without colour but only through the icons' text alternatives.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc1.4.1_l1_011.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.4_visual-audio-contrast-without-color" primary="yes">
+      <locations expectedResult="fail">
+        <location line="23" column="100" xpath="/h:html/h:body/h:ul[1]/h:li[1]/h:img/@alt"/>
+        <location line="24" column="100" xpath="/h:html/h:body/h:ul[1]/h:li[2]/h:img/@alt"/>
+        <location line="25" column="100" xpath="/h:html/h:body/h:ul[1]/h:li[3]/h:img/@alt"/>
+        <location line="29" column="100" xpath="/h:html/h:body/h:ul[2]/h:li[1]/h:img/@alt"/>
+        <location line="30" column="100" xpath="/h:html/h:body/h:ul[2]/h:li[2]/h:img/@alt"/>
+        <location line="31" column="100" xpath="/h:html/h:body/h:ul[2]/h:li[3]/h:img/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The track information is available from the icon's text alternative.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The information which track the session belongs to is available from the icon's colour and the img element's alt attribute. But the colour coding is not <html:em>simultaneously</html:em> visually evident without the colour.</p>
+        <!-- p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p-->
+        <!-- @@WCAG feedback: why are text alternatives OK for people who don't use a screen reader?? -->
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G14">G14: Ensuring that color-encoded information is also available in text</html:a></html:span>.
+          (See example 2: A color-coded schedule with icons. However, the test procedure requires that the text is not conditional content (in other words, not <html:code>alt</html:code> text.)
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

@@ -1,0 +1,22 @@
+body {
+  font-family: Verdana, Helvetica, sans-serif;
+}
+
+.leftcolmedium {
+/*  display: block; */
+  float:left;
+  text-align: right;
+  margin-right: 1em;
+  width: 11em;
+}
+
+.box {
+  position:absolute;
+  background: #FFFFE0;
+  border: 1px solid #CD853F;
+  top:6em;
+  left:0.5em;
+  height:8em;
+  width: 40em;
+  padding:0.5em;
+}

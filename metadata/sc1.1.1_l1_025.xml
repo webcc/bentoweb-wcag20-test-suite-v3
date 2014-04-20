@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.1.1_l1_025" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>A document with a client-side image map; the image represents a traffic light. 
+      The <html:code>img</html:code> element has an <html:code>alt</html:code> attribute that duplicates the <html:code>src</html:code> attribute with the <html:acronym>URI</html:acronym> to the image instead of an appriopriate text alternative. 
+      The <html:code>alt</html:code> attributes of the image map's <html:code>area</html:code> elements are empty (the <html:code>alt</html:code> attributes are present, but there is no text or white space between the double quotation marks).
+    </description>
+    <title>Alternative text for areas in client-side image maps: img element with image map; empty alt attributes in image map areas and URL as alt for image</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-29</date>
+    <status>accepted QA</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="img" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#adef-alt">How to specify alternate text</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="map" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#idx-client-side_image_map-1">How to create client-side image maps</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="area" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-AREA">Client-side image maps: the <html:code>map</html:code> and <html:code>area</html:code> elements</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail: instead of an appropriate text alternative, the <html:code>alt</html:code> attribute contains the <html:acronym>URL</html:acronym> to the image file. 
+        In addition, the text alternatives for the areas of the image map are empty.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>automatic</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.1.1_l1_025.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.1_text-equiv-all" primary="yes">
+      <locations expectedResult="fail">
+        <location column="7" line="15" xpath="/h:html/h:body/h:div/h:p[2]/h:img/@alt"/>
+        <location column="46" line="18" xpath="/h:html/h:body/h:div/h:map/h:area[1]/@alt"/>
+        <location column="47" line="19" xpath="/h:html/h:body/h:div/h:map/h:area[2]/@alt"/>
+        <location column="47" line="20" xpath="/h:html/h:body/h:div/h:map/h:area[3]/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has no proper text description associated with it (the <html:acronym>URL</html:acronym> of the image file).
+          Moreover, none of the areas in the image map has a text description.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has a <html:code>alt</html:code> attribute containing the relative <html:acronym>URL</html:acronym> of the image file.
+          Moreover, since each of the <html:code>area</html:code> elements in the map <html:code>element</html:code> has an <html:code>alt</html:code> attribute, this case does not pass.
+        </p>
+                <p>This test case is identical to sc1.1.1_l1_010, except that the <html:code>alt</html:code> attributes of the <html:code>area</html:code> elements are now empty.</p>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F30">F30: Failure of SC 1.1.1 due to using text alternatives that are not alternatives (e.g. filenames or placeholder text)</html:a></html:span>.</p>
+        <p>(In Mozilla 1.7.3, SeaMonkey 1.1, Firefox 1.0, 1.5 and 2.0, the map does not work if the <html:code>map</html:code> element has only an <html:code>id</html:code> and no <html:code>name</html:code> attribute.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.1_text-equiv-all" primary="no">
+      <locations expectedResult="fail">
+        <location column="7" line="15" xpath="/h:html/h:body/h:div/h:p[2]/h:img/@alt"/>
+        <location column="46" line="18" xpath="/h:html/h:body/h:div/h:map/h:area[1]/@alt"/>
+        <location column="47" line="19" xpath="/h:html/h:body/h:div/h:map/h:area[2]/@alt"/>
+        <location column="47" line="20" xpath="/h:html/h:body/h:div/h:map/h:area[3]/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has no proper text description associated with it (the <html:acronym>URL</html:acronym> of the image file).
+          Moreover, none of the areas in the image map has a text description.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has a <html:code>alt</html:code> attribute containing the relative <html:acronym>URL</html:acronym> of the image file.
+          Moreover, since each of the <html:code>area</html:code> elements in the map <html:code>element</html:code> has an <html:code>alt</html:code> attribute, this case does not pass.
+        </p>
+                <p>This test case is identical to sc1.1.1_l1_010, except that the <html:code>alt</html:code> attributes of the <html:code>area</html:code> elements are now empty.</p>
+        <p>(In Mozilla 1.7.3 and Firefox 1.0, the map does not work if the <html:code>map</html:code> element has only an <html:code>id</html:code> and no <html:code>name</html:code> attribute.)</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.1.1_l1_025">sc1.1.1_l1_025</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.1_text-equiv-informative" primary="no">
+      <locations expectedResult="fail">
+        <location column="7" line="15" xpath="/h:html/h:body/h:div/h:p[2]/h:img/@alt"/>
+        <location column="46" line="18" xpath="/h:html/h:body/h:div/h:map/h:area[1]/@alt"/>
+        <location column="47" line="19" xpath="/h:html/h:body/h:div/h:map/h:area[2]/@alt"/>
+        <location column="47" line="20" xpath="/h:html/h:body/h:div/h:map/h:area[3]/@alt"/>
+      </locations>
+      <functionalOutcome>
+        <p>The image has no proper text description associated with it (the <html:acronym>URL</html:acronym> of the image file).
+          Moreover, none of the areas in the image map has a text description.
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>img</html:code> element has a <html:code>alt</html:code> attribute containing the relative <html:acronym>URL</html:acronym> of the image file.
+          Moreover, since each of the <html:code>area</html:code> elements in the map <html:code>element</html:code> has an <html:code>alt</html:code> attribute, this case does not pass.
+        </p>
+                <p>This test case is identical to xhtml1_wcag2_20050630_1.1_l1_sc1_010, except that the <html:code>alt</html:code> attributes of the <html:code>area</html:code> elements are now empty.</p>
+        <p>(In Mozilla 1.7.3 and Firefox 1.0, the map does not work if the <html:code>map</html:code> element has only an <html:code>id</html:code> and no <html:code>name</html:code> attribute.)</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

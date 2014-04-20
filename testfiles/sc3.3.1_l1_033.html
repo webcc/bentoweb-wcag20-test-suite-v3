@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Web form - text input</title>
+     <link rel="stylesheet" media="screen,projection" href="resources/css/sc3.3.css" type="text/css" />
+     <script type="text/javascript" src="resources/scripts/check.js"></script>
+	<script type="text/javascript">
+	<!--
+	function check() {
+		var errTxt="";
+		if (document.getElementById("id1").value=="") {
+			errTxt = "The email address is required.";
+			if (document.getElementById("errCont").hasChildNodes()) 
+				clearNode(document.getElementById("errCont"));
+			if (document.getElementById("lab1").hasChildNodes())
+				clearNode(document.getElementById("lab1"));
+		} else if (!isValidEmail(document.getElementById("id1").value, true)) {
+		errTxt = "The email address does not seem to be valid. A valid email address consists of the name of the recipient followed by the @-sign and then followed by a domain address. For example test@test.org is a valid email address.";
+			if (document.getElementById("errCont").hasChildNodes()) 
+				clearNode(document.getElementById("errCont"));
+			if (document.getElementById("lab1").hasChildNodes())
+				clearNode(document.getElementById("lab1"));
+		} else {
+			document.getElementById("form").submit();
+			return;
+		}
+		//
+		  var errDiv = document.createElement('div');
+			  errDiv.setAttribute('id','error');
+			  errDiv.appendChild(document.createTextNode("Registration was not successful."));
+			  var br1 = document.createElement('br');
+			  errDiv.appendChild(br1);
+			  var br2 = document.createElement('br');
+			  errDiv.appendChild(br2);
+
+              errDiv.appendChild(document.createTextNode("The form is redisplayed with incorrect fields identified by: "));
+              var img1 = document.createElement('img');
+ 			  img1.setAttribute('src', 'resources/images/alert_icon.gif');
+ 			  img1.setAttribute('alt', '**');
+ 			  errDiv.appendChild(img1);
+              errDiv.appendChild(document.createTextNode("."));
+
+			  var br3 = document.createElement('br');
+			  errDiv.appendChild(br3);
+			  var br4 = document.createElement('br');
+			  errDiv.appendChild(br4);
+			  errDiv.appendChild(document.createTextNode("Please check the following item and try again:"));
+			  var listOL = document.createElement('ol');
+			  var listLI = document.createElement('li');
+			  var a = document.createElement('a');
+			  a.setAttribute('href', '#id1');
+			  a.appendChild(document.createTextNode(errTxt));
+			  listLI.appendChild(a);
+		      listOL.appendChild(listLI);
+			  errDiv.appendChild(listOL);
+			  document.getElementById("errCont").appendChild(errDiv);
+			  //
+			  var label = document.getElementById("lab1");
+			  var span = document.createElement('span');
+		      span.style.color ="rgb(255,0,0)";
+			  span.style.fontWeight="bold";
+			  span.appendChild(document.createTextNode("Email * "));
+
+			  var img = document.createElement('img');
+ 			  img.setAttribute('src', 'resources/images/alert_icon.gif');
+ 			  img.setAttribute('alt', '**');
+ 			  label.appendChild(img);
+
+			  label.appendChild(document.createTextNode(" "));
+			  label.appendChild(span);
+			  label.appendChild(document.createTextNode(": "));
+		
+			 document.getElementById("id1").focus();
+	}
+	//-->
+	</script>
+  </head>
+  <body>
+    <h1>Registration</h1>
+    <div id="errCont"></div>
+    <p>Fields marked with an asterisk (*) are mandatory.</p>
+    <form method="post" action="processformdummy.html" id="form">
+    <div>
+       <label class="leftcol" for="first">First name * : </label><input readonly="readonly" type="text" id="first" value="John" /><br />
+       <label class="leftcol" for="last">Last name * : </label><input readonly="readonly" type="text" id="last" value="Smith" /><br />
+	   <label class="leftcol" for="id1" id="lab1">Email * :</label><input type="text" name="e1" id="id1" value="" /><br/>
+	   <div class="space"><input type="button" name="subok" value="submit" onclick="check()" /><br/></div>
+	 </div>
+	 </form>
+  </body>
+
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2006
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+</html>

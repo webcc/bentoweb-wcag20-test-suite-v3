@@ -1,0 +1,348 @@
+<project name="BenToWebMigrateTestSuite2" basedir="." default="help">
+  <loadproperties srcfile="build.properties"></loadproperties>
+  <property name="metadataDir" value="${BenToWeb.testSuite3}\metadata"/>
+  <property name="testfilesDir" value="${BenToWeb.testSuite3}\testfiles"/>
+  <property name="resourcesDir" value="${testfilesDir}/resources"/>
+  <property name="audioDir" value="${resourcesDir}/audio"/>
+  <property name="imageDir" value="${resourcesDir}/images"/>
+  <property name="videoDir" value="${resourcesDir}/video"/>
+  <property name="encoding" value="utf8"/>
+  <xmlcatalog id="tcdl__Catalog">
+    <catalogpath><fileset dir="${TCDL.catalog_dir}" includes="tcdl_catalog.localhost80.cat"/></catalogpath>
+  </xmlcatalog>
+  <xmlcatalog id="tcdlCatalog">
+    <catalogpath><fileset dir="D:/eclipsedev/bentoweb/TCDL/catalogs/" includes="tcdl_catalog.localhost80.cat"/></catalogpath>
+  </xmlcatalog>
+
+  <target name="copyAndTransformAcceptedTestCases_rename" depends="-copyAcceptedQAMetadata_rename, SaveTestSuite2Identifiers, PrettyPrintTCDL2XML, cleanTCDL, removeRedundantNamespaces">
+    <description>Copies test cases with status "accepted QA" (for success criteria that have been reworded at most, but not renumbered), migrates them to the May 2007 working draft of WCAG 2.0, and pretty-prints them.</description>
+    <echo>Test suite migrated.</echo>
+  </target>
+
+  <target name="-copyAcceptedQAMetadata_rename" description="Copy test case metadata with status 'accepted QA'">
+    <copy todir="${BenToWeb.testSuite3}\metatcdl" overwrite="false" encoding="UTF8" outputEncoding="UTF8">
+      <fileset dir="${BenToWeb.testSuite2}\metadata" 
+        includes="sc1.1.1*.xml sc1.2.1*.xml sc1.2.2*.xml sc1.2.5*.xml sc1.2.6*.xml sc1.2.7*.xml sc1.3.1*.xml sc1.4.2*.xml
+        sc2.1.1*.xml sc2.1.2*.xml sc2.2.1*.xml sc2.2.2*.xml           sc2.2.4*.xml sc2.2.5*.xml sc2.2.6*.xml
+        sc2.3.1*.xml sc2.3.2*.xml sc2.4.1*.xml sc2.4.4*.xml sc2.4.7*.xml sc2.4.8*.xml sc3.1.1*.xml sc3.1.2*.xml sc3.1.3*.xml sc3.1.4*.xml sc3.1.5*.xml sc3.1.6*.xml
+        sc3.2.1*.xml sc3.2.2*.xml sc3.2.3*.xml sc3.2.4*.xml sc3.2.5*.xml sc3.2.6*.xml sc4.1.1*.xml sc4.1.2*.xml">
+        <contains text="&gt;accepted QA&lt;"/>
+      </fileset>
+      <mapper from="*.xml" to="*.xml" type="glob" />
+    </copy>
+    <!-- Run copy targets above and below separately; pretty print XSLT on files below causes stack overflow (premature end of file). -->
+    <copy todir="${BenToWeb.testSuite3}\metatcdl" overwrite="false" encoding="UTF8" outputEncoding="UTF8">
+      <fileset dir="${BenToWeb.testSuite2}\metadata" includes="sc2.2.3_l2_*.xml">
+        <contains text="&gt;accepted QA&lt;"/>
+      </fileset>
+      <mapper from="*.xml" to="*.xml" type="glob" />
+    </copy>
+    <!-- @@ "rejected QA" needs to be treated separately: often need to be remapped. -->
+  </target>
+
+
+  <target name="copyAndTransformAcceptedTestCases_manual" 
+    depends="-copyAcceptedQAMetadata_manual, -updateRenumberedTestCases, -cleanXML,    -renameRenumberedTestCases">
+    <!--   -updateRenumberedTestFiles,   , PrettyPrintXML -->
+    <!--
+      1. copy if "accepted QA" to 'metatcdl' [-copyAcceptedQAMetadata_manual] (*.xml -> *.xml)
+      2. pretty print [PrettyPrintXML] / update TCDL w XSLT [-updateRenumberedTestCases] (*.xml -> *.tcdl)
+      3. delete .xml files [-cleanXML]
+      4. manually copy relevant test files
+      5. find & replace in test files [-updateRenumberedTestFiles] (* -> *)
+      6. rename TCDL files and test files [-renameRenumberedTestCases] (*.tcdl -> *.xml; * -> *)
+    -->
+  </target>
+
+
+  <target name="-copyAcceptedQAMetadata_manual" description="Copies test cases for success criteria that have a new number.">
+    <!--copy todir="${BenToWeb.testSuite3}\metatcdl" overwrite="false" encoding="UTF8" outputEncoding="UTF8">
+      <fileset dir="${BenToWeb.testSuite2}\metadata" includes="sc1.2.3*.xml 
+        sc1.3.2*.xml sc1.3.3*.xml sc1.3.5*.xml   sc1.4.1*.xml sc1.4.3*.xml sc1.4.4*.xml 
+        sc2.4.2*.xml sc2.4.3*.xml sc2.4.5*.xml sc2.4.6*.xml   sc2.5.1*.xml sc2.5.2*.xml sc2.5.3*.xml sc2.5.4*.xml">
+        <contains text="&gt;accepted QA&lt;"/>
+      </fileset>
+      <mapper from="*.xml" to="*.xml" type="glob" />
+    </copy-->
+    <copy todir="${BenToWeb.testSuite3}\metatcdl" overwrite="false" encoding="UTF8" outputEncoding="UTF8">
+      <fileset dir="${BenToWeb.testSuite2}\metadata" includes="sc1.2.4*.xml">
+        <contains text="&gt;accepted QA&lt;"/>
+      </fileset>
+      <mapper from="*.xml" to="*.xml" type="glob" />
+    </copy>
+  </target>
+
+  <target name="-updateRenumberedTestCases">
+    <description>Update metadata for success criteria that have been renumbered.</description>
+    <xslt 
+      style="${TCDL.xslt_migrateTS2metadata_rename}" processor="trax"
+      basedir="${metadataDir}" destdir="${metadataDir}"
+      includes="*.xml" extension=".tcdl">
+    </xslt>
+    <!-- need remap: 
+      sc1.2.3_l2 -> sc1.2.4_l2
+      sc1.2.4_l2 -> sc1.2.3_l2
+      sc1.3.2_l1 -> sc1.4.1_l1
+      sc1.3.3_l1 -> sc1.3.2_l1
+      sc1.3.5_l2 -> sc1.3.3_l1 (level change)
+      sc1.4.1_l2 -> sc1.4.3_l2
+      sc1.4.3_l3 -> sc1.4.5_l2 (level change)
+      sc1.4.4_l3 -> sc1.4.6_l3
+      sc2.4.2_l2 -> sc2.4.5_l2
+      sc2.4.3_l2 -> sc2.4.2_l1 (level change)
+      sc2.4.5_l3 -> sc2.4.6_l2 (level change)
+      sc2.4.6_l3 -> sc2.4.3_l1 (level change)
+      sc2.5.1_l1 -> sc3.3.1_l1
+      sc2.5.2_l2 -> sc3.3.2_l2
+      sc2.5.3_l2 -> sc3.3.3_l2
+      sc2.5.4_l3 -> sc3.3.5_l3
+
+      sc1.3.4 -> + sc1.3.1
+    -->
+    <!-- delete?
+      sc4.2.1 -> conformance criteria
+      sc4.2.2 -> conformance criteria
+      sc4.2.3 -> conformance criteria
+      sc4.2.4 -> conformance criteria
+    -->
+  </target>
+
+  <target name="-updateRenumberedTestFiles">
+    <description>Update test files for success criteria that have been renumbered.</description>
+    <echo>WARNING: copy test files first!</echo>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc1.2.3_l2*"><replacetoken>sc1.2.3_l2</replacetoken><replacevalue>sc1.2.4_l2</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc1.2.4_l2*"><replacetoken>sc1.2.4_l2</replacetoken><replacevalue>sc1.2.3_l2</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc1.3.2_l1*"><replacetoken>sc1.3.2_l1</replacetoken><replacevalue>sc1.4.1_l1</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc1.3.3_l1*"><replacetoken>sc1.3.3_l1</replacetoken><replacevalue>sc1.3.2_l1</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc1.3.5_l2*"><replacetoken>sc1.3.5_l2</replacetoken><replacevalue>sc1.3.3_l1</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc1.4.1_l2*"><replacetoken>sc1.4.1_l2</replacetoken><replacevalue>sc1.4.3_l2</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc1.4.3_l3*"><replacetoken>sc1.4.3_l3</replacetoken><replacevalue>sc1.4.5_l2</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc1.4.4_l3*"><replacetoken>sc1.4.4_l3</replacetoken><replacevalue>sc1.4.6_l3</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc2.4.2_l2*"><replacetoken>sc2.4.2_l2</replacetoken><replacevalue>sc2.4.5_l2</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc2.4.3_l2*"><replacetoken>sc2.4.3_l2</replacetoken><replacevalue>sc2.4.2_l1</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc2.4.5_l3*"><replacetoken>sc2.4.5_l3</replacetoken><replacevalue>sc2.4.6_l2</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc2.4.6_l3*"><replacetoken>sc2.4.6_l3</replacetoken><replacevalue>sc2.4.3_l1</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc2.5.1_l1*"><replacetoken>sc2.5.1_l1</replacetoken><replacevalue>sc3.3.1_l1</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc2.5.2_l2*"><replacetoken>sc2.5.2_l2</replacetoken><replacevalue>sc3.3.2_l2</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc2.5.3_l2*"><replacetoken>sc2.5.3_l2</replacetoken><replacevalue>sc3.3.3_l2</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc2.5.4_l3*"><replacetoken>sc2.5.4_l3</replacetoken><replacevalue>sc3.3.5_l3</replacevalue></replace>
+    <replace dir="${testfilesDir}" encoding="${encoding}" includes="sc1.3.4_l2_0*"><replacetoken>sc1.3.4_l2_0</replacetoken><replacevalue>sc1.3.1_l1_2</replacevalue></replace>
+  </target>
+
+
+  <target name="-renameRenumberedTestCases" description="Rename files for test cases for success criteria with changed numbers">
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.2.3_l2*.tcdl" />
+      <mapper type="glob" from="sc1.2.3_l2*.tcdl" to="sc1.2.4_l2*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.2.3_l2*" />
+      <mapper type="glob" from="sc1.2.3_l2*" to="sc1.2.4_l2*" />
+    </move>
+
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.2.4_l2*.tcdl" />
+      <mapper type="glob" from="sc1.2.4_l2*.tcdl" to="sc1.2.3_l2*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.2.4_l2*" />
+      <mapper type="glob" from="sc1.2.4_l2*" to="sc1.2.3_l2*" />
+    </move>
+
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.3.2_l1*.tcdl" />
+      <mapper type="glob" from="sc1.3.2_l1*.tcdl" to="sc1.4.1_l1*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.3.2_l1*" />
+      <mapper type="glob" from="sc1.3.2_l1*" to="sc1.4.1_l1*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.3.2_l1*.tcdl" />
+      <mapper type="glob" from="sc1.3.2_l1*.tcdl" to="sc1.4.1_l1*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.3.2_l1*" />
+      <mapper type="glob" from="sc1.3.2_l1*" to="sc1.4.1_l1*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.3.3_l1*.tcdl" />
+      <mapper type="glob" from="sc1.3.3_l1*.tcdl" to="sc1.3.2_l1*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.3.3_l1*" />
+      <mapper type="glob" from="sc1.3.3_l1*" to="sc1.3.2_l1*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.3.5_l2*.tcdl" />
+      <mapper type="glob" from="sc1.3.5_l2*.tcdl" to="sc1.3.3_l1*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.3.5_l2*" />
+      <mapper type="glob" from="sc1.3.5_l2*" to="sc1.3.3_l1*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.4.1_l2*.tcdl" />
+      <mapper type="glob" from="sc1.4.1_l2*.tcdl" to="sc1.4.3_l2*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.4.1_l2*" />
+      <mapper type="glob" from="sc1.4.1_l2*" to="sc1.4.3_l2*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.4.3_l3*.tcdl" />
+      <mapper type="glob" from="sc1.4.3_l3*.tcdl" to="sc1.4.5_l2*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.4.3_l3*" />
+      <mapper type="glob" from="sc1.4.3_l3*" to="sc1.4.5_l2*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.4.4_l3*.tcdl" />
+      <mapper type="glob" from="sc1.4.4_l3*.tcdl" to="sc1.4.6_l3*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.4.4_l3*" />
+      <mapper type="glob" from="sc1.4.4_l3*" to="sc1.4.6_l3*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc2.4.2_l2*.tcdl" />
+      <mapper type="glob" from="sc2.4.2_l2*.tcdl" to="sc2.4.5_l2*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc2.4.2_l2*" />
+      <mapper type="glob" from="sc2.4.2_l2*" to="sc2.4.5_l2*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc2.4.3_l2*.tcdl" />
+      <mapper type="glob" from="sc2.4.3_l2*.tcdl" to="sc2.4.2_l1*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc2.4.3_l2*" />
+      <mapper type="glob" from="sc2.4.3_l2*" to="sc2.4.2_l1*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc2.4.5_l3*.tcdl" />
+      <mapper type="glob" from="sc2.4.5_l3*.tcdl" to="sc2.4.6_l2*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc2.4.5_l3*" />
+      <mapper type="glob" from="sc2.4.5_l3*" to="sc2.4.6_l2*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc2.4.6_l3*.tcdl" />
+      <mapper type="glob" from="sc2.4.6_l3*.tcdl" to="sc2.4.3_l1*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc2.4.6_l3*" />
+      <mapper type="glob" from="sc2.4.6_l3*" to="sc2.4.3_l1*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc2.5.1_l1*.tcdl" />
+      <mapper type="glob" from="sc2.5.1_l1*.tcdl" to="sc3.3.1_l1*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc2.5.1_l1*" />
+      <mapper type="glob" from="sc2.5.1_l1*" to="sc3.3.1_l1*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc2.5.2_l2*.tcdl" />
+      <mapper type="glob" from="sc2.5.2_l2*.tcdl" to="sc3.3.2_l2*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc2.5.2_l2*" />
+      <mapper type="glob" from="sc2.5.2_l2*" to="sc3.3.2_l2*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc2.5.3_l2*.tcdl" />
+      <mapper type="glob" from="sc2.5.3_l2*.tcdl" to="sc3.3.3_l2*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc2.5.3_l2*" />
+      <mapper type="glob" from="sc2.5.3_l2*" to="sc3.3.3_l2*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc2.5.4_l3*.tcdl" />
+      <mapper type="glob" from="sc2.5.4_l3*.tcdl" to="sc3.3.5_l3*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc2.5.4_l3*" />
+      <mapper type="glob" from="sc2.5.4_l3*" to="sc3.3.5_l3*" />
+    </move>
+    <move todir="${metadataDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${metadataDir}" includes="sc1.3.4*.tcdl" />
+      <mapper type="glob" from="sc1.3.4_l2_00*.tcdl" to="sc1.3.1_l1_20*.xml" />
+    </move>
+    <move todir="${testfilesDir}" encoding="${encoding}" outputencoding="${encoding}">
+      <fileset dir="${BenToWeb.testSuite2}/testfiles" includes="sc1.3.4*" />
+      <mapper type="glob" from="sc1.3.4_l2_00*" to="sc1.3.1_l1_20*" />
+    </move>
+  </target>
+
+
+  <target name="-copyAcceptedQATestFiles" depends="-copyAcceptedQAMetadata_rename" description="Copy test files (and resources) for test cases with status 'accepted QA'">
+    <!-- @@copy test files. Test files don't contain "accepted QA", so need to be copied separately.
+      Maybe Java code can parse copied TCDL files, read the test file URLs and copy them over.
+    -->
+  </target>
+
+  <target name="PrettyPrintTCDL2XML" description="Pretty print XML to ensure consistency of find-and-replace operations later on.">
+    <echo message="Make sure that you use SAXON 6.x as XSLT engine ! Check you classpath ! "></echo><!-- @@ check Saxon 8.9B -->
+    <xslt 
+      style="${TCDL.xslt_pretty_print}" processor="trax"
+      basedir="${metadataDir}" destdir="${metadataDir}"
+      includes="*.tcdl" extension=".xml"
+      >
+    </xslt>
+  </target>
+
+  <target name="PrettyPrintXML" description="Pretty print XML to ensure consistency of find-and-replace operations later on.">
+    <echo message="Make sure that you use SAXON 6.x as XSLT engine ! Check you classpath ! "></echo><!-- @@ check Saxon 8.9B -->
+    <xslt 
+      style="${TCDL.xslt_pretty_print}" processor="trax"
+      basedir="${metadataDir}" destdir="${metadataDir}"
+      includes="*.xml" extension=".tcdl">
+    </xslt>
+    <echo>Pretty print XML finished.</echo>
+  </target>
+
+  <target name="SaveTestSuite2Identifiers" description="Save identifiers and links of test cases in 2nd test suite as comments.">
+    <echo message="Make sure that you use SAXON 6.x as XSLT engine ! Check your classpath ! "></echo><!-- @@ check Saxon 8.9B -->
+    <xslt 
+      style="${TCDL.xslt_migrateTS2metadata}"
+      processor="trax"
+      basedir="${metadataDir}"
+      destdir="${metadataDir}"
+      includes="*.xml"
+      extension=".tcdl">
+    </xslt>
+  </target>
+
+  <target name="cleanTCDL" description="Delete files with extension .tcdl.">
+    <delete dir="${metadataDir}" includes="*.tcdl" />
+    <echo>*.tcdl files deleted</echo>
+  </target>
+  <target name="-cleanXML" description="Delete files with extension .xml.">
+    <delete dir="${metadataDir}" includes="*.xml" />
+    <echo>*.xml files deleted</echo>
+  </target>
+
+  <target name="removeRedundantNamespaces" description="Remove redundant namespace declarations.">
+    <replace dir="${metadataDir}" includes="*.xml">
+     <replacetoken>rule xmlns:btw="http://bentoweb.org/refs/TCDL1.1"</replacetoken>
+     <replacevalue>rule</replacevalue>
+    </replace>
+  </target>
+
+  <target name="ValidateTCDL1.1">
+    <echo>Validating TCDL 1.1 files with Xerces.</echo><!--echo>${java.class.path}</echo-->
+    <xmlvalidate classname="org.apache.xerces.parsers.SAXParser" classpath="${Xerces.path}" failonerror="false">
+      <xmlcatalog refid="tcdlCatalog" /><!-- Warning: XML Commons Resolver needs to be in classpath! -->
+      <attribute name="http://apache.org/xml/features/validation/schema" value="true" />
+      <attribute name="http://xml.org/sax/features/namespaces" value="true" />
+      <fileset dir="${metadataDir}" includes="*.xml" />
+    </xmlvalidate>
+  </target>
+
+  <target name="help"><!-- @@todo --></target>
+</project>

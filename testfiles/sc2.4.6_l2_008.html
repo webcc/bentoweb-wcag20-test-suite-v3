@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Testfile - Web Content Accessibility Guidelines 1.0</title>
+  </head>
+  <body>
+  <h1>Web Content Accessibility Guidelines 1.0</h1>
+  <h2>Abstract</h2>
+    
+    <p>These guidelines explain how to make Web content
+     accessible to people with
+    disabilities. The guidelines are intended for all Web content
+    developers (page authors and site designers) and for
+    developers of authoring tools. The primary goal of
+    these guidelines is to promote accessibility. However, following them
+    will also make Web content more available to <em>all</em> users, whatever
+    user agent 
+      they are using (e.g., desktop
+    browser, voice browser, mobile phone, automobile-based 
+    personal computer, etc.)  or
+    constraints they may be operating under (e.g., noisy 
+    surroundings, under- or over-illuminated rooms, in a hands-free
+    environment, etc.). Following these guidelines will also help people
+    find information on the Web more quickly. These guidelines do not
+    discourage content developers from using images, video, etc., but
+    rather explain how to make multimedia content more accessible to a wide
+    audience.</p>
+    
+    <p>This is a reference document for accessibility principles and
+    design ideas. Some of the strategies discussed in this document
+    address certain Web internationalization and mobile access
+    concerns. However, this document focuses on accessibility and does not
+    fully address the related concerns of other 
+    <abbr title="World Wide Web Consortium">W3C</abbr> Activities. Please
+    consult the <a href="http://www.w3.org/Mobile">W3C Mobile Access
+    Activity home page</a> and the
+    <a href="http://www.w3.org/International">W3C Internationalization
+    Activity home page</a> for more information.</p>
+    
+  <h2><a id="Introduction" name="Introduction">1. Introduction</a></h2>
+  <p>For those unfamiliar with accessibility issues pertaining to
+    Web page design, consider that many users may be operating
+    in contexts very different from your own:
+  </p>
+
+  <ul>
+     <li>They may not be able to see, hear, move, or
+         may not be able to process some types of 
+         information easily or at all.</li>
+     <li>They may have difficulty reading or comprehending text.</li>
+     <li>They may not have or be able to use a keyboard or mouse.</li>
+     <li>They may have a text-only screen, a small screen, or
+         a slow Internet connection.</li>
+     <li>They may not speak or understand fluently
+         the language in which the document is written.</li>
+     <li>They may be in a situation where their eyes, ears, or
+         hands are busy or interfered with (e.g., driving to work, 
+         working in a loud environment, etc.).</li>
+     <li>They may have an early version of a browser, a different
+         browser entirely, a voice browser, or a 
+         different operating system.
+    </li>
+  </ul>
+
+  <p>Content developers must consider these
+  different situations during page design.  While there are several
+  situations to consider, each accessible design choice generally
+  benefits several disability groups at once and the Web community as a
+  whole. For example, by using style
+  sheets to control font styles and eliminating the FONT element,
+  HTML authors will have more control over their pages, make those
+  pages more accessible to people with low vision, and by sharing the
+  style sheets, will often shorten page download times for all
+  users.</p>
+  <p>The guidelines discuss accessibility issues and provide
+  accessible design solutions. They address typical scenarios
+  (similar to the font style example) that may pose problems for users
+  with certain disabilities. For example, the first guideline explains how content
+  developers can make images accessible. Some users may not be able to see
+  images, others may use text-based browsers that do not support
+  images, while others may have turned off support for images (e.g.,
+  due to a slow Internet connection). The guidelines do not suggest
+  avoiding images as a way to improve accessibility.  Instead,
+  they explain that providing a text
+  equivalent of the image will make it accessible. </p>
+
+  <h2>2. Themes of Accessible Design</h2>
+  <p>The guidelines address two general themes: ensuring graceful transformation, and making content understandable and navigable.</p>
+  
+  <h3>2.1 Ensuring Graceful Transformation</h3>
+  <p>By following these guidelines, content developers can create pages
+    that transform gracefully.  Pages that transform gracefully remain
+    accessible despite any of the constraints described in the <a href="#Introduction">introduction</a>, including physical, sensory,
+    and cognitive disabilities, work constraints, and technological
+    barriers. Here are some keys to designing pages that transform
+    gracefully:
+  </p>
+  
+  <ul>
+    <li>Separate structure from presentation (refer to 
+        the difference between content,
+        structure, and presentation).</li>
+  
+    <li>Provide text (including text equivalents). Text
+    can be rendered in ways that are available to almost all browsing
+    devices and accessible to almost all users.</li>
+  
+    <li>Create documents that work even if the user 
+        cannot see and/or hear. Provide information
+        that serves the same purpose or function as
+        audio or video in ways 
+        suited to alternate sensory channels as well. 
+        This does not mean creating a prerecorded
+        audio version of an entire site to make it accessible to
+        users who are blind. Users who are blind can use
+        screen reader technology to
+        render all text information in a page.
+  </li> 
+  
+    <li>Create documents that do not rely on one type of hardware.
+       Pages should be usable by people
+       without mice, with small screens, low resolution screens, 
+       black and white screens, no screens, with only voice or text
+       output, etc.</li>
+  </ul>
+  
+  <p>The theme of graceful transformation is addressed primarily by
+  guidelines 1 to 11.</p>
+
+  
+  <h3>2.2 Making Content Understandable and Navigable</h3>
+  <p>Content developers should make content understandable and
+    navigable.  This includes not only making the language clear and
+    simple, but also providing understandable mechanisms for navigating
+    within and between pages. Providing navigation tools and orientation
+    information in pages will maximize accessibility and usability.
+    Not all users can make use of visual clues such as image
+    maps, proportional scroll bars, side-by-side frames, or graphics that
+    guide sighted users of graphical desktop browsers. Users also lose
+    contextual information when they can only view a portion of a page,
+    either because they are accessing the page one word at a time (speech
+    synthesis or 
+    braille display), or one section at a time (small display,
+    or a magnified display). Without orientation information,
+    users may not be able to understand very large tables, lists, menus, etc.</p>
+
+  <p>The theme of making content understandable and navigable is
+    addressed primarily in guidelines 12 to 14.
+  </p>
+  <p>(This text is an excerpt from the <a href="http://www.w3.org/TR/WAI-WEBCONTENT/">Web Content Accessibility Guidelines 1.0</a>, &copy; <acronym title="World Wide Web Consortium">W3C</acronym>.)</p>
+  </body>
+
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!-- 
+  Content is quoted from Web Content Accessibility Guidelines 1.0, copyright World Wide Web Consortium (W3C).
+  See http://www.w3.org/Consortium/Legal/ipr-notice#Copyright
+-->
+</html>

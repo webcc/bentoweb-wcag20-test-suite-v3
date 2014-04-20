@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc1.4.2_l1_002" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing a reference to sound via the <html:code>object</html:code> element.</description>
+    <title>Background sound with <html:code>object</html:code> element</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-11</date>
+    <status>validated</status><!--V_20071214--><!--@@fix Should have been L1!-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="object" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-OBJECT">Generic inclusion: the OBJECT element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The test is intended to fail because the sound cannot be stopped in Firefox or Opera.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>experts</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01 blind speech IE5.0">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computers turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" version="5.0" type="browser" product="Microsoft Internet Explorer"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario s02 lowvis IE5.0">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="2" version="5.0" type="browser" product="Microsoft Internet Explorer"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario s03 motor IE5.0">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p> Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="alternative input devices"/>
+          <UserAgent minimumLevel="3" type="browser"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04" name="Scenario s04 blind speech IE5.5">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computers turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" version="5.5" type="browser" product="Microsoft Internet Explorer"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05" name="Scenario s05 blind speech IE6.0">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computers turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" version="6.0" type="browser" product="Microsoft Internet Explorer"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s06" name="Scenario s06  motor IE5.5">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p> Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="alternative input devices"/>
+          <UserAgent minimumLevel="2" version="5.5" type="browser" product="Microsoft Internet Explorer"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s07" name="Scenario s07 motor IE6.0">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p> Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="alternative input devices"/>
+          <UserAgent minimumLevel="2" version="5.5" type="browser" product="Microsoft Internet Explorer"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s08" name="Scenario s08  motor FF">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p> Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="alternative input devices"/>
+          <UserAgent minimumLevel="2" type="browser" product="Firefox"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s09" name="Scenario s09  motor Opera">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p> Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="alternative input devices"/>
+          <UserAgent minimumLevel="2" type="browser" product="Opera"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s10" name="Scenario s10 blind speech FF">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computers turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" type="browser" product="Firefox"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s11" name="Scenario s11 blind speech Opera">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computers turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader"/>
+          <UserAgent minimumLevel="2" type="browser" product="Opera"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s12" name="Scenario s12 lowvis IE5.5">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="2" version="5.5" type="browser" product="Microsoft Internet Explorer"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s13" name="Scenario s13 lowvis IE6.0">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="2" version="6.0" type="browser" product="Microsoft Internet Explorer"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s14" name="Scenario s14 lowvis FF">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="2" type="browser" product="Firefox"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s15" name="Scenario s15 lowvis Opera">
+        <userGuidance xml:lang="en">
+          <p>Make sure you have the sound on your computer turned on.</p>
+        </userGuidance>
+        <userGuidance xml:lang="nl">
+          <p>Zorg ervoor dat u het geluid op uw computer hebt aanstaan.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Can you turn off the background music?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Kan u de achtergrondmuziek uitschakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+              <p>If yes, how did you do it?</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+              <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="2" type="browser" product="Opera"/>
+          <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc1.4.2_l2_002.html" hrefLang="en"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.4_visual-audio-contrast-dis-audio" primary="yes">
+      <locations expectedResult="fail">
+        <location line="8" column="98" xpath="/h:html/h:body/h:p/h:object"/>
+        <location line="9" column="72" xpath="/h:html/h:body/h:p/h:object/h:param"/>
+      </locations>
+      <functionalOutcome>
+        <p>Background sound cannot be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element plays a sound that cannot be stopped, except in Internet Explorer (by pressing the <html:kbd>Esc</html:kbd> button).</p>
+        <p>This test case maps to failure <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#F23">F23: Failure of SC 1.4.2 due to playing a sound longer than 3 seconds where there is no mechanism to turn it off</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule primary="no" id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.4_visual-audio-contrast-dis-audio">
+      <locations expectedResult="fail">
+        <location line="8" column="98" xpath="/h:html/h:body/h:p/h:object"/>
+        <location line="9" column="72" xpath="/h:html/h:body/h:p/h:object/h:param"/>
+      </locations>
+      <functionalOutcome>
+        <p>Background sound cannot be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element plays a sound that cannot be stopped.
+        </p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.4.2_l2_002">sc1.4.2_l2_002</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.4_visual-audio-contrast-dis-audio" primary="no">
+      <locations expectedResult="fail">
+        <location line="8" column="98" xpath="/h:html/h:body/h:p/h:object"/>
+        <location line="9" column="72" xpath="/h:html/h:body/h:p/h:object/h:param"/>
+      </locations>
+      <functionalOutcome>
+        <p>Background sound cannot be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element causes plays a sound that cannot be stopped.
+        </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>

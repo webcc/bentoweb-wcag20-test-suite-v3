@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc3.3.5_l3_018" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Application containing a textarea for entering and spell-checking a message.</description>
+    <title>Text area (in form) with spelling correction</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de;christophe.strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2006-09-14</date>
+    <status>accepted for end user evaluation</status>
+        <!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="textarea" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#edef-TEXTAREA">The <html:code>TEXTAREA</html:code> element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+            <p>The test case is intended to pass because an accessible method for spell-checking is provided.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+      <scenario id="s06" name="s06_apha_dysc_dysl_fill_idis_ldis(talkbr)">
+                <userGuidance xml:lang="en">
+                    <p>Imagine you have a landlord whose name is Steven Cloud. His bank details have changed, so you have to inform your bank about this in order to transfer the rent to the right account. For the following task you will be shown an example for such a message that includes some typing errors. Please read the message without changing something and press the button "Check spelling"? at the end. Then correct the typing errors.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Stel U heeft een huisbaas genaamd Steven Cloud. Zijn bankgegevens zijn gewijzigd, dus moet U Uw bank hierover informeren zodat de huur op de goede rekening wordt overgemaakt. In de volgende test ziet U een voorbeeld van zo'n bericht met enkele spelfouten. Lees de tekst door, zonder iets te wijzigen, druk dan op de knop spellingscontrole/check spelling en verbeter de spelfouten.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Was it easy to correct the spelling?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was het makkelijk de spelfouten te verbeteren?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="en">
+                            <p>If not, please describe here the problems you encountered. All comments are welcome!</p>
+            </optionOther>
+            <optionOther xml:lang="nl">
+                            <p>Indien niet, gelieve de problemen die U tegenkwam te beschrijven. Alle opmerkingen zijn welkom!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>50</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="talking browser"/>
+        </experience>
+        <disabilities>
+          <disability>aphasia</disability>
+          <disability>dyscalculus</disability>
+          <disability>dyslexia</disability>
+          <disability>functional illiteracy</disability>
+          <disability>intellectual disability</disability>
+          <disability>learning disability</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc3.3.5_l3_018.jsp"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_3.3_minimize-error-context-help" primary="yes">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The user can get spelling mistakes in the textarea corrected.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+                <p>(Spellchecking is mentioned in a "future technique": "Providing spell checking and suggestions for text input if applicable to the language (future link)".)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.5_minimize-error-context-help" primary="no">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The user can get spelling mistakes in the textarea corrected.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This test case maps to (future) technique: Providing spell checking and suggestions for text input if applicable to the language.</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc2.5.4_l3_017">sc2.5.4_l3_017</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.5_minimize-error-context-help" primary="no">
+      <locations expectedResult="pass"/>
+      <functionalOutcome>
+        <p>The user can get spelling mistakes in the textarea corrected.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+

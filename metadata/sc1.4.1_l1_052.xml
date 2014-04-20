@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" id="sc1.4.1_l1_052" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+<!--
+  Copyright &#169; BenToWeb Consortium 2004-2007
+  
+  Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+  not use this file except in compliance with the License. You may obtain
+  a copy of the License at http://bentoweb.org/refs/LICENSE.html
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+  <formalMetadata>
+    <description>A page with a form that has two <html:code>fieldset</html:code>s. 
+      The first <html:code>fieldset</html:code> contains a group of radio buttons, and the user is required to make a choice (there is no default). 
+      Instructions above the form explain that required fields have labels in red and contain the text "required field". 
+      The red text for the first <html:code>fieldset</html:code> is created by means of <html:acronym>CSS</html:acronym> and includes a textual cue ("required field") to tell the user that the field is required, so it is possible for users of current screen reader to find out which form fields are required. 
+      The form does not rely on the user's ability to recognize red text.
+    </description>
+    <title>Red text with <html:code>CSS</html:code> and textual cue to indicate required form fields</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2005-09-30</date>
+    <status>accepted for end user evaluation</status><!--@@migrated 2007-11-20-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512">
+      <label>Cascading Style Sheets, level 2 - <html:acronym>CSS</html:acronym> 2 Specification</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because information about required form fields is conveyed through colour and a textual cue.
+        This test is only about indicating required form fields, not about the processing of the form.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>experts</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01 blind braille">
+        <questions>
+          <multipleChoice select="multiple" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Which of the form fields are marked as required ? Multiple selections are possible.</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Welke van de velden van het formulier zijn gemarkeerd als verplicht in te vullen (required) ? Meerdere selecties zijn mogelijk.</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">Destination</label>
+
+              <label xml:lang="nl">Destination</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Transport</label>
+
+              <label xml:lang="nl">Transport</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Don't know</label>
+
+              <label xml:lang="nl">Ik weet het niet</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="Braille display" />
+          <UserAgent minimumLevel="2" version="4.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.01" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.5" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="6.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" type="browser" product="Firefox" />
+          <UserAgent minimumLevel="2" type="browser" product="Opera" />
+          <UserAgent minimumLevel="2" type="browser" product="Mozilla" />
+          <UserAgent minimumLevel="2" type="browser" product="Safari" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario s02 blind speech">
+        <questions>
+          <multipleChoice select="multiple" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Which of the form fields are marked as required? Multiple selections are possible.</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Welke van de velden van het formulier zijn gemarkeerd als verplicht in te vullen (required) ? Meerdere selecties zijn mogelijk.</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">Destination</label>
+
+              <label xml:lang="nl">Destination</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Transport</label>
+
+              <label xml:lang="nl">Transport</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Don't know</label>
+
+              <label xml:lang="nl">Ik weet het niet</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader" />
+          <UserAgent minimumLevel="2" version="4.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.01" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.5" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="6.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" type="browser" product="Firefox" />
+          <UserAgent minimumLevel="2" type="browser" product="Opera" />
+          <UserAgent minimumLevel="2" type="browser" product="Safari" />
+          <UserAgent minimumLevel="2" type="browser" product="Mozilla" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario s03 colour blind">
+        <questions>
+          <multipleChoice select="multiple" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Which of the form fields are marked as required? Multiple selections are possible.</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Welke van de velden van het formulier zijn gemarkeerd als verplicht in te vullen (required) ? Meerdere selecties zijn mogelijk.</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">Destination</label>
+
+              <label xml:lang="nl">Destination</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Transport</label>
+
+              <label xml:lang="nl">Transport</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Don't know</label>
+
+              <label xml:lang="nl">Ik weet het niet</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" version="4.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.01" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.5" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="6.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" type="browser" product="Firefox" />
+          <UserAgent minimumLevel="2" type="browser" product="Opera" />
+          <UserAgent minimumLevel="2" type="browser" product="Safari" />
+          <UserAgent minimumLevel="2" type="browser" product="Mozilla" />
+        </experience>
+        <disabilities>
+          <disability>colour vision deficiency</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04" name="Scenario s04  lowvis mag">
+        <questions>
+          <multipleChoice select="multiple" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Which of the form fields are marked as required? Multiple selections are possible.</p>
+            </questionText>
+            <questionText xml:lang="nl">
+              <p>Welke van de velden van het formulier zijn gemarkeerd als verplicht in te vullen (required) ? Meerdere selecties zijn mogelijk.</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">Destination</label>
+
+              <label xml:lang="nl">Destination</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Transport</label>
+
+              <label xml:lang="nl">Transport</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Don't know</label>
+
+              <label xml:lang="nl">Ik weet het niet</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader with magnification" />
+          <UserAgent minimumLevel="2" version="4.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.01" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="5.5" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" version="6.0" type="browser" product="Microsoft Internet Explorer" />
+          <UserAgent minimumLevel="2" type="browser" product="Firefox" />
+          <UserAgent minimumLevel="2" type="browser" product="Opera" />
+          <UserAgent minimumLevel="2" type="browser" product="Opera" />
+          <UserAgent minimumLevel="2" type="browser" product="Safari" />
+          <UserAgent minimumLevel="2" type="browser" product="Mozilla" />
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/sc1.4.1_l1_052.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.4_visual-audio-contrast-without-color" primary="yes">
+      <locations expectedResult="pass">
+        <location line="30" column="25" xpath="/h:html/h:body/h:form[1]/h:fieldset[1]/h:p" />
+      </locations>
+      <functionalOutcome>
+        <p>The user does not need to be able to recognize the colour red in order to know which fields are required.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The code uses the class attribute and a <html:acronym>CSS</html:acronym> style sheet, and text to indicate required fields.</p>
+        <p>This test case maps to technique <html:span class="technique"><html:a href="http://www.w3.org/TR/2007/WD-WCAG20-TECHS-20070517/#G122">G122: Including a text cue whenever color cues are used</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.3_content-structure-separation-without-color" primary="no">
+      <locations expectedResult="pass">
+        <location line="30" column="25" xpath="/h:html/h:body/h:form[1]/h:fieldset[1]/h:p" />
+      </locations>
+      <functionalOutcome>
+        <p>The user does not need to be able to recognize the colour red in order to know which fields are required.
+          (The test case needs further testing.)
+        </p>
+      </functionalOutcome>
+      <techComment>
+        <p>The code uses the class attribute and a <html:acronym>CSS</html:acronym> style sheet, and text to indicate required fields.</p>
+        <p>This test case maps to technique G122: Including a text cue whenever color cues are used (http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#G122).</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.3.2_l1_002">sc1.3.2_l1_002</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.3_content-presentation-structure-without-color" primary="no">
+      <locations expectedResult="pass">
+        <location line="30" column="25" xpath="/h:html/h:body/h:form[1]/h:fieldset[1]/:p" />
+      </locations>
+      <functionalOutcome>
+        <p>The user does not need to be able to recognize the colour red in order to know which fields are required.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The code uses the class attribute and a <html:acronym>CSS</html:acronym> style sheet, and text to indicate required fields.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

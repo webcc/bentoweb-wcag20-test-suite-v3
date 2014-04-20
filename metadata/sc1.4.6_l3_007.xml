@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription id="sc1.4.6_l3_007" xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL1.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd">
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>Document containing multimedia with background sound and text to be read by a screenreader. A 'stop'-button removes the background sound.</description>
+    <title>Audio contrast: turn off background sound with button</title>
+    <dc:creator>Daniela.Ortner@jku.at</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2005-2007</dc:rights>
+    <date>2006-08-21</date>
+    <status>accepted for end user evaluation</status>
+        <!--@@migrated 2007-11-27-->
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label><html:acronym>XHTML</html:acronym>™ 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="object" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#edef-OBJECT">Generic inclusion: the <html:code>OBJECT</html:code> element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="p" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/text.html#h-9.3.1">Paragraphs: the <html:code>P</html:code> element</specReference>
+        </testElement>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml"/>
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#edef-INPUT">The INPUT element</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+    <recommendation xlink:href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">
+      <label>Standard <html:acronym>ECMA</html:acronym>-262 : ECMAScript Language Specification, 3rd edition (December 1999)</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass, because there is a mechanism to turn off the background sound via 'stop'-button.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>experts</testMode>
+      </testModes>
+      <scenario id="s01" name="Scenario s01">
+                <userGuidance xml:lang="nl">
+                    <p>Stel de schermlezer zo in dat hij zowel parallel geluid als spraakweergave toelaat.</p>
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent deze actie uit te voeren.</p>
+                </userGuidance>
+                <userGuidance xml:lang="en">
+                    <p>Configure the screen reader to allow parallel sound and speech interpretation</p>
+                    <p>Note : it is possible that you are not able to perform the requested action.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Were you able to turn off the background sound?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was u in staat om het achtergrondgeluid uit te schakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If yes, how did you turn off the background sound?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader"/>
+          <UserAgent minimumLevel="3" type="browser"/>
+                    <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02" name="Scenario s03">
+                <userGuidance xml:lang="en">
+                    <p>Configure the screen reader to allow parallel sound and speech interpretation.</p>
+                    <p>Note : it is possible that you are not able to perform the requested action.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Stel de schermlezer zo in dat hij zowel parallel geluid als spraakweergave toelaat.</p>
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent deze actie uit te voeren.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Were you able to turn off the background sound?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was u in staat het achtergrondgeluid uit te schakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If yes, how did you turn off the background sound?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader with magnification"/>
+          <UserAgent minimumLevel="3" type="browser"/>
+                    <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03" name="Scenario s05">
+                <userGuidance xml:lang="en">
+                    <p>Note : it is possible that you are not able to perform the requested action.</p>
+                    <p>Please make sure to have the sound turned on.</p>
+                </userGuidance>
+                <userGuidance xml:lang="nl">
+                    <p>Opmerking : het is mogelijk dat u niet in staat bent deze actie uit te voeren.</p>
+                    <p>Zorg ervoor dat het geluid is ingeschakeld.</p>
+                </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+                            <p>Were you able to turn off the background sound?</p>
+            </questionText>
+            <questionText xml:lang="nl">
+                            <p>Was u in staat om het achtergrondgeluid uit te schakelen ?</p>
+            </questionText>
+            <optionYes value="1"/>
+            <optionNo value="-1"/>
+            <optionOther xml:lang="nl">
+                            <p>Indien ja, hoe deed u dit ?</p>
+            </optionOther>
+            <optionOther xml:lang="en">
+                            <p>If yes, how were you able to turn off the background sound?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="Braille display"/>
+          <AssistiveTechnology minimumLevel="3" type="screenreader"/>
+          <UserAgent minimumLevel="3" type="browser"/>
+                    <Device minimumLevel="3" type="PC"/>
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file hrefLang="en" xlink:href="../testfiles/sc1.4.6_l3_007.html"/>
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20070517_1.4_visual-audio-contrast-noaudio" primary="yes">
+      <locations expectedResult="pass">
+        <location column="14" line="18" xpath="/h:html/h:body/h:p[1]/h:input"/>
+        <location column="10" line="20" xpath="/h:html/h:body/h:p[2]"/>
+        <location column="14" line="27" xpath="/h:html/h:body/h:div/h:object"/>
+      </locations>
+      <functionalOutcome>
+        <p>The background sound can be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element plays a sound that can be stopped by activating the stop button.</p>
+        <p>This test case does not map to a <html:acronym>WCAG</html:acronym> 2.0 technique or failure.</p>
+                <p>(The test case may map to the future technique "Providing a control near the top of the Web page that turns off sounds that play automatically" in a future draft of <html:acronym>WCAG</html:acronym> 2.0.)</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.4_visual-audio-contrast-noaudio" primary="no">
+      <locations expectedResult="pass">
+        <location column="14" line="18" xpath="/h:html/h:body/h:p[1]/h:input"/>
+        <location column="10" line="20" xpath="/h:html/h:body/h:p[2]"/>
+        <location column="14" line="27" xpath="/h:html/h:body/h:div/h:object"/>
+      </locations>
+      <functionalOutcome>
+        <p>The background sound can be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element plays a sound that can be stopped by activating the stop button.</p>
+        <p>Online version: <html:span><html:a href="http://www.bentoweb.org/ts/XHTML1_TestSuite2/metadata/sc1.4.4_l3_007">sc1.4.4_l3_007</html:a></html:span>.</p>
+      </techComment>
+    </rule>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.4_visual-audio-contrast-noaudio" primary="no">
+      <locations expectedResult="pass">
+        <location column="14" line="18" xpath="/h:html/h:body/h:p[1]/h:input"/>
+        <location column="10" line="20" xpath="/h:html/h:body/h:p[2]"/>
+        <location column="14" line="27" xpath="/h:html/h:body/h:div/h:object"/>
+      </locations>
+      <functionalOutcome>
+        <p>The background sound can be stopped.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The <html:code>object</html:code> element plays a sound that can be stopped by activating the stop button.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml"/>
+  </namespaceMappings>
+</testCaseDescription>
+
