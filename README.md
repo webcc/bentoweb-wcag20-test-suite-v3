@@ -1,4 +1,3 @@
-wcag20_test_suite_v3
-====================
+# WCAG 2.0 Test Suite (Third Version): W3C Working Draft 17 May 2007
 
-WCAG 2.0 Test Suite (Third Version): W3C Working Draft 17 May 2007
+This Test Suite is a set of XHTML + CSS test cases mapped to the [W3C Working Draft 17 May 2007 of WCAG 2.0](http://www.w3.org/TR/2007/WD-WCAG20-20070517/). This Test Suite is in the public domain and subject to the licensing conditions set forth in the BenToWeb Public License. This is the final version of the Test Suite under the scope of the BenToWeb project. The work on test suites continues under the umbrella of the [WCAG 2.0 Test Samples Development Task Force (TSD TF)](http://www.w3.org/WAI/ER/2006/tests/) from W3C, where the test cases are adapted to the latest version of the Web Content Accessibility Guidelines 2.0.
